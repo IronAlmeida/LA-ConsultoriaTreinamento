@@ -11,5 +11,17 @@
     "next": "10.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IronDS/LA-ConsultoriaTreinamento.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IronDS/LA-ConsultoriaTreinamento/issues"
+  },
+  "homepage": "https://github.com/IronDS/LA-ConsultoriaTreinamento#readme"
 }
