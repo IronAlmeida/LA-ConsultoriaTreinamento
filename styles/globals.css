@@ -16,6 +16,8 @@
     width: calc(100% - 500px);
 }
 
-.width-700{
-    width: 700px;
+@media (min-width: 1024px){
+    .width-700{
+        width: 50%;
+    }    
 }
