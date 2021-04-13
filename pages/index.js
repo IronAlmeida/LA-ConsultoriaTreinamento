@@ -40,7 +40,7 @@ const Header = () => {
 
 const Background = () => {
   return (
-    <div className="index bg-cover relative bg-center h-screen md:block md:w-1/2 2xl:w-2/3" style={{backgroundImage: `url(/bg-main.jpg)`}}>
+    <div className="bg-cover relative bg-center md:block md:w-1/2 2xl:w-2/3 h-screen" style={{backgroundImage: `url(/bg-main.jpg)`}}>
 
     </div>
   );
@@ -48,10 +48,8 @@ const Background = () => {
 
 const Login = () => {
   return (
-    <div className="w-full h-screen md:w-1/2 2xl:w-1/3 px-12 py-40">
-      <div className="absolute w-full bg-gradient-to-r from-red-700 to-gray-700">
-        <Header />
-      </div>
+    <div className="w-full md:w-1/2 2xl:w-1/3 p-12 h-screen">
+      
 
       <div className="bg-gray-800 max-w-lg mx-auto rounded-lg shadow-2xl p-6 lg:px-16">
         <form className="flex flex-col" action="#" method="POST">
@@ -82,12 +80,20 @@ const Login = () => {
         <p className="text-black">Não tem uma conta? <a className="font-semibold hover:underline hover:text-red-500" href="#">Cadastre-se</a></p>
       </div>
 
-      <footer className="max-w-lg mx-auto text-center mt-16">
-        <p className="text-gray-500 font-normal"> Copyright © LA - Consultoria e Treinamento 2021</p>
-      </footer>
+      <div className="max-w-lg mx-auto text-center mt-12">
+        <footer className="text-gray-700 font-normal">Copyright © LA - Consultoria e Treinamento 2021</footer>
+      </div>
     </div>
   );
 };
+
+const Rodape = () => {
+  return (
+    <div className="w-full bg-gray-800 text-center">
+      <footer className="text-white font-normal">Copyright © LA - Consultoria e Treinamento 2021</footer>
+    </div>
+  );
+}
 
 export default function Home(){
   return(
@@ -97,6 +103,10 @@ export default function Home(){
         <meta name="robots" content="index/follow"/>
         <meta name="description" content="Lourdes Almeida - Consultoria e Treinamentos"/>
       </Head>
+        <div className="w-full bg-gradient-to-r from-red-700 to-gray-700">
+          <Header />
+        </div>
+
         <div className="flex">
           <Background />
           <Login />
@@ -109,5 +119,9 @@ export default function Home(){
 /*
 <div className="bg-cover flex flex-col w-screen h-screen" style={{backgroundImage: `url(/bg-main.jpg)`}}></div>
 
+
+<div>
+          <Rodape />
+        </div>
 */
 
