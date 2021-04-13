@@ -87,14 +87,6 @@ const Login = () => {
   );
 };
 
-const Rodape = () => {
-  return (
-    <div className="w-full bg-gray-800 text-center">
-      <footer className="text-white font-normal">Copyright © LA - Consultoria e Treinamento 2021</footer>
-    </div>
-  );
-}
-
 export default function Home(){
   return(
     <div>
