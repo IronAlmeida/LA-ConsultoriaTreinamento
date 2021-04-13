@@ -48,52 +48,44 @@ const Background = () => {
 
 const Login = () => {
   return (
-    <div className="w-full md:w-1/2 2xl:w-1/3 p-12 h-screen">
-      
+    <div className="width-700 h-screen overflow-y-auto">
+      <div className="min-h-screen flex flex-col justify-between p-8">
+        <div className="bg-gray-800 max-w-lg mx-auto rounded-lg shadow-2xl p-6 lg:px-16">
+          <form className="flex flex-col" action="#" method="POST">
 
-      <div className="bg-gray-800 max-w-lg mx-auto rounded-lg shadow-2xl p-6 lg:px-16">
-        <form className="flex flex-col" action="#" method="POST">
+            <div className="max-w-lg mb-6">
+              <h1 className="text-white text-xl font-semibold text-center">Bem-Vindo(a)</h1>
+            </div>
 
-          <div className="max-w-lg mb-6">
-            <h1 className="text-white text-xl font-semibold text-center">Bem-Vindo(a)</h1>
-          </div>
+            <div className="mb-6 pt-3 rounded bg-gray-200">
+              <label className="block text-gray-700 text-sm font-semibold mb-2 ml-3" for="email">Email</label>
+              <input type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-500 transition duration-500 px-2 pb-3" />
+            </div>
 
-          <div className="mb-6 pt-3 rounded bg-gray-200">
-            <label className="block text-gray-700 text-sm font-semibold mb-2 ml-3" for="email">Email</label>
-            <input type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-500 transition duration-500 px-2 pb-3" />
-          </div>
+            <div className="mb-6 pt-3 rounded bg-gray-200">
+              <label className="block text-gray-700 text-sm font-semibold mb-2 ml-3" for="senha">Senha</label>
+              <input type="password" id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-500 transition duration-500 px-2 pb-3" />
+            </div>
 
-          <div className="mb-6 pt-3 rounded bg-gray-200">
-            <label className="block text-gray-700 text-sm font-semibold mb-2 ml-3" for="senha">Senha</label>
-            <input type="password" id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-500 transition duration-500 px-2 pb-3" />
-          </div>
+            <div className="flex justify-end ">
+              <a href="#" className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6"><p>Esqueci minha senha</p></a>
+            </div>
 
-          <div className="flex justify-end ">
-            <a href="#" className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6"><p>Esqueci minha senha</p></a>
-          </div>
+            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Entrar</button>
+          </form>
+        </div>
 
-          <button className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Entrar</button>
-        </form>
-      </div>
+        <div className="max-w-lg mx-auto text-center mt-12">
+          <p className="text-black">Não tem uma conta? <a className="font-semibold hover:underline hover:text-red-500" href="#">Cadastre-se</a></p>
+        </div>
 
-      <div className="max-w-lg mx-auto text-center mt-12">
-        <p className="text-black">Não tem uma conta? <a className="font-semibold hover:underline hover:text-red-500" href="#">Cadastre-se</a></p>
-      </div>
-
-      <div className="max-w-lg mx-auto text-center mt-12">
-        <footer className="text-gray-700 font-normal">Copyright © LA - Consultoria e Treinamento 2021</footer>
+        <div className="max-w-lg mx-auto text-center mt-12">
+          <footer className="text-gray-700 font-normal">Copyright © LA - Consultoria e Treinamento 2021</footer>
+        </div>
       </div>
     </div>
   );
 };
-
-const Rodape = () => {
-  return (
-    <div className="w-full bg-gray-800 text-center">
-      <footer className="text-white font-normal">Copyright © LA - Consultoria e Treinamento 2021</footer>
-    </div>
-  );
-}
 
 export default function Home(){
   return(
@@ -119,9 +111,5 @@ export default function Home(){
 /*
 <div className="bg-cover flex flex-col w-screen h-screen" style={{backgroundImage: `url(/bg-main.jpg)`}}></div>
 
-
-<div>
-          <Rodape />
-        </div>
 */
 

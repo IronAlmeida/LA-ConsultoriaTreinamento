@@ -6,11 +6,6 @@
 
 * {
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-}
-
-::-webkit-scrollbar {
-    width: 0px;
 }
 
 .index{
@@ -19,4 +14,8 @@
 
 .width-calc{
     width: calc(100% - 500px);
+}
+
+.width-700{
+    width: 700px;
 }
