@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import React, {useState} from "react";
 
 /*CABEÇALHO*/
 const Header = () => {
@@ -42,7 +43,6 @@ const Header = () => {
     </>
   );
 };
-
 
 /*LADO ESQUERDO - BACKGROUND */
 const Background = () => {
