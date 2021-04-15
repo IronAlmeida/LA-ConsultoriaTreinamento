@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import React, {useState} from "react";
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 /*CABEÇALHO*/
 const Header = () => {
@@ -101,6 +102,9 @@ const Login = () => {
   const [ativar, setAtivar] = useState("login");
 
   const Formlogin = () => {
+
+    const [visivel, setVisivel] = useState(false)
+
     return(
       <div className="w-full">
         <form action="#" method="POST">
@@ -110,12 +114,15 @@ const Login = () => {
 
           <div className="mb-6 pt-3 rounded bg-gray-200">
             <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="email">E-mail</label>
-            <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+          <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
           </div>
 
-          <div className="mb-6 pt-3 rounded bg-gray-200">
+          <div className="mb-6 pt-3 rounded bg-gray-200 relative">
             <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="senha">Senha</label>
-            <input required type="password" id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+            <input autoComplete="no" required type={visivel ? "text" : "password"} id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+            {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
+            : 
+            <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
           </div>
 
           <div className="flex justify-end ">
@@ -125,7 +132,7 @@ const Login = () => {
           <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Entrar</button>
         </form>
         <div className="max-w-lg mx-auto text-center mt-6 sm:mt-12">
-          <p className="text-gray-800">Não tem uma conta? <span className="font-semibold hover:underline hover:text-red-600 cursor-pointer" href="#">Cadastre-se</span></p>
+          <p className="text-gray-800">Não tem uma conta? <span className="font-semibold hover:underline hover:text-red-600 cursor-pointer" onClick={() => setAtivar("cadastro")}>Cadastre-se</span></p>
         </div>
       </div>
     );
@@ -154,6 +161,54 @@ const Login = () => {
     );
   }
 
+  const Cadastro = () => {
+
+    const [visivel, setVisivel] = useState(false);
+    const [password, setPass] = useState("");
+
+    return(
+      <div className="w-full">
+        <form action="#" name="form" method="POST">
+          <div className="w-full mb-6">
+            <h1 className="text-gray-800 text-xl font-semibold text-center">Cadastre sua conta</h1>
+          </div>
+
+          <div className="mb-6 pt-3 rounded bg-gray-200">
+            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="nome">Nome completo</label>
+            <input required type="text" id="nome" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+          </div>
+
+          <div className="mb-6 pt-3 rounded bg-gray-200">
+            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="email">E-mail</label>
+            <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+          </div>
+
+          <div className="mb-6 pt-3 rounded bg-gray-200 relative">
+            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="senha">Senha</label>
+            <input autoComplete="no" required type={visivel ? "text" : "password"} id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+            {visivel ? <AiFillEye onClick={() => setVisivel(false)} onKeyup={} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
+            : 
+            <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
+          </div>
+
+          <div className="mb-6 pt-3 rounded bg-gray-200 relative">
+            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="senhacheck">Confirme sua senha</label>
+            <input autoComplete="no" required type={visivel ? "text" : "password"} id="senhacheck" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+            {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
+            : 
+            <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
+          </div>
+
+          <div className="flex justify-end ">
+            <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer transition-opacity" onClick={() => setAtivar("login")}>Já tenho uma conta</p>
+          </div>
+
+          <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Cadastrar</button>
+        </form>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full width-700 overflow-y-auto h-screen">
       <div className="flex p-4 sm:p-8 relative min-h-screen flex-col justify-between">
@@ -161,6 +216,7 @@ const Login = () => {
         <div className="bg-white rounded-lg p-6 flex flex-col flex-grow justify-center">
           {ativar === "login" && <Formlogin />}
           {ativar === "recsenha" && <Recsenha />}
+          {ativar === "cadastro" && <Cadastro />}
         </div>
         <div className="max-w-lg mx-auto text-center mt-6 sm:mt-12">
           <footer className="text-gray-800 font-normal">Copyright © LA - Consultoria e Treinamento 2021</footer>
@@ -186,3 +242,9 @@ export default function Home(){
     </div>
   );
 };
+
+
+/*
+
+<AiFillEye className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />
+*/

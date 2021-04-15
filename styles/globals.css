@@ -8,10 +8,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.index{
-    z-index: -1;
-}
-
 .width-calc{
     width: calc(100% - 500px);
 }
