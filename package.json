@@ -8,11 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "formik": "^2.2.6",
     "next": "10.1.2",
     "next-images": "^1.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.2.0"
+    "react-hook-form": "^7.1.1",
+    "react-icons": "^4.2.0",
+    "yup": "^0.32.9"
   },
   "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
   "main": "index.js",

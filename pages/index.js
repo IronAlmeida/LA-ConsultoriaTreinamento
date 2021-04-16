@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import React, {useState} from "react";
+import { Field, Form, Formik } from "formik";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+import * as Yup from 'yup';
+
+
 
 /*CABEÇALHO*/
 const Header = () => {
@@ -114,12 +118,12 @@ const Login = () => {
 
           <div className="mb-6 pt-3 rounded bg-gray-200">
             <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="email">E-mail</label>
-          <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+          <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
           </div>
 
           <div className="mb-6 pt-3 rounded bg-gray-200 relative">
             <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="senha">Senha</label>
-            <input autoComplete="no" required type={visivel ? "text" : "password"} id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+            <input autoComplete="no" required type={visivel ? "text" : "password"} id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
             {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
             : 
             <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
@@ -148,7 +152,7 @@ const Login = () => {
 
           <div className="mb-6 pt-3 rounded bg-gray-200">
             <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="email">E-mail</label>
-            <input placeholder="Informe seu e-mail cadastrado" required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
+            <input placeholder="Informe seu e-mail cadastrado" required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
           </div>
 
           <div className="flex justify-end ">
@@ -164,47 +168,86 @@ const Login = () => {
   const Cadastro = () => {
 
     const [visivel, setVisivel] = useState(false);
-    const [password, setPass] = useState("");
+
+    const numeros = /(?=,*[0-9])/
+
+    const schema = Yup.object().shape({
+      nome: Yup.string().min(2, 'Muito curto').required('Nome Obrigatório'),
+      email: Yup.string().email('Digite um endereço de e-mail válido').lowercase().required('E-mail Obrigatório'),
+      senha: Yup.string().matches(numeros, 'Incluir número').min(8, 'A senha está curta').required('A senha deve conter pelo menos 8 caracteres com no mínimo um número'),
+      senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem')
+    })
+
+    function onSubmit(values, actions) {
+      console.log('ENVIADO', values);
+    }
 
     return(
       <div className="w-full">
-        <form action="#" name="form" method="POST">
-          <div className="w-full mb-6">
-            <h1 className="text-gray-800 text-xl font-semibold text-center">Cadastre sua conta</h1>
-          </div>
+        <Formik 
+          initialValues={{
+              nome: '',
+              email: '',
+              senha: '',
+              senhaCheck: ''
+            }}
+          validationSchema={schema}
+          validateOnMount
+          onSubmit={onSubmit}
+        > 
+        
+        {({ errors, touched }) => (
+          <Form method="POST">
+            <div className="w-full mb-6">
+              <h1 className="text-gray-800 text-xl font-semibold text-center">Cadastre sua conta</h1>
+            </div>
 
-          <div className="mb-6 pt-3 rounded bg-gray-200">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="nome">Nome completo</label>
-            <input required type="text" id="nome" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
-          </div>
+            {errors.nome && touched.nome && (
+              <div className="text-red-600 text-sm font-normal">{errors.nome}</div>
+            )}
+            <div className="mb-6 pt-3 rounded bg-gray-200">
+              <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="nome">Nome ou Razão Social</label>
+              <Field type="text" name="nome" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+            </div>
+            
+            {errors.email && touched.email && (
+              <div className="text-red-600 text-sm font-normal">{errors.email}</div>
+            )}
+            <div className="mb-6 pt-3 rounded bg-gray-200">
+              <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="email">E-mail</label>
+              <Field type="email" name="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+            </div>
 
-          <div className="mb-6 pt-3 rounded bg-gray-200">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="email">E-mail</label>
-            <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
-          </div>
+            {errors.senha && (
+              <div className="text-red-600 text-sm font-normal">{errors.senha}</div>
+            )}
+            <div className="mb-6 pt-3 rounded bg-gray-200 relative">
+              <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="senha">Senha</label>
+              <Field autoComplete="no" type={visivel ? "text" : "password"} name="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+              {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
+              : 
+              <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
+            </div>
 
-          <div className="mb-6 pt-3 rounded bg-gray-200 relative">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="senha">Senha</label>
-            <input autoComplete="no" required type={visivel ? "text" : "password"} id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
-            {visivel ? <AiFillEye onClick={() => setVisivel(false)} onKeyup={} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
-            : 
-            <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
-          </div>
+            {errors.senhaCheck && touched.senhaCheck && (
+              <div className="text-red-600 text-sm font-normal">{errors.senhaCheck}</div>
+            )}
+            <div className="mb-6 pt-3 rounded bg-gray-200 relative">
+              <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="senhacheck">Confirme sua senha</label>
+              <Field required autoComplete="no" type={visivel ? "text" : "password"} name="senhaCheck" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+              {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
+              : 
+              <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
+            </div>
 
-          <div className="mb-6 pt-3 rounded bg-gray-200 relative">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="senhacheck">Confirme sua senha</label>
-            <input autoComplete="no" required type={visivel ? "text" : "password"} id="senhacheck" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-xl" />
-            {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
-            : 
-            <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
-          </div>
+            <div className="flex justify-end ">
+              <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer transition-opacity" onClick={() => setAtivar("login")}>Já tenho uma conta</p>
+            </div>
 
-          <div className="flex justify-end ">
-            <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer transition-opacity" onClick={() => setAtivar("login")}>Já tenho uma conta</p>
-          </div>
-
-          <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Cadastrar</button>
-        </form>
+            <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Cadastrar</button>
+          </Form>
+        )}
+        </Formik>
       </div>
     );
   }
@@ -242,9 +285,3 @@ export default function Home(){
     </div>
   );
 };
-
-
-/*
-
-<AiFillEye className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />
-*/
