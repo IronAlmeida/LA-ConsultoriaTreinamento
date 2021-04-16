@@ -5,8 +5,6 @@ import { Field, Form, Formik } from "formik";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import * as Yup from 'yup';
 
-
-
 /*CABEÇALHO*/
 const Header = () => {
   return (
@@ -169,12 +167,13 @@ const Login = () => {
 
     const [visivel, setVisivel] = useState(false);
 
+    const letras = /(?=,*[a-z])/
     const numeros = /(?=,*[0-9])/
 
     const schema = Yup.object().shape({
       nome: Yup.string().min(2, 'Muito curto').required('Nome Obrigatório'),
       email: Yup.string().email('Digite um endereço de e-mail válido').lowercase().required('E-mail Obrigatório'),
-      senha: Yup.string().matches(numeros, 'Incluir número').min(8, 'A senha está curta').required('A senha deve conter pelo menos 8 caracteres com no mínimo um número'),
+      senha: Yup.string().matches(numeros, 'Incluir número').matches(letras, 'Incluir letra').min(8, 'A senha está curta').required('A senha deve conter pelo menos 8 caracteres com no mínimo um número'),
       senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem')
     })
 
