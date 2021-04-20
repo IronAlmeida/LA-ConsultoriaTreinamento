@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
+import {useRouter} from "next/router";
 import React, {useState} from "react";
 import { Field, Form, Formik } from "formik";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import * as Yup from 'yup';
+import axios from "axios";
 
 /*CABEÇALHO*/
 const Header = () => {
@@ -166,6 +168,7 @@ const Login = () => {
   const Cadastro = () => {
 
     const [visivel, setVisivel] = useState(false);
+    const router = useRouter()
 
     const letras = /(?=,*[a-z])/
     const numeros = /(?=,*[0-9])/
@@ -177,8 +180,13 @@ const Login = () => {
       senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem')
     })
 
-    function onSubmit(values, actions) {
-      console.log('ENVIADO', values);
+    async function onSubmit(values, actions) {
+      try {
+        axios.post('http://localhost:3000/api/users', values);
+        router.push('/home');
+      } catch (err){
+        alert(err);
+      }
     }
 
     return(
