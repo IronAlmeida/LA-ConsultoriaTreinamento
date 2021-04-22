@@ -8,8 +8,27 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.w600{
+    width: 37.5rem;
+}
+
+.animate-pulse{
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .width-calc{
     width: calc(100% - 500px);
+}
+
+
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .1;
+    }
 }
 
 @media (min-width: 1024px){

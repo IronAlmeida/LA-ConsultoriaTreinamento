@@ -6,6 +6,7 @@ import { Field, Form, Formik } from "formik";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import * as Yup from 'yup';
 import axios from "axios";
+import Cookie from "js-cookie";
 
 /*CABEÇALHO*/
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
     <>
       <div className="w-full flex justify-between items-center pb-1 sm:pb-4">
         <div className="hidden sm:block">
-          <a href="#"><Image src="/logo-colorida.png" width={"240"} height={"100"} /></a>
+          <a href="#"><Image src="/logo-colorida.png" width={"220"} height={"100"} /></a>
         </div>
 
         <div className="sm:hidden">
@@ -183,9 +184,10 @@ const Login = () => {
     async function onSubmit(values, actions) {
       try {
         axios.post('http://localhost:3000/api/users', values);
+        Cookie.set('Token', 'IsLoged', {expires: 7})
         router.push('/home');
       } catch (err){
-        alert(err);
+        alert({Error: 'Não foi possível enviar os dados'});
       }
     }
 
