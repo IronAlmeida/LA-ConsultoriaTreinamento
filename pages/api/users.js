@@ -8,14 +8,22 @@ export default async (req, res) => {
             const { nome, email } = req.body;
             
             const {db} = await connection();
-
+            const lowercase = await email.toLowerCase();
+            const emailAlreadyExists = await db.collection("users").findOne({email: lowercase });
+            if (emailAlreadyExists) {
+                res.status(401).json({error: `E-mail ${lowercase} already exists` });
+                return;
+              }
+            
             const response = await db.collection("users").insertOne({
-                nome,
-                email,
-                hash,
+                nome: nome,
+                email: lowercase,
+                senha: hash,
             });
+
+            res.status(200); //Gerar um JWT para autenticação
         });
     } else {
-        res.status(400).json({Error: 'Metodo de requisição errada!'})
+        res.status(405).json({error: 'Somente método POST'})
     }
 }

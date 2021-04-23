@@ -10,5 +10,5 @@ export default async function connection() {
 
     const db = client.db('LA-Consultoria&Treinamentos');
 
-    return { db, client}
+    return { db, client }
 }

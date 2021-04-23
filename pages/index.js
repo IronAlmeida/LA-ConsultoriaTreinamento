@@ -1,12 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import {useRouter} from "next/router";
 import React, {useState} from "react";
 import { Field, Form, Formik } from "formik";
-import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+import { AiFillEyeInvisible, AiFillEye, AiOutlineExclamationCircle } from 'react-icons/ai';
 import * as Yup from 'yup';
 import axios from "axios";
-import Cookie from "js-cookie";
+import { useRouter } from "next/router";
 
 /*CABEÇALHO*/
 const Header = () => {
@@ -168,8 +167,10 @@ const Login = () => {
 
   const Cadastro = () => {
 
-    const [visivel, setVisivel] = useState(false);
     const router = useRouter()
+
+    const [sucesso, setSucesso] = useState(true);
+    const [visivel, setVisivel] = useState(false);
 
     const letras = /(?=,*[a-z])/
     const numeros = /(?=,*[0-9])/
@@ -177,18 +178,18 @@ const Login = () => {
     const schema = Yup.object().shape({
       nome: Yup.string().min(2, 'Muito curto').required('Nome Obrigatório'),
       email: Yup.string().email('Digite um endereço de e-mail válido').lowercase().required('E-mail Obrigatório'),
-      senha: Yup.string().matches(numeros, 'Incluir número').matches(letras, 'Incluir letra').min(8, 'A senha está curta').required('A senha deve conter pelo menos 8 caracteres com no mínimo um número'),
-      senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem')
+      senha: Yup.string().matches(numeros, 'Incluir número').matches(letras, 'Incluir letra').min(8, 'A senha está curta').required('A senha deve conter: Mínimo 8 caracteres, letras e números'),
+      senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem').required('As senhas não coincidem')
     })
 
-    async function onSubmit(values, actions) {
-      try {
-        axios.post('http://localhost:3000/api/users', values);
-        Cookie.set('Token', 'IsLoged', {expires: 7})
-        router.push('/home');
-      } catch (err){
-        alert({Error: 'Não foi possível enviar os dados'});
-      }
+    function onSubmit(values, actions) {
+        axios.post('http://localhost:3000/api/users', values)
+        .then(res => {
+          router.push('/home')
+        })
+        .catch(error => {
+          setSucesso(false)
+        });
     }
 
     return(
@@ -207,6 +208,12 @@ const Login = () => {
         
         {({ errors, touched }) => (
           <Form method="POST">
+            {sucesso === false && 
+            <div className="w-full mb-6 bg-red-600 text-center relative p-2">
+              <p className="text-xl text-white"><AiOutlineExclamationCircle className="absolute top-2.5 left-4 text-2xl" /> Não foi possível realizar seu cadastro</p>
+            </div>}
+            
+
             <div className="w-full mb-6">
               <h1 className="text-gray-800 text-xl font-semibold text-center">Cadastre sua conta</h1>
             </div>
@@ -243,7 +250,7 @@ const Login = () => {
             )}
             <div className="mb-6 pt-3 rounded bg-gray-200 relative">
               <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="senhacheck">Confirme sua senha</label>
-              <Field required autoComplete="no" type={visivel ? "text" : "password"} name="senhaCheck" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+              <Field autoComplete="no" type={visivel ? "text" : "password"} name="senhaCheck" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
               {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
               : 
               <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
@@ -253,7 +260,7 @@ const Login = () => {
               <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer transition-opacity" onClick={() => setAtivar("login")}>Já tenho uma conta</p>
             </div>
 
-            <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Cadastrar</button>
+            <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 " type="submit">Cadastrar</button>
           </Form>
         )}
         </Formik>
