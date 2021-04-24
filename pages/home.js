@@ -1,5 +1,3 @@
-import Redirect from "./redirect";
-import {useState} from "react";
 
 
 export default function home() {

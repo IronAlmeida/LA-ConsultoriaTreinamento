@@ -1,10 +1,10 @@
-import connection from "../../utils/dbconect";
+import { connectToDatabase } from "../../utils/dbconect";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 
 export default async (req, res) => {
     if (req.method === "POST"){
-        const {db} = await connection();
+        const {db} = await connectToDatabase();
 
         const email = req.body.email;
         const lowercase = await email.toLowerCase();
