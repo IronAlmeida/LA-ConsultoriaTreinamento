@@ -182,14 +182,16 @@ const Login = () => {
       senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem').required('As senhas não coincidem')
     })
 
-    function onSubmit(values, actions) {
-        axios.post('http://localhost:3000/api/users', values)
-        .then(res => {
-          router.push('/home')
-        })
-        .catch(error => {
-          setSucesso(false)
-        });
+    async function onSubmit(values, actions) {
+    await axios.post('http://localhost:3000/api/users', values, {
+       withCredentials: true,
+       headers: {'Content-type':'application/json'},
+    }).then(res => {
+        router.push('/home');
+      })
+      .catch(error => {
+        setSucesso(false)
+      });
     }
 
     return(

@@ -1,6 +1,7 @@
 import { connectToDatabase } from "../../utils/dbconect";
 import { hash } from "bcryptjs";
 import { sign } from "jsonwebtoken";
+import cookie from "cookie";
 
 export default async (req, res) => {
     if (req.method === "POST"){
@@ -32,8 +33,11 @@ export default async (req, res) => {
                     const claims = {sub: user[0]._id};
                     const jwt = sign(claims, process.env.TOKEN_SECRETKEY);
 
-                    //Auth0
-                };
+                    res.setHeader('Set-Cookie', cookie.serialize('Auth', jwt, {
+                        maxAge: 86400,
+                    }));
+                    res.status(200);
+                }; 
             });        
           });
     } else {

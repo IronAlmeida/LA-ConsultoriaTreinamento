@@ -20,7 +20,7 @@ export default async (req, res) => {
                         const claims = {sub: user[0]._id};
                         const jwt = sign(claims, process.env.TOKEN_SECRETKEY);
 
-                        res.json({authToken: jwt});
+                        res.json({token: jwt});
                     } else {
                         res.status(404).json({message: "Failed"});
                     }

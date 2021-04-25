@@ -12,7 +12,7 @@ export default function Redirect() {
         if(!token){
           setTimeout(() => {
             router.replace('/');
-          }, 3000);
+          }, 2000);
         } else{
             router.push('/home')
         }
