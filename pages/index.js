@@ -4,11 +4,16 @@ import React, {useState} from "react";
 import { Field, Form, Formik } from "formik";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import * as Yup from 'yup';
+import firebase from "../firebase/initfirebase";
+import WriteToCloudFirestore from "../components/cloudFirestore/write";
+
+firebase()
 
 /*CABEÇALHO*/
 const Header = () => {
   return (
     <>
+      <WriteToCloudFirestore />
       <div className="w-full flex justify-between items-center pb-1 sm:pb-4">
         <div className="hidden sm:block">
           <a href="#"><Image src="/logo-colorida.png" width={"240"} height={"100"} /></a>
@@ -115,12 +120,12 @@ const Login = () => {
           </div>
 
           <div className="mb-6 pt-3 rounded bg-gray-200">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="email">E-mail</label>
-          <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="email">E-mail</label>
+          <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focforus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
           </div>
 
           <div className="mb-6 pt-3 rounded bg-gray-200 relative">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="senha">Senha</label>
+            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="senha">Senha</label>
             <input autoComplete="no" required type={visivel ? "text" : "password"} id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
             {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
             : 
@@ -149,7 +154,7 @@ const Login = () => {
           </div>
 
           <div className="mb-6 pt-3 rounded bg-gray-200">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" for="email">E-mail</label>
+            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="email">E-mail</label>
             <input placeholder="Informe seu e-mail cadastrado" required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
           </div>
 
