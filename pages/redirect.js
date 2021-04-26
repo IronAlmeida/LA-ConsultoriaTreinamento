@@ -1,19 +1,17 @@
-import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import {useEffect} from "react";
 import Image from "next/image";
 
-export default function Redirect() {
+export default function Redirect({auth}) {
     const router = useRouter();
     
     useEffect(() => {
 
-        const token = Cookies.get('Token')
-        if(!token){
+        if(!auth){
           setTimeout(() => {
             router.replace('/');
           }, 2000);
-        } else{
+        } else {
             router.push('/home')
         }
     }, [])
@@ -28,3 +26,12 @@ export default function Redirect() {
         </div>
     )
 }
+
+export async function getServerSideProps(context) {
+
+    const token = context.req?.cookies.Auth ? context.req?.cookies.Auth : false
+
+    return {
+        props: {auth: token}
+    };
+};

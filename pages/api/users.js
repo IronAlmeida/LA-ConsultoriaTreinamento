@@ -1,7 +1,7 @@
 import { connectToDatabase } from "../../utils/dbconect";
 import { hash } from "bcryptjs";
 import { sign } from "jsonwebtoken";
-import cookie from "cookie";
+import { setCookie } from "../../utils/cookies";
 
 export default async (req, res) => {
     if (req.method === "POST"){
@@ -30,13 +30,15 @@ export default async (req, res) => {
                 if(!user[0]){
                     res.status(404).json({message: 'Ops! Não foi possível criar sua conta!'});
                 } else {    
-                    const claims = {sub: user[0]._id};
-                    const jwt = sign(claims, process.env.TOKEN_SECRETKEY);
+                    let split = user[0].nome.split(" ");
+                    const claims = {sub: user[0]._id, nome: split[0]};
+                    const jwt = sign(claims, process.env.TOKEN_SECRETKEY, {expiresIn: '1 day'});
 
-                    res.setHeader('Set-Cookie', cookie.serialize('Auth', jwt, {
-                        maxAge: 86400,
-                    }));
-                    res.status(200);
+                    setCookie(res, 'Auth', jwt, {
+                        path: '/',
+                        maxAge: 86400
+                    })
+                    res.end(res.getHeader('Set-Cookie'));
                 }; 
             });        
           });
