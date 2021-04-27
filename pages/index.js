@@ -1,19 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router"
 import React, {useState} from "react";
 import { Field, Form, Formik } from "formik";
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import * as Yup from 'yup';
-import firebase from "../firebase/initfirebase";
-import WriteToCloudFirestore from "../components/cloudFirestore/write";
+import {autenticacao} from "../firebase/apifirebase";
+import {useAuth} from "../firebase/auth";
 
-firebase()
 
 /*CABEÇALHO*/
 const Header = () => {
   return (
     <>
-      <WriteToCloudFirestore />
       <div className="w-full flex justify-between items-center pb-1 sm:pb-4">
         <div className="hidden sm:block">
           <a href="#"><Image src="/logo-colorida.png" width={"240"} height={"100"} /></a>
@@ -169,8 +168,8 @@ const Login = () => {
   }
 
   const Cadastro = () => {
-
     const [visivel, setVisivel] = useState(false);
+    const [erro, setErro] = useState(false);
 
     const letras = /(?=,*[a-z])/
     const numeros = /(?=,*[0-9])/
@@ -181,10 +180,6 @@ const Login = () => {
       senha: Yup.string().matches(numeros, 'Incluir número').matches(letras, 'Incluir letra').min(8, 'A senha está curta').required('A senha deve conter pelo menos 8 caracteres com no mínimo um número'),
       senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem')
     })
-
-    function onSubmit(values, actions) {
-      console.log('ENVIADO', values);
-    }
 
     return(
       <div className="w-full">
@@ -197,7 +192,14 @@ const Login = () => {
             }}
           validationSchema={schema}
           validateOnMount
-          onSubmit={onSubmit}
+          onSubmit={
+            values => {
+              const result = autenticacao(values.email, values.senha, values.nome);
+              if (!result){
+                setErro(true);
+              }
+            }
+          }
         > 
         
         {({ errors, touched }) => (
@@ -275,6 +277,14 @@ const Login = () => {
 
 /*========= COMPONENTE PRINCIPAL =========*/
 export default function Home(){
+
+  const { user } = useAuth();
+  const router = useRouter();
+
+  if (user){
+    router.replace('/home');
+  }
+
   return(
     <div>
       <Head>
