@@ -47,12 +47,12 @@ export function autenticacao (email, pass, nome) {
             email: email, nome: nome
         })
 
-        window.location.href = "/home";
         alert("Tudo OK"); //Remover depois
-        return true;
+        window.location.href = "/home";
+        return;
     })
     .catch(error => {
-        alert("Error: ", error); // Remover depois
+        alert(error); // Remover depois
         return false;
     })
 }

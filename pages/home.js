@@ -5,8 +5,6 @@ import nookies from "nookies";
 
 export default function home({session}) {
     firebaseClient();
-    const router = useRouter();
-
     if (session){
         return (
             <>
@@ -31,7 +29,7 @@ export async function getServerSideProps(context){
         const token = await verifyIdToken(cookies.token);
         const { uid, email } = token;
         return {
-            props: { session: `Your email is ${email} and your UID is ${uid}.` },
+            props: { session: `Your email is ${email} and your UID is ${uid}.`},
           };
     } catch(err){
         context.res.writeHead(302, { Location: "/" });

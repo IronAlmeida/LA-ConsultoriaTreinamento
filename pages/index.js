@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router"
 import React, {useState} from "react";
 import { Field, Form, Formik } from "formik";
-import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+import { AiFillEyeInvisible, AiFillEye, AiOutlineExclamationCircle } from 'react-icons/ai';
 import * as Yup from 'yup';
 import {autenticacao} from "../firebase/apifirebase";
 import {useAuth} from "../firebase/auth";
@@ -204,6 +204,11 @@ const Login = () => {
         
         {({ errors, touched }) => (
           <Form method="POST">
+            {erro === true && 
+            <div className="w-full mb-6 bg-red-600 text-center relative p-2">
+              <p className="text-xl text-white"><AiOutlineExclamationCircle className="absolute top-2.5 left-4 text-2xl" /> Não foi possível realizar seu cadastro</p>
+            </div>}
+
             <div className="w-full mb-6">
               <h1 className="text-gray-800 text-xl font-semibold text-center">Cadastre sua conta</h1>
             </div>
@@ -282,7 +287,7 @@ export default function Home(){
   const router = useRouter();
 
   if (user){
-    router.replace('/home');
+    router.replace('/home'); //Ou usar window.location?
   }
 
   return(
