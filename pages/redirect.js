@@ -1,20 +1,12 @@
 import { useRouter } from "next/router";
-import {useEffect} from "react";
 import Image from "next/image";
 
-export default function Redirect({auth}) {
+export default function Redirect() {
     const router = useRouter();
-    
-    useEffect(() => {
-
-        if(!auth){
-          setTimeout(() => {
-            router.replace('/');
-          }, 2000);
-        } else {
-            router.push('/home')
-        }
-    }, [])
+       
+    setTimeout(() => {
+        router.push('/home');
+    }, 1500);
 
     return(
         <div className="w-screen h-screen relative">
@@ -26,12 +18,3 @@ export default function Redirect({auth}) {
         </div>
     )
 }
-
-export async function getServerSideProps(context) {
-
-    const token = context.req?.cookies.Auth ? context.req?.cookies.Auth : false
-
-    return {
-        props: {auth: token}
-    };
-};
