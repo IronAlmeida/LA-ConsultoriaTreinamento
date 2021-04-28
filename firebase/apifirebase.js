@@ -31,30 +31,3 @@ if (!firebase.apps.length) {
     firebase.app()
 }
 */
-
-
-
-
-
-export function autenticacao (email, pass, nome) {
-    firebase.auth().createUserWithEmailAndPassword(email, pass)
-    .then(data => {
-        const db = firebase.firestore(); // Iniciando o banco de dados
-        const uid = data.user.uid;
-
-        const users = db.collection("users");
-        users.doc(uid).set({
-            email: email, nome: nome
-        })
-
-        alert("Tudo OK"); //Remover depois
-        window.location.href = "/home";
-        return;
-    })
-    .catch(error => {
-        alert(error); // Remover depois
-        return false;
-    })
-}
-
-

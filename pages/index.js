@@ -1,11 +1,12 @@
+import firebase from "firebase/app";
+import {firebaseClient} from "../firebase/apifirebase";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 import React, {useState} from "react";
 import { Field, Form, Formik } from "formik";
 import { AiFillEyeInvisible, AiFillEye, AiOutlineExclamationCircle } from 'react-icons/ai';
 import * as Yup from 'yup';
-import {autenticacao} from "../firebase/apifirebase";
 import {useAuth} from "../firebase/auth";
 
 
@@ -104,39 +105,78 @@ const Background = () => {
 
 /*LADO DIREITO - TELA DE LOGIN / CADASTRO / RECUPERAÇÃO DE SENHA */
 const Login = () => {
-
+  
   const [ativar, setAtivar] = useState("login");
+  const [erro, setErro] = useState(false);
 
+  //FORM
   const Formlogin = () => {
-
+    firebaseClient();
     const [visivel, setVisivel] = useState(false)
+
+    const schema = Yup.object().shape({
+      email: Yup.string().email('Digite um endereço de e-mail válido').lowercase().required('E-mail Obrigatório'),
+      senha: Yup.string().required('Senha Obrigatória'),
+    })
+
+    const login = (values, actions) => {
+      firebase.auth().signInWithEmailAndPassword(values.email, values.senha)
+      .then(result => {
+        window.location.href = "/home";
+      })
+      .catch(error => {
+        setErro(true)
+      });
+    }
 
     return(
       <div className="w-full">
-        <form action="#" method="POST">
-          <div className="w-full mb-6">
-            <h1 className="text-gray-800 text-xl font-semibold text-center">Bem-Vindo(a)</h1>
-          </div>
+        <Formik 
+          initialValues={{
+              email: '',
+              senha: ''
+            }}
+          validationSchema={schema}
+          onSubmit={login}
+        > 
+        {({ errors, touched }) => (
+          <Form>
+            {erro === true && 
+            <div className="w-full mb-6 bg-red-600 text-center relative p-2">
+              <p className="text-xl text-white"><AiOutlineExclamationCircle className="absolute top-2.5 left-4 text-2xl" />Algo deu errado! verifique seu e-mail e senha novamente</p>
+            </div>}
 
-          <div className="mb-6 pt-3 rounded bg-gray-200">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="email">E-mail</label>
-          <input required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focforus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
-          </div>
+            <div className="w-full mb-6">
+              <h1 className="text-gray-800 text-xl font-semibold text-center">Bem-Vindo(a)</h1>
+            </div>
 
-          <div className="mb-6 pt-3 rounded bg-gray-200 relative">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="senha">Senha</label>
-            <input autoComplete="no" required type={visivel ? "text" : "password"} id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
-            {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
-            : 
-            <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
-          </div>
+            {errors.email && touched.email && (
+              <div className="text-red-600 text-sm font-normal">{errors.email}</div>
+            )}
+            <div className="mb-6 pt-3 rounded bg-gray-200">
+              <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="email">E-mail</label>
+            <Field type="email" name="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+            </div>
 
-          <div className="flex justify-end ">
-            <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer" onClick={() => setAtivar("recsenha")}>Esqueci minha senha</p>
-          </div>
+            {errors.senha && touched.senha && (
+              <div className="text-red-600 text-sm font-normal">{errors.senha}</div>
+            )}
+            <div className="mb-6 pt-3 rounded bg-gray-200 relative">
+              <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="senha">Senha</label>
+              <Field autoComplete="no" name="senha" id="senha" type={visivel ? "text" : "password"} className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+              {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
+              : 
+              <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
+            </div>
 
-          <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Entrar</button>
-        </form>
+            <div className="flex justify-end ">
+              <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer" onClick={() => setAtivar("recsenha")}>Esqueci minha senha</p>
+            </div>
+
+            <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit">Entrar</button>
+          </Form>
+        )}
+        </Formik>
         <div className="max-w-lg mx-auto text-center mt-6 sm:mt-12">
           <p className="text-gray-800">Não tem uma conta? <span className="font-semibold hover:underline hover:text-red-600 cursor-pointer" onClick={() => setAtivar("cadastro")}>Cadastre-se</span></p>
         </div>
@@ -144,30 +184,67 @@ const Login = () => {
     );
   };
 
+  //RECUPERAÇÃO DE SENHA
   const Recsenha = () => {
+    firebaseClient();
+
+    const [erro, setErro] = useState(false);
+
+    const schema = Yup.object().shape({
+      email: Yup.string().email('Digite um endereço de e-mail válido').lowercase().required('E-mail Obrigatório'),
+    })
+
+    const recuperar = (values, actions) => {
+      firebase.auth().sendPasswordResetEmail(values.email)
+      .then()
+      .catch(error=> {
+        setErro(true);
+      })
+    }
+
     return(
       <div className="w-full">
-        <form action="#" method="POST">
-          <div className="w-full mb-6">
-            <h1 className="text-gray-800 text-xl font-semibold text-center">Recuperação de senha</h1>
-          </div>
+        <Formik 
+            initialValues={{
+              email: ''
+            }}
+          validationSchema={schema}
+          onSubmit={recuperar}
+        >
+        {({ errors, touched }) => (
+          <Form>
+            {erro === true && 
+            <div className="w-full mb-6 bg-red-600 text-center relative p-2">
+              <p className="text-xl text-white"><AiOutlineExclamationCircle className="absolute top-2.5 left-4 text-2xl" />Não foi possível enviar o e-mail</p>
+            </div>}
 
-          <div className="mb-6 pt-3 rounded bg-gray-200">
-            <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="email">E-mail</label>
-            <input placeholder="Informe seu e-mail cadastrado" required type="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
-          </div>
+            <div className="w-full mb-6">
+              <h1 className="text-gray-800 text-xl font-semibold text-center">Recuperação de senha</h1>
+            </div>
 
-          <div className="flex justify-end ">
-            <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer transition-opacity" onClick={() => setAtivar("login")}>Voltar</p>
-          </div>
+            {errors.email && touched.email && (
+              <div className="text-red-600 text-sm font-normal">{errors.email}</div>
+            )}
+            <div className="mb-6 pt-3 rounded bg-gray-200">
+              <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="email">E-mail</label>
+              <Field placeholder="Informe seu e-mail cadastrado" type="email" name="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+            </div>
 
-          <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Confirmar e-mail</button>
-        </form>
+            <div className="flex justify-end ">
+              <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer transition-opacity" onClick={() => setAtivar("login")}>Voltar</p>
+            </div>
+
+            <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit">Confirmar e-mail</button>
+          </Form>
+        )}
+        </Formik>
       </div>
     );
   }
 
+  //CADASTRO
   const Cadastro = () => {
+    firebaseClient();
     const [visivel, setVisivel] = useState(false);
     const [erro, setErro] = useState(false);
 
@@ -178,8 +255,26 @@ const Login = () => {
       nome: Yup.string().min(2, 'Muito curto').required('Nome Obrigatório'),
       email: Yup.string().email('Digite um endereço de e-mail válido').lowercase().required('E-mail Obrigatório'),
       senha: Yup.string().matches(numeros, 'Incluir número').matches(letras, 'Incluir letra').min(8, 'A senha está curta').required('A senha deve conter pelo menos 8 caracteres com no mínimo um número'),
-      senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem')
+      senhaCheck: Yup.mixed().oneOf([Yup.ref('senha')], 'As senhas não coincidem').required('As senhas não coincidem')
     })
+
+    const autenticacao = (values, actions) => {
+      firebase.auth().createUserWithEmailAndPassword(values.email, values.senha)
+      .then(data => {
+          const db = firebase.firestore(); // Iniciando o banco de dados
+          const uid = data.user.uid;
+  
+          const users = db.collection("users");
+          users.doc(uid).set({
+              email: values.email, nome: values.nome
+          })
+  
+          window.location.href = "/home";
+      })
+      .catch(error => {
+          setErro(true)
+      })
+    }
 
     return(
       <div className="w-full">
@@ -192,18 +287,11 @@ const Login = () => {
             }}
           validationSchema={schema}
           validateOnMount
-          onSubmit={
-            values => {
-              const result = autenticacao(values.email, values.senha, values.nome);
-              if (!result){
-                setErro(true);
-              }
-            }
-          }
+          onSubmit={autenticacao}
         > 
         
         {({ errors, touched }) => (
-          <Form method="POST">
+          <Form>
             {erro === true && 
             <div className="w-full mb-6 bg-red-600 text-center relative p-2">
               <p className="text-xl text-white"><AiOutlineExclamationCircle className="absolute top-2.5 left-4 text-2xl" /> Não foi possível realizar seu cadastro</p>
@@ -218,7 +306,7 @@ const Login = () => {
             )}
             <div className="mb-6 pt-3 rounded bg-gray-200">
               <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="nome">Nome ou Razão Social</label>
-              <Field type="text" name="nome" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+              <Field type="text" name="nome" id="nome" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
             </div>
             
             {errors.email && touched.email && (
@@ -226,7 +314,7 @@ const Login = () => {
             )}
             <div className="mb-6 pt-3 rounded bg-gray-200">
               <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="email">E-mail</label>
-              <Field type="email" name="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+              <Field type="email" name="email" id="email" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
             </div>
 
             {errors.senha && (
@@ -234,7 +322,7 @@ const Login = () => {
             )}
             <div className="mb-6 pt-3 rounded bg-gray-200 relative">
               <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="senha">Senha</label>
-              <Field autoComplete="no" type={visivel ? "text" : "password"} name="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+              <Field autoComplete="no" type={visivel ? "text" : "password"} name="senha" id="senha" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
               {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
               : 
               <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
@@ -245,7 +333,7 @@ const Login = () => {
             )}
             <div className="mb-6 pt-3 rounded bg-gray-200 relative">
               <label className="block text-gray-800 text-sm font-semibold mb-2 ml-3" htmlFor="senhacheck">Confirme sua senha</label>
-              <Field required autoComplete="no" type={visivel ? "text" : "password"} name="senhaCheck" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
+              <Field autoComplete="no" type={visivel ? "text" : "password"} name="senhaCheck" id="senhacheck" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-600 transition duration-500 px-2 pb-3 text-lg" />
               {visivel ? <AiFillEye onClick={() => setVisivel(false)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" /> 
               : 
               <AiFillEyeInvisible onClick={() => setVisivel(true)} className="absolute top-10 right-4 text-3xl text-gray-500 cursor-pointer" />}
@@ -255,7 +343,7 @@ const Login = () => {
               <p className="text-sm font-semibold text-red-500 hover:text-red-600 hover:underline mb-6 cursor-pointer transition-opacity" onClick={() => setAtivar("login")}>Já tenho uma conta</p>
             </div>
 
-            <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Cadastrar</button>
+            <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit">Cadastrar</button>
           </Form>
         )}
         </Formik>

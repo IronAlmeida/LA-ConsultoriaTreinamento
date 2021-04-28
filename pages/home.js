@@ -3,8 +3,10 @@ import {firebaseClient} from "../firebase/apifirebase";
 import {verifyIdToken} from "../firebase/firebase-admin";
 import nookies from "nookies";
 
+
 export default function home({session}) {
     firebaseClient();
+  
     if (session){
         return (
             <>
