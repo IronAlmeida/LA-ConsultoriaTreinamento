@@ -375,7 +375,7 @@ export default function Home(){
   const router = useRouter();
 
   if (user){
-    router.replace('/home'); //Ou usar window.location?
+    router.replace('/redirect'); //Ou usar window.location?
   }
 
   return(
