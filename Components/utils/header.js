@@ -1,11 +1,7 @@
-import {firebaseClient} from "../../firebase/apifirebase"
 import Image from "next/image";
 import Link from "next/link";
-import "firebase/auth";
 
 export function Cabecalho() {
-    firebaseClient();  
-
     return(
         <div className="w-full bg-red-600 px-4 py-2">
             <div className="flex sm:w-3/4 justify-between m-auto">
@@ -13,19 +9,19 @@ export function Cabecalho() {
                 <div className="hidden sm:block">
                     <ul>
                         <Link href="#">
-                            <a><li className="inline-block">Inicio</li></a>
+                            <a><li className="inline-block mr-1">Inicio</li></a>
                         </Link>
 
                         <Link href="#">
-                            <a><li  className="inline-block">Cursos</li></a>
+                            <a><li  className="inline-block mr-1">Cursos</li></a>
                         </Link>
 
                         <Link href="#">
-                            <a><li  className="inline-block">Consultoria</li></a>
+                            <a><li  className="inline-block mr-1">Consultoria</li></a>
                         </Link>
 
                         <Link href="#">
-                            <a><li  className="inline-block">Sobre</li></a>
+                            <a><li  className="inline-block mr-1">Sobre</li></a>
                         </Link>
                     </ul>
                 </div>

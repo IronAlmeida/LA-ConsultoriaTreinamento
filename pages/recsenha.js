@@ -40,6 +40,8 @@ export default function recSenha({path}){
             console.log(error);
         })
     }
+
+    
     return (
         <>
             {codeValidation === true &&
