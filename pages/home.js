@@ -1,16 +1,16 @@
 import firebase from "firebase/app";
 import {firebaseClient} from "../firebase/apifirebase";
 import {verifyIdToken} from "../firebase/firebase-admin";
+import { Cabecalho } from "../Components/utils/header";
 import nookies from "nookies";
-
 
 export default function home({session}) {
     firebaseClient();
-  
+
     if (session){
         return (
             <>
-                <h1>Conectado!</h1>
+                <Cabecalho />
             
                 <button onClick={async () => {
                     await firebase.auth().signOut();
