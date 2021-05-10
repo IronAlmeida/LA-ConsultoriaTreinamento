@@ -1,13 +1,24 @@
 import firebase from "firebase/app";
-import {firebaseClient} from "../firebase/apifirebase";
+import {firebaseClient} from "../../../firebase/apifirebase";
 import {verifyIdToken} from "../../../firebase/firebase-admin";
 import nookies from "nookies";
 import Cabecalho from "../../../Components/utils/header";
 import Rodape from "../../../Components/utils/footer";
+import {useState} from "react";
 
 export default function DP01P01({id}) {
+    
+    firebaseClient();
+    const[acesso, setAcesso] = useState(true)
 
-    if (id){
+    const db = firebase.firestore();
+    const col = db.collection('users').doc(id);
+    col.get().then(doc => {
+        const result = doc.get('dp');
+        setAcesso(result);
+    })
+
+    if (id && acesso){
         return (
             <>
                 <Cabecalho />
@@ -36,6 +47,15 @@ export default function DP01P01({id}) {
             </>
         );
     }
+
+    if (id && !acesso){
+        return (
+            <>
+                <Cabecalho />
+                <h1>Desculpe, você está conectado mas não tem acesso a este curso ainda!</h1>
+            </>
+        );
+    }
 }
 
 export async function getServerSideProps(context){
@@ -48,6 +68,7 @@ export async function getServerSideProps(context){
           };
     } catch(err){
         context.res.writeHead(302, { Location: "/" });
+        context.res.end();
         return { props: {} };
     };
 };

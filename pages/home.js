@@ -1,3 +1,4 @@
+import {firebaseClient} from "../firebase/apifirebase";
 import {verifyIdToken} from "../firebase/firebase-admin";
 import nookies from "nookies";
 import Cabecalho from "../Components/utils/header";
@@ -7,6 +8,8 @@ import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
 
 export default function home({session}) { 
+    firebaseClient();
+
     if (session){
         return (
             <>
@@ -44,7 +47,6 @@ export default function home({session}) {
                 </div>
                 
                 <Rodape />
-
             </>
         );
     } else {
@@ -58,12 +60,13 @@ export async function getServerSideProps(context){
     try{
         const cookies = nookies.get(context)
         const token = await verifyIdToken(cookies.token);
-        const email = token.email;
+        const id = token.uid;
         return {
-            props: {session: email},
+            props: {session: id},
           };
     } catch(err){
         context.res.writeHead(302, { Location: "/" });
+        context.res.end();
         return { props: {} };
     };
 };

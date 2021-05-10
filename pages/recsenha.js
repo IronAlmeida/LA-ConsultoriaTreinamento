@@ -98,7 +98,10 @@ export function getServerSideProps({req}) {
     const domain = 'http://localhost:3000';
     const request = req.url
     const complete = domain + request
-    const path = new URL(complete).searchParams.get("oobCode")
+    let path = new URL(complete).searchParams.get("oobCode")
+    if (!path){
+        path = 'vazio';
+    }
     return {
         props: {
             path
