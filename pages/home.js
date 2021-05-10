@@ -1,6 +1,7 @@
 import {verifyIdToken} from "../firebase/firebase-admin";
-import { Cabecalho } from "../Components/utils/header";
 import nookies from "nookies";
+import Cabecalho from "../Components/utils/header";
+import Rodape from "../Components/utils/footer";
 import Link from "next/link";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
@@ -9,7 +10,7 @@ export default function home({session}) {
     if (session){
         return (
             <>
-                <Cabecalho email={session} />
+                <Cabecalho />
                 
                 <div className="w-full bg-gray-800 p-2">
                     <div className="w-3/4 m-auto p-4">
@@ -23,7 +24,7 @@ export default function home({session}) {
                        
                         <div className="flex flex-wrap w-full p-6 xl:w-1/3 sm:p-10">
                             <div className="w-full h-full shadow border border-gray-300">
-                                <Link href="#"><a><img src="/pp.png" className="w-full" /></a></Link>
+                                <Link href="/curso/departamento-pessoal/aula01-p01"><a><img src="/pp.png" className="w-full" /></a></Link>
                                 <div className="py-1 px-2.5">
                                     <div className="mt-2">
                                         <p className="text-xl text-center font-medium text-gray-800">Departamento Pessoal</p>
@@ -35,33 +36,15 @@ export default function home({session}) {
                             </div>
 
                             <div className="w-full text-center">
-                                <Link href="#"><a><button className="w-full bg-red-600 text-center p-4 text-base text-white">Acessar</button></a></Link>
+                                <Link href="/curso/departamento-pessoal/aula01-p01"><a><button className="w-full bg-red-600 text-center p-4 text-base text-white">Acessar</button></a></Link>
                             </div>
                         </div>
-
-                        <div className="flex flex-wrap w-full p-6 xl:w-1/3 py-10 sm:p-10">
-                            <div className="w-full h-full shadow border border-gray-300">
-                                <Link href="#"><a><img src="/dctfweb.png" className="w-full" /></a></Link>
-                                <div className="py-1 px-2.5">
-                                    <div className="mt-2">
-                                        <p className="text-xl text-center font-medium text-gray-800">DCTFWEB+ para Departamento Pessoal</p>
-                                    </div>
-                                    <div className="my-4">
-                                        <p className="text-red-600 text-base text-center"><RiRecordCircleLine className="text-red-600 inline-block text-2xl" /> Curso Gravado Ao Vivo</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="w-full text-center">
-                                <Link href="#"><a><button className="w-full bg-red-600 text-center p-4 text-base text-white">Acessar</button></a></Link>
-                            </div>
-                        </div>
-
                         
                    </div>
                 </div>
                 
-               
+                <Rodape />
+
             </>
         );
     } else {
