@@ -6,19 +6,19 @@ import Cabecalho from "../../../Components/utils/header";
 import Rodape from "../../../Components/utils/footer";
 import {useState} from "react";
 
-export default function DP01P01({id}) {
+export default function DP01P01({session}) {
     
     firebaseClient();
     const[acesso, setAcesso] = useState(true)
 
     const db = firebase.firestore();
-    const col = db.collection('users').doc(id);
+    const col = db.collection('users').doc(session);
     col.get().then(doc => {
         const result = doc.get('dp');
         setAcesso(result);
     })
 
-    if (id && acesso){
+    if (session && acesso){
         return (
             <>
                 <Cabecalho />
@@ -48,11 +48,17 @@ export default function DP01P01({id}) {
         );
     }
 
-    if (id && !acesso){
+    if (session && !acesso){
         return (
             <>
                 <Cabecalho />
                 <h1>Desculpe, você está conectado mas não tem acesso a este curso ainda!</h1>
+            </>
+        );
+    } else {
+        return (
+            <>
+                <h1>Redirecionando...</h1>
             </>
         );
     }
@@ -64,11 +70,11 @@ export async function getServerSideProps(context){
         const token = await verifyIdToken(cookies.token);
         const id = token.uid;
         return {
-            props: {id: id},
+            props: {session: id},
           };
     } catch(err){
-        context.res.writeHead(302, { Location: "/" });
-        context.res.end();
+        context.res.setHeader("Location", "/login");
+        context.res.statusCode = 302;
         return { props: {} };
     };
-};
+  };

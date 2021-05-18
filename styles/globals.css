@@ -17,3 +17,45 @@
         width: 50%;
     }    
 }
+
+@media (max-width: 1023px){
+
+    #menu{
+        display: block;
+        top: 86px;
+        transition: 0.6s;
+        height: 0;
+        @apply absolute;
+        @apply right-0;
+        @apply bg-gray-500;
+        @apply w-full;
+        @apply gap-0;
+        @apply m-0;
+        @apply text-xl;
+        @apply text-center;
+        @apply z-50;
+        @apply invisible;
+        @apply overflow-y-hidden;
+    }
+
+    #menu li {
+        @apply py-4;
+        @apply border-b-2;
+        @apply border-black;
+        @apply border-solid;
+        @apply border-opacity-10;
+    }
+
+    #nav.active #menu{
+        height: calc(100vh - 86px);
+        @apply visible;
+        @apply overflow-y-auto;
+    }
+
+    #nav.active #close{
+        @apply block;
+    }
+    #nav.active #burger{
+        @apply hidden;
+    }
+}

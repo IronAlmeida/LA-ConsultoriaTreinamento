@@ -34,7 +34,7 @@ export default function recSenha({path}){
     const atualizarSenha = (values, actions) => {
         firebase.auth().confirmPasswordReset(path, values.senha)
         .then(function() {
-            window.location.href = "/";
+            window.location.href = "/login";
         })
         .catch(function(error) {
             console.log(error);
