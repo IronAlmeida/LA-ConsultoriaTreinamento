@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "date-fns": "^2.21.3",
     "firebase": "^8.4.2",
     "firebase-admin": "^9.6.0",
     "formik": "^2.2.6",
