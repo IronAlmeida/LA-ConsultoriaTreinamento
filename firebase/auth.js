@@ -14,7 +14,7 @@ export const AuthProvider = ({children}) => {
         return firebase.auth().onIdTokenChanged(async (user)=> {
             if(!user){
                 setUser(null);
-                nookies.set(undefined, "token", "", {}); //colocar mais condições nos cookies?
+                nookies.set(undefined, "token", "", {});
                 return;
             }
 

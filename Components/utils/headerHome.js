@@ -17,13 +17,13 @@ export default function HeaderHome() {
             
                     <nav id="nav" className="flex items-center">
                         <ul id="menu" className="lg:flex items-center gap-2 mr-6">
-                            <li className="text-lg text-white"><Link href="/"><a className="block p-2">Inicio</a></Link></li>
-                            <li className="text-lg text-white"><Link href="/cursos"><a className="block p-2">Cursos</a></Link></li>
-                            <li className="text-lg text-white"><Link href="#"><a className="block p-2">BPO</a></Link></li>
-                            <li className="text-lg text-white"><Link href="#"><a className="block p-2">Suporte</a></Link></li>
-                            <li className="text-lg text-white"><Link href="#"><a className="block p-2">Sobre</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/"><a className="block p-2">Inicio</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/cursos"><a className="block p-2">Cursos</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="#"><a className="block p-2">BPO</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="#"><a className="block p-2">Suporte</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="#"><a className="block p-2">Sobre</a></Link></li>
                             <li><Link href="/login"><a>
-                                <button className="text-lg text-white rounded-full w-24 p-2 bg-gray-800">Entrar</button>
+                                <button className="text-lg text-white rounded-full w-24 p-2 bg-gray-800 transform hover:scale-110 transition duration-200 focus:outline-none">Entrar</button>
                             </a></Link></li>
                         </ul>
 

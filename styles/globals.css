@@ -47,7 +47,7 @@
     }
 
     #nav.active #menu{
-        height: calc(100vh - 86px);
+        height: 131%;
         @apply visible;
         @apply overflow-y-auto;
     }
@@ -57,5 +57,13 @@
     }
     #nav.active #burger{
         @apply hidden;
+    }
+}
+
+@media (min-width: 700px){
+    #nav.active #menu{
+        height: 100%;
+        @apply visible;
+        @apply overflow-y-auto;
     }
 }

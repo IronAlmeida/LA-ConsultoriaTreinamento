@@ -11,7 +11,8 @@
     "firebase": "^8.4.2",
     "firebase-admin": "^9.6.0",
     "formik": "^2.2.6",
-    "next": "10.1.2",
+    "keen-slider": "^5.4.1",
+    "next": "^10.2.2",
     "next-images": "^1.7.0",
     "nookies": "^2.5.2",
     "react": "17.0.2",
@@ -34,7 +35,7 @@
   "homepage": "https://github.com/IronDS/LA-ConsultoriaTreinamento#readme",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.15",
     "tailwindcss": "^2.1.1"
   }
 }
