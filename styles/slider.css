@@ -16,7 +16,19 @@ body {
     font-weight: 500;
     height: 400px;
   }
-  
+
+  /*SLIDER CLIENTES */
+  [class^="number-slider"],
+  [class*=" number-slider"] {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 0, 0);
+    height: 100px;
+  }
+
+  /*SLIDER PRINCIPAIS*/
   .number-slide1 {
     background: rgb(200, 38, 38);
     background: linear-gradient(
@@ -36,13 +48,14 @@ body {
   }
   
   .number-slide3 {
-    background: rgb(182, 255, 64);
+    background: rgb(107, 114, 128);
     background: linear-gradient(
       128deg,
-      rgba(16, 29, 50, 1) 0%,
-      rgba(16, 29, 50, 1) 100%
+      rgba(107, 114, 128, 1) 0%,
+      rgba(107, 114, 128, 1) 100%
     );
   }
+  /*FIM SLIDER PRINCIPAIS*/
   
   .navigation-wrapper {
     position: relative;
@@ -84,6 +97,17 @@ body {
     cursor: pointer;
   }
   
+  .arrow-clients{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    fill: #111827;
+    cursor: pointer;
+  }
+
   .arrow--left {
     left: 5px;
   }
@@ -111,6 +135,17 @@ body {
     height: 200px;
   }
 
+  [class^="number-slider"],
+  [class*=" number-slider"] {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 0, 0);
+    height: 100px;
+  }
+
+  /*SLIDER PRINCIPAIS*/
   .number-slide1 {
     background: rgb(200, 38, 38);
     background: linear-gradient(
@@ -130,13 +165,14 @@ body {
   }
   
   .number-slide3 {
-    background: rgb(182, 255, 64);
+    background: rgb(107, 114, 128);
     background: linear-gradient(
       128deg,
-      rgba(16, 29, 50, 1) 0%,
-      rgba(16, 29, 50, 1) 100%
+      rgba(107, 114, 128, 1) 0%,
+      rgba(107, 114, 128, 1) 100%
     );
   }
+  /*FIM SLIDER PRINCIPAIS*/
   }
 
   @media (min-width: 421px) and (max-width: 620px){
@@ -151,7 +187,19 @@ body {
     font-weight: 500;
     height: 300px;
   }
+
+  [class^="number-slider"],
+  [class*=" number-slider"] {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 0, 0);
+    height: 100px;
+  }
   
+  /*SLIDER PRINCIPAIS*/
+
   .number-slide1 {
     background: rgb(200, 38, 38);
     background: linear-gradient(
@@ -171,11 +219,13 @@ body {
   }
   
   .number-slide3 {
-    background: rgb(182, 255, 64);
+    background: rgb(107, 114, 128);
     background: linear-gradient(
       128deg,
-      rgba(16, 29, 50, 1) 0%,
-      rgba(16, 29, 50, 1) 100%
+      rgba(107, 114, 128, 1) 0%,
+      rgba(107, 114, 128, 1) 100%
     );
   }
+
+  /*FIM SLIDER PRINCIPAIS*/
   }
