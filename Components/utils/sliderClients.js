@@ -1,6 +1,7 @@
 import React from "react";
 import {useKeenSlider} from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import Image from "next/image";
 
 export default function SliderClients() {
 
@@ -43,37 +44,37 @@ export default function SliderClients() {
             <div className="navigation-wrapper sm:w-3/4 m-auto p-2">
                 <div ref={sliderRef} className="keen-slider">
                 <div className="keen-slider__slide number-slider4">
-                    <img src="sescap.png" />
+                    <Image width="242px" height="79px" src="/sescap.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider5">
-                    <img src="impacto.png" />
+                    <Image width="226px" height="49px" src="/impacto.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider6">
-                    <img src="barros-filhos.png" />
+                    <Image width="252px" height="89px" src="/barros-filhos.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider7">
-                    <img src="campo-lindo.png" />
+                    <Image width="273px" height="100px" src="/campo-lindo.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider8">
-                    <img src="ricarte.png" />
+                    <Image width="261px" height="100px" src="/ricarte.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider9">
-                    <img src="hospital-olhos.png" />
+                    <Image width="185px" height="92px" src="/hospital-olhos.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider10">
-                    <img src="giro.png" />
+                    <Image width="164px" height="78px" src="/giro.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider11">
-                    <img src="jj.png" />
+                    <Image width="164px" height="109px" src="/jj.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider12">
-                    <img src="cemise.png" />
+                    <Image width="251px" height="91px" src="/cemise.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider13">
-                    <img src="emcs.png" />
+                    <Image width="218px" height="77px" src="/emcs.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider14">
-                    <img src="mb-moto.png" />
+                    <Image width="174px" height="100px" src="/mb-moto.webp" />
                 </div>
                 </div>
              </div>       
