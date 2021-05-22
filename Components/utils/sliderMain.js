@@ -49,19 +49,19 @@ export default function SliderMain() {
             <div className="navigation-wrapper">
                 <div ref={sliderRef} className="keen-slider">
                     <div className="keen-slider__slide number-slide1">
-                        <Link href="#"><a><img className="block xl:hidden" src="la-suporte-800.gif" /></a></Link>
-                        <Link href="#"><a><img className="hidden xl:block 2xl:hidden" src="la-suporte-1000.gif" /></a></Link>
-                        <Link href="#"><a><img className="hidden 2xl:block" src="la-suporte-1400.gif" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="block xl:hidden" src="la-suporte-800.webp" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="hidden xl:block 2xl:hidden" src="la-suporte-1000.webp" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="hidden 2xl:block" src="la-suporte-1400.webp" /></a></Link>
                     </div>
                     <div className="keen-slider__slide number-slide2">
-                        <Link href="#"><a><img className="block xl:hidden" src="la-BPO-800.png" /></a></Link>
-                        <Link href="#"><a><img className="hidden xl:block 2xl:hidden" src="la-BPO-1000.png" /></a></Link>
-                        <Link href="#"><a><img className="hidden 2xl:block" src="la-BPO-1400.png" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="block xl:hidden" src="la-BPO-800.webp" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="hidden xl:block 2xl:hidden" src="la-BPO-1000.webp" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="hidden 2xl:block" src="la-BPO-1400.webp" /></a></Link>
                     </div>
                     <div className="keen-slider__slide number-slide3">
-                        <Link href="#"><a><img className="block xl:hidden" src="la-cursos-800.png" /></a></Link>
-                        <Link href="#"><a><img className="hidden xl:block 2xl:hidden" src="la-cursos-1000.png" /></a></Link>
-                        <Link href="#"><a><img className="hidden 2xl:block" src="la-cursos-1400.png" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="block xl:hidden" src="la-cursos-800.webp" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="hidden xl:block 2xl:hidden" src="la-cursos-1000.webp" /></a></Link>
+                        <Link href="#"><a><img width="100%" height="auto" className="hidden 2xl:block" src="la-cursos-1400.webp" /></a></Link>
                     </div>
                 </div>
                 {slider && (
