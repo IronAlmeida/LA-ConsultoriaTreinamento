@@ -7,7 +7,7 @@ import Link from "next/link";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
 
-export default function home({session}) { 
+export default function Cursos({session}) { 
     if (session){
         return (
             <>
@@ -33,12 +33,12 @@ export default function home({session}) {
                         </div>
 
                         <div className="mt-4 p-1">
-                            <p className="text-red-600 text-base text-center"><RiRecordCircleLine className="text-red-600 inline-block text-2xl" /> Curso Gravado Ao Vivo</p>
+                            <p className="text-red-700 text-base text-center"><RiRecordCircleLine className="text-red-700 inline-block text-2xl" /> Curso Gravado Ao Vivo</p>
                         </div>
 
                         <div className="w-full mt-4">
                             <Link href="/curso/departamento-pessoal/aula01-p01"><a>
-                            <button className="w-full bg-red-600 text-center p-4 text-lg text-white focus:outline-none">Assistir</button></a>
+                            <button className="w-full bg-red-700 text-center p-4 text-lg text-white focus:outline-none">Assistir</button></a>
                             </Link>
                         </div>
                         </div>
@@ -81,12 +81,12 @@ export default function home({session}) {
                         </div>
 
                         <div className="mt-4 p-1">
-                            <p className="text-red-600 text-base text-center"><RiRecordCircleLine className="text-red-600 inline-block text-2xl" /> Curso Gravado Ao Vivo</p>
+                            <p className="text-red-700 text-base text-center"><RiRecordCircleLine className="text-red-700 inline-block text-2xl" /> Curso Gravado Ao Vivo</p>
                         </div>
 
                         <div className="w-full mt-4">
                             <Link href="/curso/departamento-pessoal/aula01-p01"><a>
-                            <button className="w-full bg-red-600 text-center p-4 text-lg text-white focus:outline-none">Assistir</button></a>
+                            <button className="w-full bg-red-700 text-center p-4 text-lg text-white focus:outline-none">Assistir</button></a>
                             </Link>
                         </div>
                         </div>

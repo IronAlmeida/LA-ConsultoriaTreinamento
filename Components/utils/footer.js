@@ -6,7 +6,7 @@ export default function Rodape() {
     let ano = data.getFullYear();    
 
     return (
-        <div className="w-full bg-red-600">
+        <div className="w-full bg-red-700">
             <div className="flex flex-col py-3 text-white text-sm sm:text-lg items-center text-center w-3/4 mx-auto">
                 <Image src="/LA-Logo.png" className="py-2" width="60" height="60" />
                 <div className="flex pb-2 pt-4">   

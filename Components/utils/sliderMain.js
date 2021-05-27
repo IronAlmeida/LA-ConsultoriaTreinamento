@@ -38,7 +38,7 @@ export default function SliderMain() {
         if (!pause && slider) {
             slider.next()
         }
-        }, 5000)
+        }, 8000)
         return () => {
         clearInterval(timer.current)
         }
@@ -54,9 +54,9 @@ export default function SliderMain() {
                         <Link href="#"><a><img width="100%" height="100%" className="hidden 2xl:block" src="la-suporte-1400.webp" /></a></Link>
                     </div>
                     <div className="keen-slider__slide number-slide2">
-                        <Link href="#"><a><img width="100%" height="100%" className="block xl:hidden" src="la-BPO-800.webp" /></a></Link>
-                        <Link href="#"><a><img width="100%" height="100%" className="hidden xl:block 2xl:hidden" src="la-BPO-1000.webp" /></a></Link>
-                        <Link href="#"><a><img width="100%" height="100%" className="hidden 2xl:block" src="la-BPO-1400.webp" /></a></Link>
+                        <Link href="/bpo"><a><img width="100%" height="100%" className="block xl:hidden" src="la-BPO-800.webp" /></a></Link>
+                        <Link href="/bpo"><a><img width="100%" height="100%" className="hidden xl:block 2xl:hidden" src="la-BPO-1000.webp" /></a></Link>
+                        <Link href="/bpo"><a><img width="100%" height="100%" className="hidden 2xl:block" src="la-BPO-1400.webp" /></a></Link>
                     </div>
                     <div className="keen-slider__slide number-slide3">
                         <Link href="#"><a><img width="100%" height="100%" className="block xl:hidden" src="la-cursos-800.webp" /></a></Link>
@@ -77,7 +77,7 @@ export default function SliderMain() {
                 </>
                 )}
             </div>
-
+            
             {slider && (
             <div className="dots">
                 {[...Array(slider.details().size).keys()].map((idx) => {
@@ -93,6 +93,7 @@ export default function SliderMain() {
                 })}
             </div>
             )}
+            
         </>
     );
 };

@@ -22,7 +22,7 @@
 
     #menu{
         display: block;
-        top: 86px;
+        top: 92px;
         transition: 0.6s;
         height: 0;
         @apply absolute;
@@ -47,7 +47,7 @@
     }
 
     #nav.active #menu{
-        height: 131%;
+        height: calc(100vh - 92px);
         @apply visible;
         @apply overflow-y-auto;
     }
