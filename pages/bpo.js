@@ -23,15 +23,40 @@ export default function Bpo() {
         funcao: Yup.string().required('Função obrigatório')
     })
 
-    const enviar = (values, actions) => {
+    const enviar = (values, {resetForm}) => {
         console.log(values);
-        document.querySelector('.clean').value=''
+
+        fetch('/api/mailBpo', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json" 
+            },
+            body: JSON.stringify({
+                nome: values.nome,
+                email: values.email,
+                telefone: values.telefone,
+                cadastro: values.cadastro,
+                funcao: values.funcao,
+                qtdEmpregado: values.qtdEmpregado,
+                individual: values.individual,
+                estagiario: values.estagiario,
+                aprendiz: values.aprendiz,
+                tribEmpresa: values.tribEmpresa
+            })
+        }).then((response) => {
+            console.log(response)
+            alert("Solicitação enviada!")
+            resetForm({})
+        }).catch((error) => {
+            console.log(error)
+            alert("Falha no envio!")
+        })
     }
 
     return (
         <>
             <HeaderHome />
-            <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800">
+            <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 bg-cover bg-center" style={{backgroundImage: 'url(/bpo-bg.webp)'}}>
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                     <h2 className="text-4xl font-light text-white text-center">BPO - Terceirização de Departamento Pessoal</h2>
                </div>
@@ -57,31 +82,31 @@ export default function Bpo() {
                     <h2 className="text-gray-900 text-2xl sm:text-center font-medium my-8">Porque terceirizar os processos de Departamento Pessoal?</h2>
                     
                     <div className="flex items-center mt-4">
-                        <span className="text-lg text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Padronização do Processos (eficiência operacional)</span>
+                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Padronização do Processos (eficiência operacional)</span>
                     </div>
                     
                     <div className="flex items-center mt-4">
-                        <span className="text-lg text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Baixo investimento comparado a mão de obra interna e suas qualificações</span> 
+                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Baixo investimento comparado a mão de obra interna e suas qualificações</span> 
                     </div>
 
                     <div className="flex items-center mt-4">
-                        <span className="text-lg text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Segurança de dados</span>
+                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Segurança de dados</span>
                     </div>
 
                     <div className="flex items-center mt-4">
-                        <span className="text-lg text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Atualização e capacitação constante.</span>
+                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Atualização e capacitação constante.</span>
                     </div>
 
                     <div className="flex items-center mt-4">
-                        <span className="text-lg text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Baixa rotatividade e absenteísmo. </span>
+                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Baixa rotatividade e absenteísmo. </span>
                     </div>
 
                     <div className="flex items-center mt-4">
-                    <span className="text-lg text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Serviços executados por profissionais especificamente treinados.</span>
+                    <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Serviços executados por profissionais especificamente treinados.</span>
                     </div>
 
                     <div className="flex items-center mt-4">
-                        <span className="text-lg text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Prazo de 48H para execução de atividades.</span>
+                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Prazo de 48H para execução de atividades.</span>
                     </div>
                 </div>
             </section>
@@ -107,8 +132,8 @@ export default function Bpo() {
                     onSubmit={enviar}
                     > 
         
-                    {(values) => (
-                    <Form>
+                    {({resetForm}) => (
+                    <Form id="form">
                         <div className="w-full mb-6">
                             <h1 className="text-white text-4xl font-semibold text-center">Solicite um orçamento</h1>
                         </div>
@@ -154,7 +179,7 @@ export default function Bpo() {
                             <Campos type="text" autoComplete="no" id="cnpj" name="cadastro" placeholder="Informe CNPJ" label="CNPJ" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-700 transition duration-500 px-2 pb-3 text-lg" />
                         }
 
-                        <MySelect label="Quantidade de empregados" name="qtdEmpregado" required>
+                        <MySelect className="w-full focus:outline-none" label="Quantidade de empregados" name="qtdEmpregado" required>
                             <option value="">Selecione uma das opções</option>
                             <option value="Entre 1 a 20">1 - 20</option>
                             <option value="Entre 21 a 50">21 - 50</option>
@@ -193,7 +218,7 @@ export default function Bpo() {
                         
 
                         <div className="w-full xl:w-3/4 m-auto">
-                            <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit" >SOLICITAR ORÇAMENTO</button>
+                            <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit">SOLICITAR ORÇAMENTO</button>
                         </div>
                         
                     </Form>

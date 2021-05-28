@@ -11,16 +11,16 @@ export default function HeaderHome() {
 
     return (
         <>
-            <div className="w-full bg-red-700 px-4 py-2">
+            <div className="w-full bg-red-700 px-6 py-2">
                 <div className="flex sm:w-3/4 justify-between m-auto items-center">
-                    <Link href="/"><a><Image src="/LA-Logo.png" width={70} height={70} /></a></Link>
+                    <Link href="/"><a className="mt-2"><Image src="/LA-Logo.webp" width={70} height={70} /></a></Link>
             
                     <nav id="nav" className="flex items-center">
                         <ul id="menu" className="lg:flex items-center gap-2 mr-6">
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/"><a className="block p-2">Inicio</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/cursos"><a className="block p-2">Cursos</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/bpo"><a className="block p-2">BPO</a></Link></li>
-                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="#"><a className="block p-2">Suporte</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/suporte"><a className="block p-2">Suporte</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="#"><a className="block p-2">Sobre</a></Link></li>
                             <li><Link href="/login"><a>
                                 <button className="text-lg text-white rounded-full w-24 p-2 bg-gray-800 transform hover:scale-110 transition duration-200 focus:outline-none">Entrar</button>

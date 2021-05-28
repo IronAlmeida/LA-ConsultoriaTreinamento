@@ -74,11 +74,11 @@ const Header = () => {
     <>
       <div className="w-full flex justify-between items-center pb-1 sm:pb-4">
         <div className="hidden sm:block">
-          <Link href="/"><a><Image src="/logo-colorida.png" width={"240"} height={"100"} /></a></Link>
+          <Link href="/"><a><Image src="/logo-colorida.webp" width={"240"} height={"100"} /></a></Link>
         </div>
 
         <div className="sm:hidden">
-          <Link href="/"><a><Image src="/logo-vermelha.png" width={"60"} height={"60"} /></a></Link>
+          <Link href="/"><a><Image src="/logo-vermelha.webp" width={"60"} height={"60"} /></a></Link>
         </div>
 
         <div className="flex">   

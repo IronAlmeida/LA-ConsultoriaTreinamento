@@ -8,7 +8,7 @@ export default function Rodape() {
     return (
         <div className="w-full bg-red-700">
             <div className="flex flex-col py-3 text-white text-sm sm:text-lg items-center text-center w-3/4 mx-auto">
-                <Image src="/LA-Logo.png" className="py-2" width="60" height="60" />
+                <Image src="/LA-Logo.webp" className="py-2" width="60" height="60" />
                 <div className="flex pb-2 pt-4">   
                     <a className="pr-4 md:px-3" href="#">
                         <svg width="30" height="30" x="0" y="0" viewBox="0 0 682 682.66669" className="fill-current text-white hover:text-gray-800 transition duration-200">

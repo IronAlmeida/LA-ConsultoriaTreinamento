@@ -15,16 +15,16 @@ export default function Cabecalho(props) {
     }
 
     return(
-        <div className="w-full bg-red-600 px-4 py-2">
+        <div className="w-full bg-red-600 px-6 py-2">
             <div className="flex sm:w-3/4 justify-between m-auto items-center">
-                <Link href="/"><a><Image src="/LA-Logo.png" width={70} height={70} /></a></Link>
+                <Link href="/"><a className="mt-2"><Image src="/LA-Logo.webp" width={70} height={70} /></a></Link>
                 
                 <nav id="nav" className="flex items-center">
                     <ul id="menu" className="lg:flex gap-2 mr-6">
                         <li className="text-lg text-white"><Link href="/home"><a className="block p-2">Inicio</a></Link></li>
                         <li className="text-lg text-white"><Link href="/cursos"><a className="block p-2">Cursos</a></Link></li>
-                        <li className="text-lg text-white"><Link href="#"><a className="block p-2">BPO</a></Link></li>
-                        <li className="text-lg text-white"><Link href="#"><a className="block p-2">Suporte</a></Link></li>
+                        <li className="text-lg text-white"><Link href="/bpo"><a className="block p-2">BPO</a></Link></li>
+                        <li className="text-lg text-white"><Link href="/suporte"><a className="block p-2">Suporte</a></Link></li>
                         <li className="text-lg text-white"><Link href="#"><a className="block p-2">Arquivos</a></Link></li>
                         <li className="text-lg text-white"><Link href="#"><a className="block p-2">Sobre</a></Link></li>
                         <li className="text-lg text-white"><Link href="#"><a className="block p-2">Minha Conta</a></Link></li>
