@@ -1,5 +1,6 @@
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
+import Widget from "../Components/utils/widget";
 import SliderMain from "../Components/utils/sliderMain";
 import SliderClients from "../Components/utils/sliderClients";
 import {BsBullseye} from "react-icons/bs";
@@ -48,6 +49,8 @@ export default function homePublic() {
             </section>
 
             <SliderClients />
+
+            <Widget />
 
             <Rodape />
         </>

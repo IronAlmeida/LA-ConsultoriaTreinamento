@@ -1,6 +1,6 @@
 import HeaderHome from "../Components/utils/headerHome";
+import Widget from "../Components/utils/widget";
 import Rodape from "../Components/utils/footer";
-import {BiMailSend} from "react-icons/bi";
 
 export default function suporte() {
 
@@ -17,6 +17,8 @@ export default function suporte() {
             <section className="w-full p-4">
                
             </section>
+
+            <Widget />
 
             <Rodape />
         </>

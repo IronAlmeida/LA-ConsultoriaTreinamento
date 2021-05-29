@@ -3,6 +3,7 @@ import nookies from "nookies";
 import Cabecalho from "../Components/utils/header";
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
+import Widget from "../Components/utils/widget";
 import Link from "next/link";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
@@ -86,7 +87,7 @@ export default function Cursos({session}) {
 
                         <div className="w-full mt-4">
                             <Link href="/curso/departamento-pessoal/aula01-p01"><a>
-                            <button className="w-full bg-red-700 text-center p-4 text-lg text-white focus:outline-none">Assistir</button></a>
+                                <button className="w-full bg-red-700 text-center p-4 text-lg text-white focus:outline-none">Assistir</button></a>
                             </Link>
                         </div>
                         </div>
@@ -99,6 +100,8 @@ export default function Cursos({session}) {
                     </div>
                 </div>
                 
+                <Widget />
+
                 <Rodape />
             </>
         );

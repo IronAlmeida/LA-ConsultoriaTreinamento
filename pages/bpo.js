@@ -132,8 +132,8 @@ export default function Bpo() {
                     onSubmit={enviar}
                     > 
         
-                    {({resetForm}) => (
-                    <Form id="form">
+                    {() => (
+                    <Form>
                         <div className="w-full mb-6">
                             <h1 className="text-white text-4xl font-semibold text-center">Solicite um orçamento</h1>
                         </div>
