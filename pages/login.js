@@ -125,7 +125,7 @@ const Header = () => {
     const login = (values, actions) => {
       firebase.auth().signInWithEmailAndPassword(values.email, values.senha)
       .then(result => {
-        router.replace('/home');
+        router.replace('/');
       })
       .catch(error => {
         setErro(true)
@@ -273,7 +273,7 @@ const Header = () => {
               email: values.email, nome: values.nome
           })
            
-         router.replace("/home");
+         router.replace("/");
       })
       .catch(error => {
           setErro(true)
@@ -379,7 +379,7 @@ export default function Index(){
   const router = useRouter();
 
   if (user){
-    router.replace('/home');
+    router.replace('/');
   }
 
   return(

@@ -1,16 +1,27 @@
+import {verifyIdToken} from "../firebase/firebase-admin";
+import nookies from "nookies";
+import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
+import SuperForm from "../Components/utils/superForm";
 import Widget from "../Components/utils/widget";
 import Rodape from "../Components/utils/footer";
 import {HiOutlineDocumentSearch} from "react-icons/hi";
 import {BiChat, BiSupport} from "react-icons/bi";
+import Link from "next/link";
 
-export default function suporte() {
+export default function suporte({session}) {
+
+    let logado = false;
+    if (session){
+        logado = true;
+    }
 
     return (
         <>
-            <HeaderHome />
+            {logado === false && <HeaderHome />}
+            {logado === true && <Cabecalho email={session} />}
             
-            <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 bg-cover bg-center" style={{backgroundImage: 'url(/suporte-bg.webp)'}}>
+            <div className="w-full bg-cover bg-center" style={{backgroundImage: 'url(/suporte-bg.webp)'}}>
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                     <h2 className="text-4xl font-light text-white text-center">Serviços</h2>
                </div>
@@ -88,7 +99,7 @@ export default function suporte() {
                             <p className="text-gray-900 text-xl">Outsourcing de folha de pagamento, os serviços serão executados por profissionais especificamente treinados.</p>
                         </div>
                         <div className="w-full">
-                            <button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button>
+                            <Link href="/bpo"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button></a></Link>
                         </div>
                     </div>
 
@@ -131,7 +142,7 @@ export default function suporte() {
                             <p className="text-gray-900 text-xl">Cursos online para quem quer ingressar no Departamento Pessoal e para aqueles que tem experiência mas que precisam se atualizar.</p>
                         </div>
                         <div className="w-full">
-                            <button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button>
+                            <Link href="/cursos"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button></a></Link>
                         </div>
                     </div>
 
@@ -143,9 +154,10 @@ export default function suporte() {
                             <h2 className="text-2xl text-gray-900 font-medium">Consultoria / Assesoria</h2>
                         </div>
                         <div className="p-4 text-center">
-                            <p className="text-gray-900 text-xl">Consultoria orientativa tralhista</p>
+                            <p className="text-gray-900 text-xl">Consultoria orientativa trabalhista</p>
                         </div>
                         <div className="w-full">
+                            <Link href="#"><a></a></Link>
                             <button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button>
                         </div>
                     </div>
@@ -171,7 +183,7 @@ export default function suporte() {
                             <p className="text-gray-900 text-xl">Nosso processo de Mentoria visa capacitar o profissional de Departamento Pessoal nas rotinas e sub-rotinas do setor.</p>
                         </div>
                         <div className="w-full">
-                            <button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button>
+                            <Link href="/mentoria"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button></a></Link>
                         </div>
                     </div>
 
@@ -186,11 +198,19 @@ export default function suporte() {
                             <p className="text-gray-900 text-xl">Tire suas dúvidas do dia a dia através do nosso suporte via e-mail.</p>
                         </div>
                         <div className="w-full">
-                            <button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button>
+                            <Link href="/suporte"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button></a></Link>
                         </div>
                     </div>
                </div>
             </section>
+
+            <section className="w-full py-4 px-2 bg-gray-300">
+                <div className="w-full sm:w-3/4 m-auto text-center">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-900">Se interresou por algum dos nossos serviços? <br/><br/> Preencha o formulário abaixo e vamos conversar! ;)</h2>
+                </div>
+            </section>
+
+            <SuperForm titulo="Formulário" nomeBtn="Enviar" />
 
             <Widget />
 
@@ -198,3 +218,17 @@ export default function suporte() {
         </>
     );
 };
+
+export async function getServerSideProps(context){
+    try{
+        const cookies = nookies.get(context)
+        const token = await verifyIdToken(cookies.token);
+        const email = token.email;
+        return {
+            props: {session: email},
+          };
+    } catch(err){
+        context.res.statusCode = 302;
+        return { props: {} };
+    };
+  };

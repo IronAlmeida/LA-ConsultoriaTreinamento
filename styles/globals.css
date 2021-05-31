@@ -12,6 +12,25 @@
     width: calc(100% - 500px);
 }
 
+.dark{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.animation-message{
+    animation: message 1s;
+}
+
+@keyframes message {
+  0%{
+    opacity: 0;
+    top: 20%;
+  }
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
 @media (min-width: 1024px){
     .width-700{
         width: 50%;
