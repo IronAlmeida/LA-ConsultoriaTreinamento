@@ -107,6 +107,9 @@ export default function SuperForm({titulo, nomeBtn}) {
     }
 
     const enviar = (values, {resetForm}) => {
+        const cursos = values.cursos
+        const orcamento = values.orcamento
+
         fetch('/api/mailSuperForm', {
             method: 'POST',
             headers: {
@@ -133,6 +136,42 @@ export default function SuperForm({titulo, nomeBtn}) {
         }).catch(() => {
             alert("Falha no envio!")
         })
+
+        if(cursos.length > 0){
+            fetch('/api/mailClientCursos', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json" 
+                },
+                body: JSON.stringify({
+                    nome: values.nome,
+                    email: values.email,
+                })
+            }).then(() => {
+                setOk(true);
+                resetForm({})
+            }).catch(() => {
+                alert("Falha no envio!")
+            })
+        }
+
+        if(orcamento.length > 0){
+            fetch('/api/mailClientOrcamento', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json" 
+                },
+                body: JSON.stringify({
+                    nome: values.nome,
+                    email: values.email,
+                })
+            }).then(() => {
+                setOk(true);
+                resetForm({})
+            }).catch(() => {
+                alert("Falha no envio!")
+            })
+        }
     }
 
     return (

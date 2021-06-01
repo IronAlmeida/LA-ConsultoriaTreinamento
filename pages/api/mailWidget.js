@@ -1,41 +1,30 @@
-const nodemailer = require('nodemailer')
-require("dotenv").config()
-const USERMAIL = process.env.USERMAIL
-const PASSMAIL = process.env.PASSMAIL
+const mailWidget = require('@sendgrid/mail')
+mailWidget.setApiKey(process.env.SENDGRID_API_KEY_WIDGET)
 
 export default function sendMailWidget(req, res) {
 
-    let transporter = nodemailer.createTransport({
-        host: "smtp.umbler.com",
-        port: 587,
-        secure: false,
-        auth: {
-            user: USERMAIL,
-            pass: PASSMAIL
-        },
-    })
+   const dataWidget = {
+       to: 'contato@lourdesalmeidadp.com.br',
+       from: 'Contato Site SendGrid <contato@lourdesalmeidadp.com.br>',
+       subject: 'Contato através do site',
+       text: 'Nova mensagem',
+       html: `
+        <div>
+            <h2><b>Alguem enviou uma nova mensagem através do site!</b></h2>
+            <br/>
+            <br/> 
+            
+            <p>Nome: ${req.body.nome}</p>
+            <p>Email: ${req.body.email}</p>
+            
+            <p>Mensagem: ${req.body.message}</p>
+        </div>
+       `
+   }
 
-    transporter.sendMail({
-        from: `"Mensagem Site" <${USERMAIL}>`,
-        to: USERMAIL,
-        subject: `Mensagem através do Site` ,
-        text: `Nova mensagem`,
-        html: 
-        `   <div>
-                <h2><b>Alguem enviou uma nova mensagem através do site!</b></h2>
-                <br/>
-                <br/> 
-                
-                <p>Nome: ${req.body.nome}</p>
-                <p>Email: ${req.body.email}</p>
-                
-                <p>${req.body.message}</p>
-            </div>
-        `
-    }).then((response) => {
-        res.send(response)
-    })
-    .catch((error) => {
-        res.send(error)
-    })
+   mailWidget.send(dataWidget).then((response) => {
+       res.send(response)
+   }).catch((error) => {
+       res.send(error)
+   })
 }
