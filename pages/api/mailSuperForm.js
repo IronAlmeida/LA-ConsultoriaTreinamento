@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer')
-const config = require("../../config.local")
+const USERMAIL = process.env.USERMAIL
+const PASSMAIL = process.env.PASSMAIL
 
 export default function sendMailSuperForm(req, res) {
 
@@ -12,14 +13,14 @@ export default function sendMailSuperForm(req, res) {
         host: "smtp.umbler.com",
         port: 587,
         auth: {
-            user: config.USERMAIL,
-            pass: config.PASSMAIL
+            user: USERMAIL,
+            pass: PASSMAIL
         },
     })
 
     transporter.sendMail({
-        from: `"Contato Site" <${config.USERMAIL}>`,
-        to: config.USERMAIL,
+        from: `"Contato Site" <${USERMAIL}>`,
+        to: USERMAIL,
         subject: `Contato através do Site` ,
         text: `Nova solicitação`,
         html: 
@@ -54,7 +55,7 @@ export default function sendMailSuperForm(req, res) {
 
     if(orcamento.length > 0){
         transporter.sendMail({
-            from: `"Lourdes Almeida" <${config.USERMAIL}>`,
+            from: `"Lourdes Almeida" <${USERMAIL}>`,
             to: req.body.email,
             subject: `Orçamento` ,
             text: `Solicitação de orçamento em análise`,
@@ -99,7 +100,7 @@ export default function sendMailSuperForm(req, res) {
     
     if(cursos.length > 0){
         transporter.sendMail({
-            from: `"Lourdes Almeida" <${config.USERMAIL}>`,
+            from: `"Lourdes Almeida" <${USERMAIL}>`,
             to: req.body.email,
             subject: `Cursos LA` ,
             text: ``,
