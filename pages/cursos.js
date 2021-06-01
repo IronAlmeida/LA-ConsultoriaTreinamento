@@ -91,7 +91,7 @@ export default function Cursos({session}) {
                             </div>
 
                             <div className="w-full border-t-2 border-gray-300">
-                                <a href="https://api.whatsapp.com/send?phone=5579999839846" target="_blank"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
+                                <a href="https://api.whatsapp.com/send?phone=5579999839846" target="_blank" rel="noopener noreferrer"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
                             </div>
                         </div>
                         {/*END CARD1 */}
@@ -103,7 +103,7 @@ export default function Cursos({session}) {
                             </div>
 
                             <div className="w-full border-t-2 border-gray-300">
-                                <a href="https://api.whatsapp.com/send?phone=5579999839846" target="_blank"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
+                                <a href="https://api.whatsapp.com/send?phone=5579999839846" target="_blank" rel="noopener noreferrer"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
                             </div>
                         </div>
                         {/*END CARD 2 */}

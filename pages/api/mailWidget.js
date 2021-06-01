@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer')
-require('dotenv').config()
-const USERMAIL = process.env.USERMAIL
-const PASSMAIL = process.env.PASSMAIL
+const config = require("../../config.local")
+
 
 export default function sendMailWidget(req, res) {
 
@@ -9,14 +8,14 @@ export default function sendMailWidget(req, res) {
         host: "smtp.umbler.com",
         port: 587,
         auth: {
-            user: USERMAIL,
-            pass: PASSMAIL
+            user: config.USERMAIL,
+            pass: config.PASSMAIL
         },
     })
 
     transporter.sendMail({
-        from: `"Mensagem Site" <${USERMAIL}>`,
-        to: USERMAIL,
+        from: `"Mensagem Site" <${config.USERMAIL}>`,
+        to: config.USERMAIL,
         subject: `Mensagem através do Site` ,
         text: `Nova mensagem`,
         html: 
