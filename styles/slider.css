@@ -39,11 +39,11 @@ body {
   }
   
   .number-slide2 {
-    background: rgb(30, 58, 138);
+    background: rgb(31, 41, 55);
     background: linear-gradient(
       128deg,
-      rgba(30, 58, 138, 1) 0%,
-      rgba(30, 58, 138, 1) 100%
+      rgba(31, 41, 55, 1) 0%,
+      rgba(31, 41, 55, 1) 100%
     );
   }
   

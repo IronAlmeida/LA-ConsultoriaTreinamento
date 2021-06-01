@@ -25,11 +25,9 @@ export default function Cabecalho({email}) {
                         <ul id="menu" className="lg:flex gap-2 mr-6">
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/"><a className="block p-2">Inicio</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/cursos"><a className="block p-2">Cursos</a></Link></li>
-                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/bpo"><a className="block p-2">BPO</a></Link></li>
-                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/suporte"><a className="block p-2">Suporte</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/servicos"><a className="block p-2">Serviços</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/arquivos"><a className="block p-2">Arquivos</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/sobre"><a className="block p-2">Sobre</a></Link></li>
-                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/minha-conta"><a className="block p-2">Minha Conta</a></Link></li>
                             <li className="block lg:hidden">
                                 <button onClick={async () => {
                                     await firebase.auth().signOut();

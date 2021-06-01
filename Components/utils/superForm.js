@@ -8,6 +8,9 @@ export default function SuperForm({titulo, nomeBtn}) {
     const [cadastro, setCadastro] = useState('0');
     const [formBPO, setFormBPO] = useState(false);
     const [formCursos, setFormCursos] = useState(false);
+
+    const [ok, setOk] = useState(false)
+
     
     const cel = /(^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$)/
     const ddd = /(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])/
@@ -104,8 +107,6 @@ export default function SuperForm({titulo, nomeBtn}) {
     }
 
     const enviar = (values, {resetForm}) => {
-        console.log(values);
-        
         fetch('/api/mailSuperForm', {
             method: 'POST',
             headers: {
@@ -123,23 +124,29 @@ export default function SuperForm({titulo, nomeBtn}) {
                 aprendiz: values.aprendiz,
                 tribEmpresa: values.tribEmpresa,
                 servicos: values.servicos,
-                orcamento: values.orcamento,
-                cursos: values.cursos
+                cursos: values.cursos,
+                orcamento: values.orcamento
             })
-        }).then((response) => {
-            console.log(response)
-            alert("Solicitação enviada!")
+        }).then(() => {
+            setOk(true);
             resetForm({})
-        }).catch((error) => {
-            console.log(error)
+        }).catch(() => {
             alert("Falha no envio!")
         })
-        
-        
     }
 
     return (
-        <section className="bg-gray-800 w-full p-4">
+        <section className="relative bg-gray-800 w-full p-4">
+            {ok && (
+                <div className="w-full dark h-full p-8 absolute top-0 left-0">
+                    <div className="w-3/4 sm:w-1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-600 text-center p-4 rounded-xl animation-message">
+                        <h2 className="text-xl text-white font-medium">Mensagem enviada!</h2>
+                        <div className="w-1/3 rounded-full m-auto bg-gray-300 p-2 mt-2">
+                            <p className="text-xl text-gray-900 cursor-pointer" onClick={() => setOk(false)}>Ok!</p>
+                        </div>
+                    </div>
+                </div>
+            )}
             <div className="w-full sm:w-3/4 m-auto">
             <div className="w-full p-8 bg-gray-700">
                 <Formik 
@@ -155,8 +162,8 @@ export default function SuperForm({titulo, nomeBtn}) {
                     aprendiz: '',
                     tribEmpresa: '',
                     servicos: '',
-                    orcamento: '',
-                    cursos: ''
+                    cursos: '',
+                    orcamento: ''
                     }}
                 validationSchema={schema}
                 validateOnMount
@@ -215,11 +222,11 @@ export default function SuperForm({titulo, nomeBtn}) {
                                 <div className="flex flex-col flex-wrap">
                                     <label className="text-white text-base font-semibold mr-4"><Field className="mr-1 boxes2" type="checkbox" name="cursos" value="Analista DP" onClick={checkBox} />Analista Departamento Pessoal (<span className="text-green-500 text-base">Disponível</span>)</label>
                                     <label className="text-white text-base font-semibold mr-4"><Field className="mr-1 boxes2" type="checkbox" name="cursos" value="eSocial e DCTFWeb" onClick={checkBox} />eSocial e DCTFWeb (<span className="text-green-500 text-base">Disponível</span>)</label>
-                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Folha e encargos" onClick={checkBox} />Folha de Pagamento e Encargos (<span className="text-red-500 text-base">Indisponível</span>)</label>
-                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Calculos" />Cálculos Trabalhistas – Rescisões (<span className="text-red-500 text-base">Indisponível</span>)</label>
-                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="FGTS" onClick={checkBox} />Parcelamento de FGTS (<span className="text-red-500 text-base">Indisponível</span>)</label>
-                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Jornadas" />Tipos de Jornadas/Horários e Cálculos (<span className="text-red-500 text-base">Indisponível</span>)</label>
-                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Declarações" />Declarações: GFIP, RAIS e DISO (<span className="text-red-500 text-base">Indisponível</span>)</label>
+                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Folha de Pagamento e encargos" onClick={checkBox} />Folha de Pagamento e Encargos (<span className="text-red-500 text-base">Indisponível</span>)</label>
+                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Cálculos Trabalhistas - Rescisões" />Cálculos Trabalhistas – Rescisões (<span className="text-red-500 text-base">Indisponível</span>)</label>
+                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Parcelamento de FGTS" onClick={checkBox} />Parcelamento de FGTS (<span className="text-red-500 text-base">Indisponível</span>)</label>
+                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Tipos de Jornadas/Horários e Cálculos" />Tipos de Jornadas/Horários e Cálculos (<span className="text-red-500 text-base">Indisponível</span>)</label>
+                                    <label className="text-white text-base font-semibold mr-4"><Field disabled className="mr-1 boxes2" type="checkbox" name="cursos" value="Declarações: GFIP, RAIS e DISO" />Declarações: GFIP, RAIS e DISO (<span className="text-red-500 text-base">Indisponível</span>)</label>
                                 </div>
                             </div>
                         </>    

@@ -5,6 +5,7 @@ import Rodape from "../Components/utils/footer";
 import SuperForm from "../Components/utils/superForm";
 import {GiCardExchange} from "react-icons/gi";
 import Cabecalho from "../Components/utils/cabecalho";
+import Widget from "../Components/utils/widget";
 
 export default function Bpo({session}) {
 
@@ -74,6 +75,8 @@ export default function Bpo({session}) {
             </section>
 
             <SuperForm titulo="Solicite seu orçamento" nomeBtn="SOLICITAR ORÇAMENTO" />
+
+            <Widget />
 
             <Rodape />
         </>

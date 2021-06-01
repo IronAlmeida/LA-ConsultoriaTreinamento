@@ -21,7 +21,7 @@ export default function suporte({session}) {
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={session} />}
             
-            <div className="w-full bg-cover bg-center" style={{backgroundImage: 'url(/suporte-bg.webp)'}}>
+            <div className="w-full bg-gradient-to-l from-gray-400 via-gray-500 to-gray-400">
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                     <h2 className="text-4xl font-light text-white text-center">Serviços</h2>
                </div>
@@ -30,34 +30,6 @@ export default function suporte({session}) {
             <section className="w-full p-4 bg-gray-300">
                <div className="flex flex-wrap xl:justify-around sm:w-3/4 m-auto">
 
-                    <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
-                        <div className="p-4">
-                            <HiOutlineDocumentSearch className="text-red-700 text-7xl" />
-                        </div>
-                        <div className="p-4 text-center">
-                            <h2 className="text-2xl text-gray-900 font-medium">Auditoria Folha de Pagamento/DP</h2>
-                        </div>
-                        <div className="p-4 text-center">
-                            <p className="text-gray-900 text-xl">Análise correta das tributações, redução ou eliminação de Passivo Trabalhista, Autuações, Multas e Processos Trabalhistas.</p>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
-                        <div className="p-4">
-                            <svg width="72px" height="72px" x="0" y="0" viewBox="0 0 64 64" className="fill-current text-red-700">
-                                <path d="M60,53H59V18a3,3,0,0,0-3-3H50V14a1,1,0,0,0-1-1H47.406a13.889,13.889,0,0,0-1.1-2.649l1.128-1.129a1,1,0,0,0,0-1.414L43.192,3.565a1.029,1.029,0,0,0-1.414,0L40.649,4.694A13.866,13.866,0,0,0,38,3.594V2a1,1,0,0,0-1-1H31a1,1,0,0,0-1,1V3.594a13.866,13.866,0,0,0-2.649,1.1L26.222,3.565a1.029,1.029,0,0,0-1.414,0L20.565,7.808a1,1,0,0,0,0,1.414l1.128,1.129A13.889,13.889,0,0,0,20.594,13H19a1,1,0,0,0-1,1v1H8a3,3,0,0,0-3,3V53H4a3,3,0,0,0-3,3v2a5.006,5.006,0,0,0,5,5H58a5.006,5.006,0,0,0,5-5V56A3,3,0,0,0,60,53ZM20,15h1.361a1,1,0,0,0,.973-.77,11.965,11.965,0,0,1,1.46-3.518,1,1,0,0,0-.144-1.233l-.963-.964,2.828-2.829.964.965a1,1,0,0,0,1.233.144,11.9,11.9,0,0,1,3.518-1.46A1,1,0,0,0,32,4.362V3h4V4.362a1,1,0,0,0,.77.973A11.9,11.9,0,0,1,40.288,6.8a1,1,0,0,0,1.233-.144l.964-.965,2.828,2.829-.963.964a1,1,0,0,0-.144,1.233,11.965,11.965,0,0,1,1.46,3.518,1,1,0,0,0,.973.77H48v4H46.639a1,1,0,0,0-.973.77,11.965,11.965,0,0,1-1.46,3.518,1,1,0,0,0,.144,1.233l.963.964-2.828,2.829-.964-.965a1,1,0,0,0-1.233-.144,12.032,12.032,0,0,1-2.262,1.087,11.684,11.684,0,0,0-.691-1.385l.829-.829a10,10,0,1,0-13.887-6.761A.992.992,0,0,0,24,20v1.387c-.342.087-.667.215-1,.331a11.891,11.891,0,0,1-.668-1.949A1,1,0,0,0,21.361,19H20ZM35.354,39.939l.838.839-1.414,1.414-.839-.839a1,1,0,0,0-1.274-.117,9.891,9.891,0,0,1-3.846,1.59A1,1,0,0,0,28,43.81V45H26V43.81a1,1,0,0,0-.819-.984,9.891,9.891,0,0,1-3.846-1.59,1,1,0,0,0-1.274.117l-.839.839-1.414-1.414.838-.839a1,1,0,0,0,.117-1.274,9.892,9.892,0,0,1-1.589-3.846A1,1,0,0,0,16.19,34H15V32h1.19a1,1,0,0,0,.984-.819,9.892,9.892,0,0,1,1.589-3.846,1,1,0,0,0-.117-1.274l-.838-.839,1.414-1.414.84.839a1,1,0,0,0,1.274.116,9.857,9.857,0,0,1,3.845-1.589A1,1,0,0,0,26,22.19V21h2v1.19a1,1,0,0,0,.819.984,9.857,9.857,0,0,1,3.845,1.589,1,1,0,0,0,1.274-.116l.84-.839,1.414,1.414-.838.839a1,1,0,0,0-.117,1.274,9.892,9.892,0,0,1,1.589,3.846A1,1,0,0,0,37.81,32H39v2H37.81a1,1,0,0,0-.984.819,9.892,9.892,0,0,1-1.589,3.846A1,1,0,0,0,35.354,39.939ZM26,17a8,8,0,1,1,11.811,7.013l-2.326-2.326a1,1,0,0,0-1.414,0l-.978.979A11.8,11.8,0,0,0,30,21.387V20a1,1,0,0,0-1-1H26.253A7.98,7.98,0,0,1,26,17ZM20.6,21a13.816,13.816,0,0,0,.571,1.536c-.085.047-.176.079-.259.129l-.978-.979a1,1,0,0,0-1.414,0l-2.828,2.828a1,1,0,0,0,0,1.414l.978.978A11.8,11.8,0,0,0,15.387,30H14a1,1,0,0,0-1,1v4a1,1,0,0,0,1,1h1.387a11.8,11.8,0,0,0,1.278,3.093l-.978.978a1,1,0,0,0,0,1.414l2.828,2.828a1.029,1.029,0,0,0,1.414,0l.978-.978A11.834,11.834,0,0,0,24,44.613V46a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V44.613a11.834,11.834,0,0,0,3.093-1.278l.978.978a1,1,0,0,0,1.414,0l2.828-2.828a1,1,0,0,0,0-1.414l-.978-.978A11.8,11.8,0,0,0,38.613,36H40a1,1,0,0,0,1-1V31a1,1,0,0,0-1-1h-.84a13.864,13.864,0,0,0,1.489-.694l1.129,1.129a1,1,0,0,0,1.414,0l4.243-4.243a1,1,0,0,0,0-1.414l-1.128-1.129A13.889,13.889,0,0,0,47.406,21H53V49H11V21H20.6ZM7,18a1,1,0,0,1,1-1H18v2H10a1,1,0,0,0-1,1V50a1,1,0,0,0,1,1H54a1,1,0,0,0,1-1V20a1,1,0,0,0-1-1H50V17h6a1,1,0,0,1,1,1V53H7ZM27,55H37v1a1,1,0,0,1-1,1H28a1,1,0,0,1-1-1Zm34,3a3,3,0,0,1-3,3H6a3,3,0,0,1-3-3V56a1,1,0,0,1,1-1H25v1a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V55H60a1,1,0,0,1,1,1Z" />
-
-                                <path xmlns="http://www.w3.org/2000/svg" d="M27,25a8,8,0,1,0,8,8A8.009,8.009,0,0,0,27,25Zm5,4.69A5.971,5.971,0,0,1,32.65,31H32Zm-.9-1.063a11.9,11.9,0,0,1-3.384-1.422,1,1,0,0,0-1.233.144l-.964.965-.844-.843A5.978,5.978,0,0,1,31.1,28.627ZM27,39a5.991,5.991,0,0,1-4.046-10.418l1.854,1.853a1,1,0,0,0,1.414,0l1.129-1.129A13.866,13.866,0,0,0,30,30.406V32a1,1,0,0,0,1,1h2A6.006,6.006,0,0,1,27,39Z"/>
-                            </svg>
-                        </div>
-                        <div className="p-4 text-center">
-                            <h2 className="text-2xl text-gray-900 font-medium">Padronização do DP</h2>
-                        </div>
-                        <div className="p-4 text-center">
-                            <p className="text-gray-900 text-xl"><span className="text-2xl text-red-700">•</span> Levantamento de diagnóstico; <br/><span className="text-2xl text-red-700">•</span> Checklist / Mapear processos organizando o Departamento Pessoal.</p>
-                        </div>
-                    </div>
-                    
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto  justify-between xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
                         <div className="p-4">
                             <svg width="72px" height="72px" viewBox="0 0 496 496" className="fill-current text-red-700">
@@ -99,7 +71,7 @@ export default function suporte({session}) {
                             <p className="text-gray-900 text-xl">Outsourcing de folha de pagamento, os serviços serão executados por profissionais especificamente treinados.</p>
                         </div>
                         <div className="w-full">
-                            <Link href="/bpo"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button></a></Link>
+                            <Link href="/bpo"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba mais</button></a></Link>
                         </div>
                     </div>
 
@@ -142,7 +114,35 @@ export default function suporte({session}) {
                             <p className="text-gray-900 text-xl">Cursos online para quem quer ingressar no Departamento Pessoal e para aqueles que tem experiência mas que precisam se atualizar.</p>
                         </div>
                         <div className="w-full">
-                            <Link href="/cursos"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button></a></Link>
+                            <Link href="/cursos"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Ver cursos</button></a></Link>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
+                        <div className="p-4">
+                            <HiOutlineDocumentSearch className="text-red-700 text-7xl" />
+                        </div>
+                        <div className="p-4 text-center">
+                            <h2 className="text-2xl text-gray-900 font-medium">Auditoria Folha de Pagamento/DP</h2>
+                        </div>
+                        <div className="p-4 text-center">
+                            <p className="text-gray-900 text-xl">Análise correta das tributações, redução ou eliminação de Passivo Trabalhista, Autuações, Multas e Processos Trabalhistas.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
+                        <div className="p-4">
+                            <svg width="72px" height="72px" x="0" y="0" viewBox="0 0 64 64" className="fill-current text-red-700">
+                                <path d="M60,53H59V18a3,3,0,0,0-3-3H50V14a1,1,0,0,0-1-1H47.406a13.889,13.889,0,0,0-1.1-2.649l1.128-1.129a1,1,0,0,0,0-1.414L43.192,3.565a1.029,1.029,0,0,0-1.414,0L40.649,4.694A13.866,13.866,0,0,0,38,3.594V2a1,1,0,0,0-1-1H31a1,1,0,0,0-1,1V3.594a13.866,13.866,0,0,0-2.649,1.1L26.222,3.565a1.029,1.029,0,0,0-1.414,0L20.565,7.808a1,1,0,0,0,0,1.414l1.128,1.129A13.889,13.889,0,0,0,20.594,13H19a1,1,0,0,0-1,1v1H8a3,3,0,0,0-3,3V53H4a3,3,0,0,0-3,3v2a5.006,5.006,0,0,0,5,5H58a5.006,5.006,0,0,0,5-5V56A3,3,0,0,0,60,53ZM20,15h1.361a1,1,0,0,0,.973-.77,11.965,11.965,0,0,1,1.46-3.518,1,1,0,0,0-.144-1.233l-.963-.964,2.828-2.829.964.965a1,1,0,0,0,1.233.144,11.9,11.9,0,0,1,3.518-1.46A1,1,0,0,0,32,4.362V3h4V4.362a1,1,0,0,0,.77.973A11.9,11.9,0,0,1,40.288,6.8a1,1,0,0,0,1.233-.144l.964-.965,2.828,2.829-.963.964a1,1,0,0,0-.144,1.233,11.965,11.965,0,0,1,1.46,3.518,1,1,0,0,0,.973.77H48v4H46.639a1,1,0,0,0-.973.77,11.965,11.965,0,0,1-1.46,3.518,1,1,0,0,0,.144,1.233l.963.964-2.828,2.829-.964-.965a1,1,0,0,0-1.233-.144,12.032,12.032,0,0,1-2.262,1.087,11.684,11.684,0,0,0-.691-1.385l.829-.829a10,10,0,1,0-13.887-6.761A.992.992,0,0,0,24,20v1.387c-.342.087-.667.215-1,.331a11.891,11.891,0,0,1-.668-1.949A1,1,0,0,0,21.361,19H20ZM35.354,39.939l.838.839-1.414,1.414-.839-.839a1,1,0,0,0-1.274-.117,9.891,9.891,0,0,1-3.846,1.59A1,1,0,0,0,28,43.81V45H26V43.81a1,1,0,0,0-.819-.984,9.891,9.891,0,0,1-3.846-1.59,1,1,0,0,0-1.274.117l-.839.839-1.414-1.414.838-.839a1,1,0,0,0,.117-1.274,9.892,9.892,0,0,1-1.589-3.846A1,1,0,0,0,16.19,34H15V32h1.19a1,1,0,0,0,.984-.819,9.892,9.892,0,0,1,1.589-3.846,1,1,0,0,0-.117-1.274l-.838-.839,1.414-1.414.84.839a1,1,0,0,0,1.274.116,9.857,9.857,0,0,1,3.845-1.589A1,1,0,0,0,26,22.19V21h2v1.19a1,1,0,0,0,.819.984,9.857,9.857,0,0,1,3.845,1.589,1,1,0,0,0,1.274-.116l.84-.839,1.414,1.414-.838.839a1,1,0,0,0-.117,1.274,9.892,9.892,0,0,1,1.589,3.846A1,1,0,0,0,37.81,32H39v2H37.81a1,1,0,0,0-.984.819,9.892,9.892,0,0,1-1.589,3.846A1,1,0,0,0,35.354,39.939ZM26,17a8,8,0,1,1,11.811,7.013l-2.326-2.326a1,1,0,0,0-1.414,0l-.978.979A11.8,11.8,0,0,0,30,21.387V20a1,1,0,0,0-1-1H26.253A7.98,7.98,0,0,1,26,17ZM20.6,21a13.816,13.816,0,0,0,.571,1.536c-.085.047-.176.079-.259.129l-.978-.979a1,1,0,0,0-1.414,0l-2.828,2.828a1,1,0,0,0,0,1.414l.978.978A11.8,11.8,0,0,0,15.387,30H14a1,1,0,0,0-1,1v4a1,1,0,0,0,1,1h1.387a11.8,11.8,0,0,0,1.278,3.093l-.978.978a1,1,0,0,0,0,1.414l2.828,2.828a1.029,1.029,0,0,0,1.414,0l.978-.978A11.834,11.834,0,0,0,24,44.613V46a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V44.613a11.834,11.834,0,0,0,3.093-1.278l.978.978a1,1,0,0,0,1.414,0l2.828-2.828a1,1,0,0,0,0-1.414l-.978-.978A11.8,11.8,0,0,0,38.613,36H40a1,1,0,0,0,1-1V31a1,1,0,0,0-1-1h-.84a13.864,13.864,0,0,0,1.489-.694l1.129,1.129a1,1,0,0,0,1.414,0l4.243-4.243a1,1,0,0,0,0-1.414l-1.128-1.129A13.889,13.889,0,0,0,47.406,21H53V49H11V21H20.6ZM7,18a1,1,0,0,1,1-1H18v2H10a1,1,0,0,0-1,1V50a1,1,0,0,0,1,1H54a1,1,0,0,0,1-1V20a1,1,0,0,0-1-1H50V17h6a1,1,0,0,1,1,1V53H7ZM27,55H37v1a1,1,0,0,1-1,1H28a1,1,0,0,1-1-1Zm34,3a3,3,0,0,1-3,3H6a3,3,0,0,1-3-3V56a1,1,0,0,1,1-1H25v1a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V55H60a1,1,0,0,1,1,1Z" />
+
+                                <path xmlns="http://www.w3.org/2000/svg" d="M27,25a8,8,0,1,0,8,8A8.009,8.009,0,0,0,27,25Zm5,4.69A5.971,5.971,0,0,1,32.65,31H32Zm-.9-1.063a11.9,11.9,0,0,1-3.384-1.422,1,1,0,0,0-1.233.144l-.964.965-.844-.843A5.978,5.978,0,0,1,31.1,28.627ZM27,39a5.991,5.991,0,0,1-4.046-10.418l1.854,1.853a1,1,0,0,0,1.414,0l1.129-1.129A13.866,13.866,0,0,0,30,30.406V32a1,1,0,0,0,1,1h2A6.006,6.006,0,0,1,27,39Z"/>
+                            </svg>
+                        </div>
+                        <div className="p-4 text-center">
+                            <h2 className="text-2xl text-gray-900 font-medium">Padronização do DP</h2>
+                        </div>
+                        <div className="p-4 text-center">
+                            <p className="text-gray-900 text-xl"><span className="text-2xl text-red-700">•</span> Levantamento de diagnóstico; <br/><span className="text-2xl text-red-700">•</span> Checklist / Mapear processos organizando o Departamento Pessoal.</p>
                         </div>
                     </div>
 
@@ -155,10 +155,6 @@ export default function suporte({session}) {
                         </div>
                         <div className="p-4 text-center">
                             <p className="text-gray-900 text-xl">Consultoria orientativa trabalhista</p>
-                        </div>
-                        <div className="w-full">
-                            <Link href="#"><a></a></Link>
-                            <button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button>
                         </div>
                     </div>
 
@@ -182,9 +178,6 @@ export default function suporte({session}) {
                         <div className="p-4 text-center">
                             <p className="text-gray-900 text-xl">Nosso processo de Mentoria visa capacitar o profissional de Departamento Pessoal nas rotinas e sub-rotinas do setor.</p>
                         </div>
-                        <div className="w-full">
-                            <Link href="/mentoria"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button></a></Link>
-                        </div>
                     </div>
 
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto  justify-between xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
@@ -197,9 +190,6 @@ export default function suporte({session}) {
                         <div className="p-4 text-center">
                             <p className="text-gray-900 text-xl">Tire suas dúvidas do dia a dia através do nosso suporte via e-mail.</p>
                         </div>
-                        <div className="w-full">
-                            <Link href="/suporte"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba Mais</button></a></Link>
-                        </div>
                     </div>
                </div>
             </section>
@@ -210,7 +200,7 @@ export default function suporte({session}) {
                 </div>
             </section>
 
-            <SuperForm titulo="Formulário" nomeBtn="Enviar" />
+            <SuperForm titulo="" nomeBtn="Enviar" />
 
             <Widget />
 

@@ -17,7 +17,7 @@ export default function sobre({session}) {
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={session} />}
             
-            <div className="w-full bg-gradient-to-r from-gray-700 via-gray-900 to-gray-700 bg-cover bg-center">
+            <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 bg-cover bg-center">
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                     <h2 className="text-4xl font-light text-white text-center">Sobre</h2>
                </div>
@@ -25,7 +25,7 @@ export default function sobre({session}) {
 
             <section className="w-full p-4 bg-gradient-to-r from-gray-300 to-gray-500">
                 <div className="w-full sm:w-3/4 m-auto">
-                    <h2 className="text-2xl text-center sm:text-left sm:text-4xl font-medium text-gray-900 mb-4">Quem é Lourdes Almeida?</h2>
+                    <h2 className="text-2xl text-center sm:text-4xl font-medium text-gray-700 mb-4">Quem é Lourdes Almeida?</h2>
 
                     <div className="flex flex-wrap justify-between sm:p-4">
                         <div className=" shadow-2xl px-2 pt-2 mb-4 mx-auto">

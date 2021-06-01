@@ -2,11 +2,12 @@ import firebase from "firebase/app";
 import {firebaseClient} from "../../../firebase/apifirebase";
 import {verifyIdToken} from "../../../firebase/firebase-admin";
 import nookies from "nookies";
-import Cabecalho from "../../../Components/utils/header";
+import Cabecalho from "../../../Components/utils/cabecalho";
 import Rodape from "../../../Components/utils/footer";
+import Widget from "../../../Components/utils/widget";
 import {useState} from "react";
 
-export default function DP01P01({session}) {
+export default function DP01P01({session, email}) {
     
     firebaseClient();
     const[acesso, setAcesso] = useState(true)
@@ -21,7 +22,7 @@ export default function DP01P01({session}) {
     if (session && acesso){
         return (
             <>
-                <Cabecalho />
+                <Cabecalho email={email} />
     
                 <div className="w-full px-1 my-4 sm:w-3/4 mx-auto">
                     <div className="w-full flex flex-col items-center text-center p-1 sm:p-4">
@@ -42,6 +43,8 @@ export default function DP01P01({session}) {
                     </div>
                     
                 </div>
+
+                <Widget />
     
                 <Rodape />
             </>
@@ -51,8 +54,10 @@ export default function DP01P01({session}) {
     if (session && !acesso){
         return (
             <>
-                <Cabecalho />
+                <Cabecalho email={email} />
                 <h1>Desculpe, você está conectado mas não tem acesso a este curso ainda!</h1>
+                <Widget />
+                <Rodape />
             </>
         );
     } else {
@@ -69,8 +74,12 @@ export async function getServerSideProps(context){
         const cookies = nookies.get(context)
         const token = await verifyIdToken(cookies.token);
         const id = token.uid;
+        const email = token.email;
         return {
-            props: {session: id},
+            props: {
+                session: id,
+                email
+            },
           };
     } catch(err){
         context.res.setHeader("Location", "/login");

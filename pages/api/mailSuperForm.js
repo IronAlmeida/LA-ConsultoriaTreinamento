@@ -104,7 +104,7 @@ export default function sendMailSuperForm(req, res) {
             from: `"Lourdes Almeida" <${USERMAIL}>`,
             to: req.body.email,
             subject: `Cursos LA` ,
-            text: `Mensagem recebida`,
+            text: ``,
             html: 
             `   <div style="width: 100%; background-color: #E5E7EB;">
                     <div style="background-color: white;  max-width: 600px; margin: 0 auto; border: 2px solid #D1D5DB;">
@@ -119,7 +119,7 @@ export default function sendMailSuperForm(req, res) {
                         </div>
     
                         <div style="width: 90%; margin: 0 auto; padding: 16px 0;">
-                            <p style="font-size: 18px; color: #1F2937;">Obrigado pelo interrese em nossos cursos! Logo você irá receber mais informações sobre</p>
+                            <p style="font-size: 18px; color: #1F2937;">Obrigado pelo interrese em nosso(s) curso(s)! Logo entraremos em contato com mais informações.</p>
                         </div>
                         
                         <div style="width: 90%; margin: 0 auto; padding: 16px 0;">

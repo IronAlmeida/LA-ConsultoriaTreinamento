@@ -13,12 +13,7 @@ export default function Widget() {
         email: Yup.string().email().lowercase().required('E-mail obrigatório'),
     })
 
-    const enviar = (values, {resetForm}) => {
-        console.log(values);
-        setOk(true);
-        SetBtnMessage('Enviar mensagem');
-        resetForm({})
-
+    const enviar = (values, {resetForm}) => {        
         fetch('/api/mailWidget', {
             method: 'POST',
             headers: {
@@ -29,28 +24,27 @@ export default function Widget() {
                 email: values.email,
                 message: values.message
             })
-        }).then((response) => {
+        }).then(() => {
             setOk(true);
             SetBtnMessage('Enviar mensagem');
             resetForm({})
-        }).catch((error) => {
-            console.log(error)
+        }).catch(() => {
             alert("Falha no envio!")
         })
     } 
 
     return (
         <section className="relative w-full p-4 bg-gradient-to-b from-red-700 to-red-800">
-                {ok && (
-                    <div className="w-full dark h-full p-8 absolute top-0 left-0">
-                        <div className="w-3/4 sm:w-1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-600 text-center p-4 rounded-xl animation-message">
-                            <h2 className="text-xl text-white font-medium">Mensagem enviada!</h2>
-                            <div className="w-1/3 rounded-full m-auto bg-gray-300 p-2 mt-2">
-                                <p className="text-xl text-gray-900 cursor-pointer" onClick={() => setOk(false)}>Ok!</p>
-                            </div>
+            {ok && (
+                <div className="w-full dark h-full p-8 absolute top-0 left-0">
+                    <div className="w-3/4 sm:w-1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-600 text-center p-4 rounded-xl animation-message">
+                        <h2 className="text-xl text-white font-medium">Mensagem enviada!</h2>
+                        <div className="w-1/3 rounded-full m-auto bg-gray-300 p-2 mt-2">
+                            <p className="text-xl text-gray-900 cursor-pointer" onClick={() => setOk(false)}>Ok!</p>
                         </div>
                     </div>
-                )}
+                </div>
+            )}
 
             <div className="w-full sm:w-5/6 m-auto flex flex-wrap justify-between">
                 
@@ -122,7 +116,7 @@ export default function Widget() {
 
                                 <div className="w-full mb-2 pt-3 rounded bg-gray-200">
                                     <label className="block text-gray-800 text-base font-semibold mb-2 ml-3" htmlFor="message">Mensagem: </label>
-                                    <Field  id="message" name="message" as="textarea" placeholder="O que deseja?" rows="2" cols="50" required className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none px-2 pb-2 text-lg resize-none" />
+                                    <Field  id="message" name="message" as="textarea" placeholder="Sua mensagem" rows="2" cols="50" required className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none px-2 pb-2 text-lg resize-none" />
                                 </div>
 
                                 <div className="w-full">

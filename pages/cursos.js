@@ -4,7 +4,6 @@ import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
 import Widget from "../Components/utils/widget";
-import SuperForm from "../Components/utils/superForm";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
 import {BsCameraVideo} from "react-icons/bs";
@@ -81,7 +80,7 @@ export default function Cursos({session}) {
                     <div className="bg-gray-200 rounded-xl shadow-xl py-4 px-2 sm:px-6 flex flex-wrap justify-between items-center text-center my-7">
 
                         {/*CARD 1 */}
-                        <div className="flex flex-col m-auto items-center justify-between text-center border border-gray-400 shadow">
+                        <div className="flex flex-col m-auto mt-6 items-center justify-between text-center border border-gray-400 shadow">
                             <div>
                                 <img className="w-full" width="300px" height="300px" src="/analista-dp.png"/>
                             </div>
@@ -93,7 +92,7 @@ export default function Cursos({session}) {
                         {/*END CARD1 */}
 
                         {/*CARD 2 */}
-                        <div className="flex flex-col m-auto items-center justify-between text-center border border-gray-400 shadow">
+                        <div className="flex flex-col m-auto mt-6 items-center justify-between text-center border border-gray-400 shadow">
                             <div>
                                 <img className="w-full" width="300px" height="300px" src="/eSocial0506.png"/>
                             </div>
@@ -114,7 +113,7 @@ export default function Cursos({session}) {
                     <div className="bg-gray-200 rounded-xl shadow-xl py-4 px-2 sm:px-6 flex flex-wrap justify-between items-center text-center my-7">
                         <div className="flex m-auto">
                             <div className="w-full p-4">
-                                <h1 className="text-3xl text-gray-800 font-medium text-center">Cursos sendo gravados com maior carinho e decicação. <br/>Em breve serão lançados ;)</h1>
+                                <h1 className="text-3xl text-gray-800 font-medium text-center">Cursos sendo gravados com maior carinho e dedicação. <br/>Em breve serão lançados ;)</h1>
                             </div>
                         </div>
                     </div>

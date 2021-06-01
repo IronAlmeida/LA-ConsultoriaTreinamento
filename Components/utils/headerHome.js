@@ -16,11 +16,9 @@ export default function HeaderHome() {
                     <Link href="/"><a className="mt-2"><Image src="/LA-Logo.webp" width={70} height={70} /></a></Link>
 
                     <nav id="nav" className="flex items-center">
-                        <ul id="menu" className="lg:flex items-center gap-2 mr-6">
+                        <ul id="menu" className="lg:flex items-center gap-6 mr-6">
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/"><a className="block p-2">Inicio</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/cursos"><a className="block p-2">Cursos</a></Link></li>
-                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/bpo"><a className="block p-2">BPO</a></Link></li>
-                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/suporte"><a className="block p-2">Suporte</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/servicos"><a className="block p-2">Serviços</a></Link></li>
                             <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/sobre"><a className="block p-2">Sobre</a></Link></li>
                             <li><Link href="/login"><a>

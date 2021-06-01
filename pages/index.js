@@ -67,7 +67,6 @@ export default function home({session}) {
                 </div>
             </section>
             
-
             <SliderClients />
 
             <section className="w-full p-4">
