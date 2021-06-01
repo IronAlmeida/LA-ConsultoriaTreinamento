@@ -12,6 +12,7 @@ export default function sendMailSuperForm(req, res) {
     let transporter = nodemailer.createTransport({
         host: "smtp.umbler.com",
         port: 587,
+        secure: false,
         auth: {
             user: USERMAIL,
             pass: PASSMAIL

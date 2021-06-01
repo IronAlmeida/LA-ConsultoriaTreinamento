@@ -7,6 +7,7 @@ export default function sendMailWidget(req, res) {
     let transporter = nodemailer.createTransport({
         host: "smtp.umbler.com",
         port: 587,
+        secure: false,
         auth: {
             user: USERMAIL,
             pass: PASSMAIL
