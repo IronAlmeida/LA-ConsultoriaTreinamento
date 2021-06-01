@@ -1,5 +1,6 @@
 import {verifyIdToken} from "../firebase/firebase-admin";
 import nookies from "nookies";
+import Head from "next/head";
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
 import SuperForm from "../Components/utils/superForm";
@@ -16,6 +17,11 @@ export default function Bpo({session}) {
 
     return (
         <>
+
+            <Head>
+                <title>LA - BPO</title>
+            </Head>
+
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={session} />}
 

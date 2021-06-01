@@ -1,5 +1,6 @@
 import {verifyIdToken} from "../firebase/firebase-admin";
 import nookies from "nookies";
+import Head from "next/head";
 import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
@@ -14,6 +15,10 @@ export default function sobre({session}) {
 
     return (
         <>
+            <Head>
+                <title>LA - Sobre</title>
+            </Head>
+
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={session} />}
             

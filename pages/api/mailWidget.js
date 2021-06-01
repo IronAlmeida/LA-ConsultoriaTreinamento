@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 require('dotenv').config()
 const USERMAIL = process.env.USERMAIL
-const PASSWORD = process.env.PASSWORD
+const PASSMAIL = process.env.PASSMAIL
 
 export default function sendMailWidget(req, res) {
 
@@ -10,7 +10,7 @@ export default function sendMailWidget(req, res) {
         port: 587,
         auth: {
             user: USERMAIL,
-            pass: PASSWORD
+            pass: PASSMAIL
         },
     })
 

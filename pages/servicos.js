@@ -1,5 +1,6 @@
 import {verifyIdToken} from "../firebase/firebase-admin";
 import nookies from "nookies";
+import Head from "next/head";
 import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
 import SuperForm from "../Components/utils/superForm";
@@ -18,6 +19,10 @@ export default function suporte({session}) {
 
     return (
         <>
+            <Head>
+                <title>LA - Serviços</title>
+            </Head>
+
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={session} />}
             

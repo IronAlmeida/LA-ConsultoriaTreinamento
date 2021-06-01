@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { URL } from "url";
 import "firebase/auth";
+import Head from "next/head";
 
 export default function recSenha({path}){
     firebaseClient();
@@ -44,6 +45,10 @@ export default function recSenha({path}){
     
     return (
         <>
+            <Head>
+                <title>LA - Recuperação de Senha</title>
+            </Head>
+
             {codeValidation === true &&
                 <div className="w-80 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <Formik 

@@ -1,5 +1,6 @@
 import {verifyIdToken} from "../firebase/firebase-admin";
 import nookies from "nookies";
+import Head from "next/head";
 import HeaderHome from "../Components/utils/headerHome";
 import Cabecalho from "../Components/utils/cabecalho";
 import Rodape from "../Components/utils/footer";
@@ -19,6 +20,13 @@ export default function home({session}) {
 
     return (
         <>
+            <Head>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+                <title>LA - Consultoria e Treinamento</title>
+                <meta name="robots" content="index/follow"/>
+                <meta name="description" content="Lourdes Almeida - Consultoria e Treinamento"/>
+            </Head>
+
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={session} />}
             

@@ -1,5 +1,6 @@
 import {verifyIdToken} from "../firebase/firebase-admin";
 import nookies from "nookies";
+import Head from "next/head";
 import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
@@ -18,6 +19,10 @@ export default function Cursos({session}) {
 
     return (
         <>
+            <Head>
+                <title>LA - Cursos</title>
+            </Head>
+
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={session} />}
             
@@ -86,7 +91,7 @@ export default function Cursos({session}) {
                             </div>
 
                             <div className="w-full border-t-2 border-gray-300">
-                                <a href="#inscricao"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
+                                <a href="https://api.whatsapp.com/send?phone=5579999839846" target="_blank"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
                             </div>
                         </div>
                         {/*END CARD1 */}
@@ -98,7 +103,7 @@ export default function Cursos({session}) {
                             </div>
 
                             <div className="w-full border-t-2 border-gray-300">
-                                <a href="#inscricao"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
+                                <a href="https://api.whatsapp.com/send?phone=5579999839846" target="_blank"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
                             </div>
                         </div>
                         {/*END CARD 2 */}
