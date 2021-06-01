@@ -1,0 +1,38 @@
+import Link from "next/link";
+import Image from "next/image";
+import {AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
+
+export default function HeaderHome() {
+
+    const ToggleMenu = () => {
+        const nav = document.getElementById('nav');
+        nav.classList.toggle('active');
+    }
+
+    return (
+        <>
+            <div className="w-full bg-red-700 px-6 py-2">
+                <div className="flex sm:w-3/4 justify-between m-auto items-center">
+                    <Link href="/"><a className="mt-2"><Image src="/LA-Logo.webp" width={70} height={70} /></a></Link>
+
+                    <nav id="nav" className="flex items-center">
+                        <ul id="menu" className="lg:flex items-center gap-6 mr-6">
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/"><a className="block p-2">Inicio</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/cursos"><a className="block p-2">Cursos</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/servicos"><a className="block p-2">Serviços</a></Link></li>
+                            <li className="text-lg text-white hover:text-gray-800 trasition duration-200"><Link href="/sobre"><a className="block p-2">Sobre</a></Link></li>
+                            <li><Link href="/login"><a>
+                                <button className="text-lg text-white rounded-full w-24 p-2 bg-gray-800 transform hover:scale-110 transition duration-200 focus:outline-none">Entrar</button>
+                            </a></Link></li>
+                        </ul>
+
+                        <div id="btn" className="lg:hidden mr-6">
+                            <AiOutlineMenu onClick={ToggleMenu} id="burger" className="text-3xl text-white cursor-pointer" />
+                            <AiOutlineClose onClick={ToggleMenu} id="close" className="text-3xl text-white cursor-pointer hidden"/>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </>
+    );
+}
