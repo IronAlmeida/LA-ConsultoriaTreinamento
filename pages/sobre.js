@@ -38,7 +38,7 @@ export default function sobre({session}) {
                         </div>
 
                         <div className="w-full xl:w-3/5 bg-gradient-to-tl from-gray-700 via-gray-800 to-gray-900 rounded-xl">
-                            <p className="text-2xl text-white p-4">
+                            <p className="text-2xl text-white p-4 text-center">
                             Técnica Contábil CRC/SE; Gestora de RH; MBA Legislação Trabalhista e  Direito Previdenciário; Especialista em eSocial, DCTFWEB e Departamento Pessoal; Consultora Trabalhista; Professora e Palestrante; Vivência profissional de 19 anos na área trabalhista.<br/><br/>
                             Palestrante do 1º Congresso Nacional e eSocial, realizado em São Paulo, no dia 10 de dezembro de 2018.<br/><br/>
                             Palestrante do 1º Congresso Nacional On-line de Departamento Pessoal e eSocial, no período de 10 a 15 de outubro de 2020.
