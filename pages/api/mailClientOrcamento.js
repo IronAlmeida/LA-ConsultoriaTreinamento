@@ -1,7 +1,7 @@
 const mailClientOrcamento = require('@sendgrid/mail')
 mailClientOrcamento.setApiKey(process.env.SENDGRID_API_KEY_CLIENTORCAMENTO)
 
-export default function sendMailClientOrcamento(req, res) {
+export default async function sendMailClientOrcamento(req, res) {
 
     const nomeCompleto = req.body.nome;
     const nomediv = nomeCompleto.split(" ")
@@ -44,7 +44,7 @@ export default function sendMailClientOrcamento(req, res) {
         `
     }
 
-   mailClientOrcamento.send(dataClientOrcamento).then((response) => {
+   await mailClientOrcamento.send(dataClientOrcamento).then((response) => {
        res.send(response)
    }).catch((error) => {
        res.send(error)

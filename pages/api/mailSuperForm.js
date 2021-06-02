@@ -1,7 +1,7 @@
 const mailSuperForm = require('@sendgrid/mail')
 mailSuperForm.setApiKey(process.env.SENDGRID_API_KEY_SUPERFORM)
 
-export default function sendMailSuperForm(req, res) {
+export default async function sendMailSuperForm(req, res) {
     const dataSuperForm = {
         to: 'contato@lourdesalmeidadp.com.br',
         from: 'Contato Site <contato@lourdesalmeidadp.com.br>',
@@ -31,7 +31,7 @@ export default function sendMailSuperForm(req, res) {
             </div>
         `
     }
-    mailSuperForm.send(dataSuperForm).then((response) => {
+    await mailSuperForm.send(dataSuperForm).then((response) => {
         res.send(response)
     }).catch((error) => {
         res.send(error)

@@ -1,7 +1,7 @@
 const mailClientCursos = require('@sendgrid/mail')
 mailClientCursos.setApiKey(process.env.SENDGRID_API_KEY_CLIENTCURSOS)
 
-export default function sendMailClientCursos(req, res) {
+export default async function sendMailClientCursos(req, res) {
 
     const nomeCompleto = req.body.nome;
     const nomediv = nomeCompleto.split(" ")
@@ -43,7 +43,7 @@ export default function sendMailClientCursos(req, res) {
         </div>
         `
     }
-    mailClientCursos.send(dataClientCursos).then((response) => {
+    await mailClientCursos.send(dataClientCursos).then((response) => {
         res.send(response)
     }).catch((error) => {
         res.send(error)

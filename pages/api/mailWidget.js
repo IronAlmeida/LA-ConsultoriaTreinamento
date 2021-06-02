@@ -1,7 +1,7 @@
 const mailWidget = require('@sendgrid/mail')
 mailWidget.setApiKey(process.env.SENDGRID_API_KEY_WIDGET)
 
-export default function sendMailWidget(req, res) {
+export default async function sendMailWidget(req, res) {
 
    const dataWidget = {
        to: 'contato@lourdesalmeidadp.com.br',
@@ -22,7 +22,7 @@ export default function sendMailWidget(req, res) {
        `
    }
 
-   mailWidget.send(dataWidget).then((response) => {
+   await mailWidget.send(dataWidget).then((response) => {
        res.send(response)
    }).catch((error) => {
        res.send(error)
