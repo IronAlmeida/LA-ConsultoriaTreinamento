@@ -30,7 +30,7 @@ body {
 
   /*SLIDER PRINCIPAIS*/
   .number-slide1 {
-    background: rgb(200, 38, 38);
+    background: rgb(17, 24, 39);
     background: linear-gradient(
       128deg,
       rgba(17, 24, 39, 1) 0%,
@@ -147,7 +147,7 @@ body {
 
   /*SLIDER PRINCIPAIS*/
   .number-slide1 {
-    background: rgb(200, 38, 38);
+    background: rgb(17, 24, 39);
     background: linear-gradient(
       128deg,
       rgba(17, 24, 39, 1) 0%,
@@ -156,11 +156,11 @@ body {
   }
   
   .number-slide2 {
-    background: rgb(30, 58, 138);
+    background: rgb(31, 41, 55);
     background: linear-gradient(
       128deg,
-      rgba(30, 58, 138, 1) 0%,
-      rgba(30, 58, 138, 1) 100%
+      rgba(31, 41, 55, 1) 0%,
+      rgba(31, 41, 55, 1) 100%
     );
   }
   
@@ -200,7 +200,7 @@ body {
   /*SLIDER PRINCIPAIS*/
 
   .number-slide1 {
-    background: rgb(200, 38, 38);
+    background: rgb(17, 24, 39);
     background: linear-gradient(
       128deg,
       rgba(17, 24, 39, 1) 0%,
@@ -209,11 +209,11 @@ body {
   }
   
   .number-slide2 {
-    background: rgb(30, 58, 138);
+    background: rgb(31, 41, 55);
     background: linear-gradient(
       128deg,
-      rgba(30, 58, 138, 1) 0%,
-      rgba(30, 58, 138, 1) 100%
+      rgba(31, 41, 55, 1) 0%,
+      rgba(31, 41, 55, 1) 100%
     );
   }
   
