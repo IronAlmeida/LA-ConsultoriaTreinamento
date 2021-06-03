@@ -86,3 +86,31 @@
         @apply overflow-y-auto;
     }
 }
+
+@media (min-height: 1px) and (min-width: 1024px){
+    .padding-h{
+        @apply py-10;
+        @apply px-4;
+    }
+}
+
+@media (min-height: 750px) and (min-width: 1024px){
+    .padding-h{
+        @apply py-16;
+        @apply px-10;
+    }
+}
+
+@media (min-height: 1024px) and (min-width: 1024px){
+    .padding-h{
+        @apply py-24;
+        @apply px-4;
+    }
+}
+
+@media (min-height: 1280px) and (min-width: 1024px){
+    .padding-h{
+        @apply py-36;
+        @apply px-4;
+    }
+}

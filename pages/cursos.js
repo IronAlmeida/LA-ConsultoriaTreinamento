@@ -8,6 +8,7 @@ import Widget from "../Components/utils/widget";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
 import {BsCameraVideo} from "react-icons/bs";
+import Image from "next/image";
 
 
 export default function Cursos({session}) { 

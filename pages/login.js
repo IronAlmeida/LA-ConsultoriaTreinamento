@@ -14,9 +14,9 @@ import {useAuth} from "../firebase/auth";
 const Background = () => {
   
     return (
-      <div className="bg-cover relative overflow-hidden hidden bg-center lg:block lg:w-1/2 2xl:w-2/3 h-screen p-12" style={{backgroundImage: `url(/bg-main.jpg)`}}>
+      <div className="bg-cover relative overflow-hidden hidden bg-center lg:block lg:w-1/2 2xl:w-2/3 h-screen p-12" style={{backgroundImage: `url(/bg-main.webp)`}}>
         <div className="flex flex-col">
-          <div className="w-full flex items-center p-10 lg:p-14 xl:p-16">
+          <div className="w-full flex items-center p-10 padding-h">
             <svg width="50" height="50" x="0" y="0" viewBox="0 0 512 512" className="inline-block fill-current text-white">
                 <path d="M304,96H112c-8.832,0-16,7.168-16,16c0,8.832,7.168,16,16,16h192c8.832,0,16-7.168,16-16C320,103.168,312.832,96,304,96z" />
               
@@ -29,7 +29,7 @@ const Background = () => {
             <span className="ml-8 text-white text-3xl font-semibold">Consultoria via E-mail profissional</span>
           </div>
   
-          <div className="w-full flex items-center p-10 lg:p-14 xl:p-16">
+          <div className="w-full flex items-center p-10 padding-h">
             <svg width="50" height="50" x="0" y="0" viewBox="0 0 60 58" className="inline-block fill-current text-white">
               <path d="m30 26c-.146 0-.291-.032-.426-.095l-17-8c-.35-.165-.574-.518-.574-.905s.224-.74.574-.905l17-8c.27-.127.582-.127.852 0l17 8c.35.165.574.518.574.905s-.224.74-.574.905l-17 8c-.135.063-.28.095-.426.095zm-14.651-9 14.651 6.895 14.651-6.895-14.651-6.895z" />
               <path d="m30 34c-.153 0-.307-.035-.447-.105l-12-6c-.339-.17-.553-.516-.553-.895v-7.647c0-.342.175-.661.464-.844.289-.184.652-.205.961-.061l11.575 5.447 11.574-5.447c.31-.145.673-.123.961.061.29.183.465.502.465.844v7.647c0 .379-.214.725-.553.895l-12 6c-.14.07-.294.105-.447.105zm-11-7.618 11 5.5 11-5.5v-5.453l-10.574 4.976c-.27.127-.582.127-.852 0l-10.574-4.976z" />
@@ -49,7 +49,7 @@ const Background = () => {
             <span className="ml-8 text-white text-3xl font-semibold">Cursos com preços acessíveis</span>
           </div>
   
-          <div className="w-full flex items-center p-10 lg:p-14 xl:p-16">
+          <div className="w-full flex items-center p-10 padding-h">
             <svg width="90" height="90" x="0" y="0" viewBox="0 0 512 512" className="inline-block fill-current text-white">
               <path d="m497 128.04h-29.88v-45.76c0-8.284-6.716-15-15-15h-204.003l-23.164-49.435c-2.469-5.27-7.764-8.636-13.583-8.636h-196.37c-8.284 0-15 6.716-15 15v402.58c0 8.284 6.716 15 15 15h45v46c0 8.284 6.716 15 15 15h422c8.284 0 15-6.716 15-15v-344.749c0-8.284-6.716-15-15-15zm-467 283.75v-372.58h171.833l23.164 49.435c2.469 5.27 7.764 8.636 13.583 8.636h198.54v30.76h-362.12c-8.284 0-15 6.716-15 15v268.75h-30zm452 61h-392v-46-268.75h362.12 29.88z"/>
               <path d="m393.144 378.906c-8.284 0-15 6.716-15 15v18.884h-184.288v-18.884c0-8.284-6.716-15-15-15s-15 6.716-15 15v33.884c0 8.284 6.716 15 15 15h214.288c8.284 0 15-6.716 15-15v-33.884c0-8.284-6.716-15-15-15z"/>
@@ -74,7 +74,7 @@ const Header = () => {
     <>
       <div className="w-full flex justify-between items-center pb-1 sm:pb-4">
         <div className="hidden sm:block">
-          <Link href="/"><a><Image src="/logo-colorida.webp" width={"240"} height={"100"} /></a></Link>
+          <Link href="/"><a><Image src="/logo-colorida.png" width={"240"} height={"100"} /></a></Link>
         </div>
 
         <div className="sm:hidden">

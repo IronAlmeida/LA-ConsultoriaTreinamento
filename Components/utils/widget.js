@@ -6,7 +6,6 @@ import * as Yup from 'yup';
 export default function Widget() {
 
     const [ok, setOk] = useState(false)
-    const [btnMessage, SetBtnMessage] = useState('Enviar mensagem');
 
     const schema = Yup.object().shape({
         nome: Yup.string().min(3, 'Muito curto').required('Nome obrigatório'),
@@ -26,7 +25,6 @@ export default function Widget() {
             })
         }).then(() => {
             setOk(true);
-            SetBtnMessage('Enviar mensagem');
             resetForm({})
         }).catch(() => {
             alert("Falha no envio!")
@@ -120,7 +118,7 @@ export default function Widget() {
                                 </div>
 
                                 <div className="w-full">
-                                    <button className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit" onClick={() => SetBtnMessage('Enviando...')}>{btnMessage}</button>
+                                    <button className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit">Enviar mensagem</button>
                                 </div>
                             </Form>
                         )}

@@ -25,7 +25,7 @@ export default function Bpo({session}) {
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={session} />}
 
-            <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 bg-cover bg-center" style={{backgroundImage: 'url(/bpo-bg.webp)'}}>
+            <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 bg-cover bg-center" style={{backgroundImage: 'url(/bpo-bg.png)'}}>
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                     <h2 className="text-4xl font-light text-white text-center">BPO - Terceirização de Departamento Pessoal</h2>
                </div>

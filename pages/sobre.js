@@ -34,7 +34,7 @@ export default function sobre({session}) {
 
                     <div className="flex flex-wrap justify-between sm:p-4">
                         <div className=" shadow-2xl px-2 pt-2 mb-4 mx-auto">
-                            <img className="mt-20" src="lourdes-sobre.png" width="323px" height="402px" />
+                            <img className="mt-20" src="lourdes-sobre.webp" width="323px" height="402px" />
                         </div>
 
                         <div className="w-full xl:w-3/5 bg-gradient-to-tl from-gray-700 via-gray-800 to-gray-900 rounded-xl">
