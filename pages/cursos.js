@@ -1,5 +1,3 @@
-import {verifyIdToken} from "../firebase/firebase-admin";
-import nookies from "nookies";
 import Head from "next/head";
 import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
@@ -8,13 +6,15 @@ import Widget from "../Components/utils/widget";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
 import {BsCameraVideo} from "react-icons/bs";
-import Image from "next/image";
+import {useAuth} from "../firebase/auth";
 
 
-export default function Cursos({session}) { 
+export default function Cursos() { 
+
+    const { user } = useAuth();
 
     let logado = false;
-    if(session){
+    if(user){
         logado = true;
     }
 
@@ -25,7 +25,7 @@ export default function Cursos({session}) {
             </Head>
 
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={session} />}
+            {logado === true && <Cabecalho email={user.email} />}
             
             <div className="w-full bg-gray-800">
                 <div className="w-full sm:w-3/4 m-auto py-8 px-4">
@@ -132,17 +132,3 @@ export default function Cursos({session}) {
         </>
     );
 };
-
-export async function getServerSideProps(context){
-    try{
-        const cookies = nookies.get(context)
-        const token = await verifyIdToken(cookies.token);
-        const email = token.email;
-        return {
-            props: {session: email},
-          };
-    } catch(err){
-        context.res.statusCode = 302;
-        return { props: {} };
-    };
-  };

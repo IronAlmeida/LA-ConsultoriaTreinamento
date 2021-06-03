@@ -1,5 +1,5 @@
-import {verifyIdToken} from "../firebase/firebase-admin";
-import nookies from "nookies";
+//import {verifyIdToken} from "../firebase/firebase-admin";
+//import nookies from "nookies";
 import Head from "next/head";
 import HeaderHome from "../Components/utils/headerHome";
 import Cabecalho from "../Components/utils/cabecalho";
@@ -10,11 +10,14 @@ import SliderClients from "../Components/utils/sliderClients";
 import {BsBullseye} from "react-icons/bs";
 import {AiFillEye} from "react-icons/ai";
 import {FaHandshake} from "react-icons/fa";
+import { useAuth } from "../firebase/auth";
 
-export default function home({session}) {
+export default function home() {
+
+    const { user } = useAuth();
 
     let logado = false;
-    if (session){
+    if (user){
         logado = true;
     }
 
@@ -27,7 +30,7 @@ export default function home({session}) {
             </Head>
 
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={session} />}
+            {logado === true && <Cabecalho email={user.email} />}
             
             <SliderMain />
 
@@ -121,6 +124,7 @@ export default function home({session}) {
     );
 };
 
+/*
 export async function getServerSideProps(context){
     try{
         const cookies = nookies.get(context)
@@ -133,4 +137,4 @@ export async function getServerSideProps(context){
         context.res.statusCode = 302;
         return { props: {} };
     };
-};
+};*/

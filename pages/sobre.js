@@ -1,15 +1,16 @@
-import {verifyIdToken} from "../firebase/firebase-admin";
-import nookies from "nookies";
 import Head from "next/head";
 import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
 import Widget from "../Components/utils/widget";
+import {useAuth} from "../firebase/auth";
 
-export default function sobre({session}) {
+export default function sobre() {
+
+    const { user } = useAuth();
 
     let logado = false;
-    if (session){
+    if (user){
         logado = true;
     }
 
@@ -20,8 +21,8 @@ export default function sobre({session}) {
             </Head>
 
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={session} />}
-            
+            {logado === true && <Cabecalho email={user.email} />}
+        
             <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 bg-cover bg-center">
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                     <h2 className="text-4xl font-light text-white text-center">Sobre</h2>
@@ -53,18 +54,4 @@ export default function sobre({session}) {
             <Rodape />
         </>
     );
-};
-
-export async function getServerSideProps(context){
-    try{
-        const cookies = nookies.get(context)
-        const token = await verifyIdToken(cookies.token);
-        const email = token.email;
-        return {
-            props: {session: email},
-          };
-    } catch(err){
-        context.res.statusCode = 302;
-        return { props: {} };
-    };
 };
