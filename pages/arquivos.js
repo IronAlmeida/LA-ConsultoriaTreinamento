@@ -48,6 +48,10 @@ export default function arquivos({session}) {
                 <section className="w-full p-4 bg-gray-100">
                     <div className="w-full sm:w-3/4 m-auto">
 
+                        <div className="w-full text-center my-2 mb-8">
+                            <h2 className="text-3xl text-gray-800">Checklists, PDFs e planilhas para lhe auxiliar na rotina de Departamento Pessoal</h2>
+                        </div>
+
                         {/* DOWNLOADS ADMISSAO */}
                         <div id="admissao" className="mt-4">
                             <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleAdmissao}>
@@ -253,16 +257,21 @@ export default function arquivos({session}) {
                     </div>
                 </div>
 
-                <section className="w-full p-8 bg-gray-100">
+                <section className="w-full p-4 sm:p-8 bg-gray-100">
                     <div className="relative w-full sm:w-3/4 m-auto">
 
-                        <div className="w-full sm:w-1/2 m-auto border-2 rounded-lg border-gray-800 text-center">
-                            <div className="p-4">   
-                                <h1 className="text-xl font-medium">Faça o login para ter acesso aos arquivos.</h1>
+                        <div className="w-full text-center my-2 mb-8">
+                            <h2 className="text-3xl text-gray-800">Checklists, PDFs e planilhas para lhe auxiliar na rotina de Departamento Pessoal</h2>
+                        </div>
+                        
+
+                        <div className="w-full sm:w-3/5 m-auto border-2 rounded-lg border-gray-800 text-center">
+                            <div className="p-6">   
+                                <h1 className="text-2xl text-gray-800 font-medium">Faça login para ter acesso aos arquivos!</h1>
                             </div>
-                            <div className="p-4">
+                            <div className="p-6">
                                 <Link href="/login">
-                                    <a><button className="text-lg text-white rounded-full w-24 p-2 bg-gray-800 transform hover:scale-110 transition duration-200 focus:outline-none">Entrar</button></a>
+                                    <a><button className="text-lg text-white rounded-full w-36 p-4 bg-gray-800 transform hover:scale-110 transition duration-200 focus:outline-none">Fazer login</button></a>
                                 </Link>
                             </div>
                         </div>
