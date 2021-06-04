@@ -20,6 +20,83 @@
     animation: message 1s;
 }
 
+/*GERAL*/
+.flex-options{
+    transition: 0.3s;
+    height: 0px;
+    @apply flex;
+    @apply items-center;
+    @apply justify-between;
+    @apply w-full;
+    @apply py-0;
+    @apply px-2;
+    @apply border-b;
+    @apply border-gray-600;
+    @apply bg-gray-300;
+    @apply invisible;
+    @apply overflow-hidden;
+}
+
+/* ADMISSÃO */
+#admissao.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#admissao.active #less{
+    @apply block;
+}
+#admissao.active #plus{
+    @apply hidden;
+}
+
+/* INSS */
+#inss.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#inss.active #less{
+    @apply block;
+}
+#inss.active #plus{
+    @apply hidden;
+}
+
+/*CNO E CAEPF*/
+#cno.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#cno.active #less{
+    @apply block;
+}
+#cno.active #plus{
+    @apply hidden;
+}
+
+/*COVID-19*/
+#covid.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#covid.active #less{
+    @apply block;
+}
+#covid.active #plus{
+    @apply hidden;
+}
+
 @keyframes message {
   0%{
     opacity: 0;
