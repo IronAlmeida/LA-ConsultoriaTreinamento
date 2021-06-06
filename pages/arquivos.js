@@ -55,7 +55,7 @@ export default function arquivos({session}) {
                         {/* DOWNLOADS ADMISSAO */}
                         <div id="admissao" className="mt-4">
                             <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleAdmissao}>
-                                <h2 className="text-xl font-medium">Admissão</h2>
+                                <h2 className="text-xl font-medium text-gray-900">Admissão</h2>
                                 <div>
                                     <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
                                     <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
@@ -83,7 +83,7 @@ export default function arquivos({session}) {
                         {/* DOWNLOADS INSS */}
                         <div id="inss" className="mt-4">
                             <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleINSS}>
-                                <h2 className="text-xl font-medium">Afastamentos / ASO / CAT / INSS</h2>
+                                <h2 className="text-xl text-gray-900 font-medium">Afastamentos / ASO / CAT / INSS</h2>
                                 <div>
                                     <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
                                     <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
@@ -112,7 +112,7 @@ export default function arquivos({session}) {
                         {/* DOWNLOADS CNO E CAEPF */}
                         <div id="cno" className="mt-4">
                             <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleCNO}>
-                                <h2 className="text-xl font-medium">CNO E CAEPF</h2>
+                                <h2 className="text-xl text-gray-900 font-medium">CNO E CAEPF</h2>
                                 <div>
                                     <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
                                     <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
@@ -147,7 +147,7 @@ export default function arquivos({session}) {
                         {/* DOWNLOADS COVID-19 */}
                         <div id="covid" className="mt-4">
                             <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleCOVID}>
-                                <h2 className="text-xl font-medium">COVID-19</h2>
+                                <h2 className="text-xl text-gray-900 font-medium">COVID-19</h2>
                                 <div>
                                     <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
                                     <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
