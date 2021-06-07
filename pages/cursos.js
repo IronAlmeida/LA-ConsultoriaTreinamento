@@ -85,7 +85,7 @@ export default function Cursos() {
                     <p className="text-2xl sm:text-3xl text-gray-900"><RiRecordCircleLine className="text-red-700 inline-block text-2xl" /> Cursos Ao-vivo</p>
                     <div className="bg-gray-200 rounded-xl shadow-xl py-4 px-2 sm:px-6 flex flex-wrap justify-between items-center text-center my-7">
 
-                        {/*CARD 1 */}
+                        {/*CARD*/}
                         <div className="flex flex-col m-auto my-6 items-center justify-between text-center border border-gray-400 shadow">
                             <div>
                                 <img className="w-full" width="300px" height="300px" src="/analista-dp.png"/>
@@ -95,7 +95,7 @@ export default function Cursos() {
                                 <a href="https://api.whatsapp.com/send?phone=5579999839846" target="_blank" rel="noopener noreferrer"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
                             </div>
                         </div>
-                        {/*END CARD1 */}
+                        {/*END CARD*/}
                             
                         <div className="w-full sm:w-4/6 mx-auto mt-12 pl-2">
                             <h1 className="text-3xl text-gray-800 font-medium text-center">Vagas para outros cursos em breve...</h1>
