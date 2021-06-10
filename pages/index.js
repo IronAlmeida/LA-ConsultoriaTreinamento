@@ -1,5 +1,3 @@
-//import {verifyIdToken} from "../firebase/firebase-admin";
-//import nookies from "nookies";
 import Head from "next/head";
 import HeaderHome from "../Components/utils/headerHome";
 import Cabecalho from "../Components/utils/cabecalho";
@@ -123,18 +121,3 @@ export default function home() {
         </>
     );
 };
-
-/*
-export async function getServerSideProps(context){
-    try{
-        const cookies = nookies.get(context)
-        const token = await verifyIdToken(cookies.token);
-        const email = token.email;
-        return {
-            props: {session: email},
-          };
-    } catch(err){
-        context.res.statusCode = 302;
-        return { props: {} };
-    };
-};*/

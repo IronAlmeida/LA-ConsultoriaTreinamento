@@ -1,14 +1,15 @@
-import {verifyIdToken} from "../firebase/firebase-admin";
-import nookies from "nookies";
-import Head from "next/head";
+import { useAuth } from "../firebase/auth";
 import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
 import Widget from "../Components/utils/widget";
+import Head from "next/head";
 import Link from "next/link"
 import {AiOutlineCloudDownload, AiOutlinePlusCircle, AiOutlineMinusCircle} from "react-icons/ai"
 
-export default function arquivos({session}) {
+export default function arquivos() {
+
+    const { user } = useAuth();
 
     function ToggleAdmissao(){
         const element= document.getElementById('admissao');
@@ -30,14 +31,59 @@ export default function arquivos({session}) {
         element.classList.toggle('active');
     }
 
-    if (session){
+    function ToggleDCTFWeb(){
+        const element= document.getElementById('dctfweb');
+        element.classList.toggle('active');
+    }
+
+    function ToggleDemissao(){
+        const element= document.getElementById('demissao');
+        element.classList.toggle('active');
+    }
+
+    function ToggleDomestico(){
+        const element= document.getElementById('domestico');
+        element.classList.toggle('active');
+    }
+
+    function ToggleEsocial(){
+        const element= document.getElementById('esocial');
+        element.classList.toggle('active');
+    }
+
+    function ToggleFolha(){
+        const element= document.getElementById('folha');
+        element.classList.toggle('active');
+    }
+
+    function TogglePlanilhas(){
+        const element= document.getElementById('planilhas');
+        element.classList.toggle('active');
+    }
+
+    function ToggleRural(){
+        const element= document.getElementById('rural');
+        element.classList.toggle('active');
+    }
+
+    function ToggleSst(){
+        const element= document.getElementById('sst');
+        element.classList.toggle('active');
+    }
+
+    function ToggleCCT(){
+        const element= document.getElementById('cct');
+        element.classList.toggle('active');
+    }
+
+    if (user){
         return (
             <>
                 <Head>
                     <title>LA - Arquivos</title>
                 </Head>
     
-                <Cabecalho email={session} />
+                <Cabecalho email={user.email} />
                 
                 <div className="w-full bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600">
                     <div className="w-full sm:w-3/4 m-auto py-8 px-4">
@@ -106,6 +152,57 @@ export default function arquivos({session}) {
                                     </div>
                                 </a>
                                 
+                            </div>
+                        </div>
+
+                        {/* DOWNLOADS CCT-ACT*/}
+                        <div id="cct" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleCCT}>
+                                <h2 className="text-xl text-gray-900 font-medium">CCT - ACT</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">SEAC - SINDCESE (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1xxaCJGvVf9L1Ac5o1FwblUTxss3CUwZZ&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">SENALBA - SE (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=19ZREkK98fc3A3LHiivL40QWgYleeN5IL&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">SINDHOTRE (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1LsSfsYrt8pJQpYaIqUOJgmOfb316D1Xe&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Sindicato comércio - Socorro (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1nbuf_pa-FM7WF_qiqTaTZrh8WGjW9BfO&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">SINDPAN (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1_cKfCSFvnw63ujvYGBF6ywXafa0qgDx5&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
                             </div>
                         </div>
 
@@ -234,6 +331,166 @@ export default function arquivos({session}) {
                             </div>
                         </div>
 
+                        {/* DOWNLOADS DCTFWEB*/}
+                        <div id="dctfweb" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleDCTFWeb}>
+                                <h2 className="text-xl text-gray-900 font-medium">DCTFWeb</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">MANUAL DO SISTAD (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1pdY8_m4dXwARTFnq0FEawkN-Befbswp6&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                        </div>
+
+                        {/* DOWNLOADS DEMISSÃO*/}
+                        <div id="demissao" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleDemissao}>
+                                <h2 className="text-xl text-gray-900 font-medium">Demissão</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Como requerer seguro desemprego pelo app celular (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=12Vb5quPa2xZmCObU8c8cqH5XNaPpzr2C&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                        </div>
+
+                        {/* DOWNLOADS DOMÉSTICO*/}
+                        <div id="domestico" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleDomestico}>
+                                <h2 className="text-xl text-gray-900 font-medium">Doméstico</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Manual de orientação do Doméstico eSocial (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=190PwqBeZkLKuQmCGbVqGxORestJZO9GA&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Passo a Passo Doméstico - Benefício emergencial (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1zqZeDPHVr9hCimQpRJ9gongZTKLmgiq-&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                        </div>
+
+                        {/* DOWNLOADS ESOCIAL*/}
+                        <div id="esocial" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleEsocial}>
+                                <h2 className="text-xl text-gray-900 font-medium">eSocial</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Fase 2 - eSocial (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=13iEoWiOQAWGp6WXs-vVn0hKApv6x5Y1x&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                        </div>
+
+                        {/* DOWNLOADS FOLHA DE PAGAMENTO*/}
+                        <div id="folha" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleFolha}>
+                                <h2 className="text-xl text-gray-900 font-medium">Folha de pagamento</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Folha de Pagamento (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1jsZFhzXAWBHJ2EBIuImFjA3auZ6S2EQo&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                        </div>
+
+                        {/* DOWNLOADS PLANILHAS*/}
+                        <div id="planilhas" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={TogglePlanilhas}>
+                                <h2 className="text-xl text-gray-900 font-medium">Planilhas</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Modelo de controle de banco de horas (Excel)</h2>
+                                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQjthlV0RYMvocJn1SIpnkGsMPKSjiJxIJtdmMgF2BvME4CeSQWj3aFLRHAbHWXMg/pub?output=xlsx">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                        </div>
+
+                        {/* DOWNLOADS RURAL*/}
+                        <div id="rural" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleRural}>
+                                <h2 className="text-xl text-gray-900 font-medium">Rural</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Cartilha empregado rural (PDF)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1HBEyb8CtUvd1eHxWtVzFlZbjFF7h8ZAS&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                        </div>
+
+                        {/* DOWNLOADS SST*/}
+                        <div id="sst" className="mt-4">
+                            <div className="flex item-center justify-between w-full p-4 bg-gray-400 border-b-2 shadow-xl border-gray-800 cursor-pointer" onClick={ToggleSst}>
+                                <h2 className="text-xl text-gray-900 font-medium">SST</h2>
+                                <div>
+                                    <AiOutlinePlusCircle id="plus" className="text-4xl text-red-700" />
+                                    <AiOutlineMinusCircle id="less" className="text-4xl text-red-700 hidden" />
+                                </div>
+                            </div>
+                            <div className="flex-options">
+                                <h2 className="text-base sm:text-lg font-medium">Termo de entrega de EPI's (Word)</h2>
+                                <a href="https://drive.google.com/u/1/uc?id=1OvbCB9OBfxCqp5je1eslF-WGZXcfVnsO&export=download">
+                                    <div className="rounded-full bg-gray-200 p-2">
+                                        <AiOutlineCloudDownload className="text-4xl text-red-700" />
+                                    </div>
+                                </a>  
+                            </div>
+                        </div>
+
                     </div>
                 </section>
     
@@ -287,18 +544,4 @@ export default function arquivos({session}) {
     }
 
     
-};
-
-
-export async function getServerSideProps(context){
-    try{
-        const cookies = nookies.get(context)
-        const token = await verifyIdToken(cookies.token);
-        const email = token.email;
-        return {
-            props: {session: email},
-          };
-    } catch(err){
-        return { props: {} };
-    };
 };

@@ -12,6 +12,10 @@
     width: calc(100% - 500px);
 }
 
+.hide{
+    display: none;
+}
+
 .dark{
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -22,7 +26,7 @@
 
 /*GERAL*/
 .flex-options{
-    transition: 0.3s;
+    transition: 0.5s;
     height: 0px;
     @apply flex;
     @apply items-center;
@@ -96,6 +100,142 @@
 #covid.active #plus{
     @apply hidden;
 }
+
+/*DCTFWEB*/
+#dctfweb.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#dctfweb.active #less{
+    @apply block;
+}
+#dctfweb.active #plus{
+    @apply hidden;
+}
+
+/*DEMISSÃO*/
+#demissao.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#demissao.active #less{
+    @apply block;
+}
+#demissao.active #plus{
+    @apply hidden;
+}
+
+/*DOMÉSTICO*/
+#domestico.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#domestico.active #less{
+    @apply block;
+}
+#domestico.active #plus{
+    @apply hidden;
+}
+
+/*ESOCIAL*/
+#esocial.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#esocial.active #less{
+    @apply block;
+}
+#esocial.active #plus{
+    @apply hidden;
+}
+
+/*FOLHA DE PAGAMENTO*/
+#folha.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#folha.active #less{
+    @apply block;
+}
+#folha.active #plus{
+    @apply hidden;
+}
+
+/*PLANILHAS*/
+#planilhas.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#planilhas.active #less{
+    @apply block;
+}
+#planilhas.active #plus{
+    @apply hidden;
+}
+
+/*RURAL*/
+#rural.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#rural.active #less{
+    @apply block;
+}
+#rural.active #plus{
+    @apply hidden;
+}
+
+/* SST */
+#sst.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#sst.active #less{
+    @apply block;
+}
+#sst.active #plus{
+    @apply hidden;
+}
+
+/* SST */
+#cct.active .flex-options{
+    height: 69px;
+    @apply px-2;
+    @apply py-2;
+    @apply visible;
+}
+
+#cct.active #less{
+    @apply block;
+}
+#cct.active #plus{
+    @apply hidden;
+}
+
 
 @keyframes message {
   0%{
