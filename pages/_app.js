@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import "../styles/slider.css";
+import {AuthProvider} from "../firebase/auth";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
