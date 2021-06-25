@@ -23,7 +23,7 @@ export async function getServerSideProps(context) {
 
     const id = context.query.id;
     const num = (parseInt(id) - 1);
-    const res = await fetch('http://localhost:3000/api/cursos/all');
+    const res = await fetch('https://lourdesalmeidadp.com.br/api/cursos/all');
     const json = await res.json();
     const dp = await json.aulas.dp[num];
 
@@ -40,7 +40,6 @@ export async function getServerSideProps(context) {
         email
       }
     }
-    
   } catch{
     return {
       props: {user: null}
@@ -50,7 +49,7 @@ export async function getServerSideProps(context) {
 
 export default function post({aulas, user, email}) {
   firebaseClient();
-  const[acesso, setAcesso] = useState(false);
+  const[acesso, setAcesso] = useState(null);
   const[assistido, setAssistido] = useState(0);
   const[marcado, setMarcado] = useState({});
   const[ok, setOk] = useState();
@@ -164,7 +163,6 @@ export default function post({aulas, user, email}) {
     if(user){
       const db = firebase.firestore();
       const col = db.collection('users').doc(user);
-
       col.get().then(doc => {
         const result = doc.get('dp');
         setAcesso(result);
@@ -368,7 +366,6 @@ export default function post({aulas, user, email}) {
     )
   }
 
-  /*
   if(acesso === null){
     return (
       <>
@@ -380,7 +377,7 @@ export default function post({aulas, user, email}) {
         </div>
       </>
     )
-  }*/
+  }
 
   if(user === null){
     //Se usuário não estiver conectado, mostrar que é necessário fazer login
