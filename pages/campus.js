@@ -33,7 +33,7 @@ export async function getServerSideProps(context) {
 
 export default function campus({user, email}) {
     firebaseClient();
-    const[acesso, setAcesso] = useState(null);
+    const[acesso, setAcesso] = useState(false);
     const[nome, setNome] = useState('');
     const[assistido, setAssistido] = useState(0);
 
@@ -147,7 +147,7 @@ export default function campus({user, email}) {
             </>
         );
     } 
-    
+    /*
     if(acesso === null){
         return(
             <>
@@ -159,7 +159,7 @@ export default function campus({user, email}) {
                 </div>
             </>
         )
-    }  
+    }  */
 
     if(acesso === false){
         const router = useRouter()

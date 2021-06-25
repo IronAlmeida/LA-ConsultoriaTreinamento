@@ -50,7 +50,7 @@ export async function getServerSideProps(context) {
 
 export default function post({aulas, user, email}) {
   firebaseClient();
-  const[acesso, setAcesso] = useState(null);
+  const[acesso, setAcesso] = useState(false);
   const[assistido, setAssistido] = useState(0);
   const[marcado, setMarcado] = useState({});
   const[ok, setOk] = useState();
@@ -368,6 +368,7 @@ export default function post({aulas, user, email}) {
     )
   }
 
+  /*
   if(acesso === null){
     return (
       <>
@@ -379,7 +380,7 @@ export default function post({aulas, user, email}) {
         </div>
       </>
     )
-  }
+  }*/
 
   if(user === null){
     //Se usuário não estiver conectado, mostrar que é necessário fazer login
