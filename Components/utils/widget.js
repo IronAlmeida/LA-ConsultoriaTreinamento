@@ -122,7 +122,6 @@ export default function Widget() {
                                 </div>
                             </Form>
                         )}
-
                         </Formik>
                     </div>  
                 </div>
