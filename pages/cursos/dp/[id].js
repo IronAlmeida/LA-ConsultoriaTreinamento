@@ -131,13 +131,15 @@ export default function post({aulas, user, email}) {
   }
 
   function mark() {
-    const db = firebase.firestore();
+    setTimeout(function(){
+      const db = firebase.firestore();
 
-    const check = db.collection('users').doc(user);
+      const check = db.collection('users').doc(user);
       check.get().then(doc => {
         const info = doc.get('dp-aulas');
         setMarcado(info);
       })
+    }, 500)
   }
 
   const enviar = (values, {resetForm}) => {    
@@ -230,35 +232,47 @@ export default function post({aulas, user, email}) {
 
               <div className="flex items-center bg-gray-200 p-2 text-center">
                 {marcado[1] === true && (
-                  <input id="dp1" defaultChecked hidden type="checkbox" onClick={watched}/>
+                  <>
+                  <input id="dp1" hidden defaultChecked type="checkbox" onClick={watched}/>
+                  <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/1"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-400"/><p className="text-gray-400">01. Introdução ao DP</p></div></a></Link>
+                  </>
                 )}            
                 {marcado[1] === false && (
+                  <>
                   <input id="dp1" hidden type="checkbox" onClick={watched}/>
-                )}
-                <label className="caixas-aulas" htmlFor="dp1" onClick={mark}></label>
-                <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/1"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-400"/><p>01. Introdução ao DP</p></div></a></Link>
+                  <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/1"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-800"/><p className="text-gray-800">01. Introdução ao DP</p></div></a></Link>
+                  </>
+                )}  
               </div>
 
-              <div className="flex items-center bg-gray-200 p-2 text-center">           
+              <div className="flex items-center bg-gray-200 p-2 text-center">      
                 {marcado[2] === true && (
-                  <input id="dp2" defaultChecked hidden type="checkbox" onClick={watched}/>
+                  <>
+                    <input id="dp2" hidden defaultChecked type="checkbox" onClick={watched}/>
+                    <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/2"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-400"/><p className="text-gray-400">02. Teoria do DP</p></div></a></Link>
+                  </>
                 )}            
                 {marcado[2] === false && (
-                  <input id="dp2" hidden type="checkbox" onClick={watched}/>
+                  <>
+                    <input id="dp2" hidden type="checkbox" onClick={watched}/>
+                    <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/2"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-800"/><p className="text-gray-800">02. Teoria do DP</p></div></a></Link>
+                  </>
                 )}
-                <label className="caixas-aulas" htmlFor="dp2" onClick={mark}></label>
-                <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/2"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-400"/><p>02. Teoria do DP</p></div></a></Link>
               </div>
 
               <div className="flex items-center bg-gray-200 p-2 text-center">
                 {marcado[3] === true && (
-                  <input id="dp3" defaultChecked hidden type="checkbox" onClick={watched}/>
+                  <>
+                    <input id="dp3" hidden defaultChecked type="checkbox" onClick={watched}/>
+                    <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/3"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-400"/><p className="text-gray-400">03. Conceito do DP</p></div></a></Link>
+                  </>
                 )}            
                 {marcado[3] === false && (
-                  <input id="dp3" hidden type="checkbox" onClick={watched}/>
+                  <>
+                    <input id="dp3" hidden type="checkbox" onClick={watched}/>                      
+                    <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/3"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-800"/><p className="text-gray-800">03. Conceito do DP</p></div></a></Link>
+                  </>
                 )}
-                <label className="caixas-aulas" htmlFor="dp3" onClick={mark}></label>
-                <Link href="http://localhost:3000/cursos/dp/[id]" as="/cursos/dp/3"><a className="ml-2" onClick={mark}><div className="flex items-center"><BsPlayFill className="mr-1 text-4xl text-gray-400"/><p>03. Conceito do DP</p></div></a></Link>
               </div>
               {/*FIM DO MODULO */}
             </div>

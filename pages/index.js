@@ -12,11 +12,7 @@ import { useAuth } from "../firebase/auth";
 
 
 export default function home() {
-
-    
-
     const { user } = useAuth();
-
     let logado = false;
     if (user){
         logado = true;

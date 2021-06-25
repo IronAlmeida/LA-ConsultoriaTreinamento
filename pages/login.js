@@ -120,7 +120,7 @@ const Header = () => {
     const login = (values, actions) => {
       firebase.auth().signInWithEmailAndPassword(values.email, values.senha)
       .then(result => {
-        router.replace('/');
+        router.replace('/campus');
       })
       .catch(error => {
         setErro(true)
@@ -268,7 +268,7 @@ const Header = () => {
               email: values.email, nome: values.nome
           })
            
-         router.replace("/");
+         router.replace("/campus");
       })
       .catch(error => {
           setErro(true)
@@ -360,7 +360,7 @@ const Header = () => {
           {ativar === "cadastro" && <Cadastro />}
         </div>
         <div className="max-w-lg mx-auto text-center mt-6 sm:mt-12">
-          <footer className="text-gray-800 font-normal">Copyright © LA - Consultoria e Treinamento 2021</footer>
+          <footer className="text-gray-500 font-normal">Copyright © LA - Consultoria e Treinamento 2021 | <Link href="politica-de-privacidade"><a className="text-black">Política de Privacidade</a></Link></footer>
         </div>
       </div>
     </div>
@@ -374,18 +374,28 @@ export default function Index(){
   const router = useRouter();
 
   if (user){
-    router.replace('/');
-  }
-
-  return(
-    <div>
-      <Head>
-        <title>LA - Login</title>
-      </Head>
-      <div className="flex">
-        <Background />
-        <Login />
+    router.replace('/campus');
+    return (
+      <>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:p-4 animate-pulse">
+        <div className="flex flex-col items-center">
+            <img src="/logo-colorida.png" width="800px" height="306px" />
+            <p className="mt-4 text-xl text-black">Carregando...</p>
+        </div>
+        </div>
+      </>
+    );
+  } else{
+    return(
+      <div>
+        <Head>
+          <title>LA - Login</title>
+        </Head>
+        <div className="flex">
+          <Background />
+          <Login />
+        </div>
       </div>
-    </div>
-  );
+    );
+  } 
 };
