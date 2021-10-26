@@ -9,12 +9,13 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.4",
+    "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "firebase": "^8.4.2",
     "firebase-admin": "^9.6.0",
     "formik": "^2.2.6",
     "keen-slider": "^5.4.1",
-    "next": "^10.2.2",
+    "next": "^12.0.0",
     "next-images": "^1.7.0",
     "nookies": "^2.5.2",
     "react": "17.0.2",
@@ -30,7 +31,7 @@
     "type": "git",
     "url": "git+https://github.com/IronDS/LA-ConsultoriaTreinamento.git"
   },
-  "author": "",
+  "author": "Iron Santos",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/IronDS/LA-ConsultoriaTreinamento/issues"
