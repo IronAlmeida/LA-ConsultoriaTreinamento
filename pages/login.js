@@ -350,6 +350,9 @@ const Header = () => {
     );
   }
 
+  let data = new Date();
+  let ano = data.getFullYear(); 
+
   return (
     <div className="w-full width-700 overflow-y-auto h-screen">
       <div className="flex p-4 sm:p-8 relative min-h-screen flex-col justify-between">
@@ -360,7 +363,7 @@ const Header = () => {
           {ativar === "cadastro" && <Cadastro />}
         </div>
         <div className="max-w-lg mx-auto text-center mt-6 sm:mt-12">
-          <footer className="text-gray-500 font-normal">Copyright © LA - Consultoria e Treinamento 2021 | <Link href="politica-de-privacidade"><a className="text-black">Política de Privacidade</a></Link></footer>
+          <footer className="text-gray-500 font-normal">Copyright © LA - Consultoria e Treinamento {ano} | <Link href="politica-de-privacidade"><a className="text-black">Política de Privacidade</a></Link></footer>
         </div>
       </div>
     </div>
