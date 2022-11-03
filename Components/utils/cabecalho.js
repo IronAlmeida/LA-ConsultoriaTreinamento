@@ -19,7 +19,7 @@ export default function Cabecalho({email}) {
         <>
             <section className="w-full bg-slate-900 px-6 py-2">
                 <div className="flex sm:w-3/4 justify-between m-auto items-center">
-                    <Link href="/" className="mt-2"><Image src="/LA-logo.webp" alt="Logo da LA" width={80} height={56} /></Link>
+                    <Link href="/" className="mt-2"><Image src="/LA-Logo.webp" alt="Logo da LA" width={80} height={56} /></Link>
                     
                     <nav id="nav" className="flex items-center">
                         <ul id="menu" className="lg:flex items-center gap-2 mr-4">
