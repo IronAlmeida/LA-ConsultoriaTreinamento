@@ -32,12 +32,12 @@ export default function Bpo() {
                </div>
             </div>
             
-            <section className="w-full p-4 bg-gradient-to-b from-gray-300 to-gray-200">
+            <section className="w-full p-4 bg-gray-300">
                 <div className="w-full sm:w-3/4 m-auto">
                     <h2 className="text-gray-900 text-2xl font-medium text-center my-4">O que é BPO?</h2>
 
                     <div className="flex flex-col items-center">
-                        <GiCardExchange className="text-center text-9xl text-red-700"/>
+                        <GiCardExchange className="text-center text-9xl text-rose-700"/>
                     </div>
 
                     <p className="text-gray-900 text-xl text-center my-4"><em>Business Process Outsourcing</em>  é a terceirização de processos de negócios. Esse tipo de terceirização, representa a transferência do Departamento Pessoal para uma empresa especializada na área, com as atividades que envolvem a folha de pagamento, eSocial, GFIP, RAIS, DIRF, entre outras.
@@ -47,36 +47,36 @@ export default function Bpo() {
                 </div>
             </section>
 
-            <section className="bg-gray-200 w-full p-4">
+            <section className="bg-gray-300 w-full p-4">
                 <div className="w-full sm:w-3/4 m-auto">
                     <h2 className="text-gray-900 text-2xl sm:text-center font-medium my-8">Porque terceirizar os processos de Departamento Pessoal?</h2>
                     
                     <div className="flex items-center mt-4">
-                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Padronização do Processos (eficiência operacional)</span>
+                        <span className="text-xl text-rose-700">►</span><span className="text-gray-900 text-xl ml-4">Padronização do Processos (eficiência operacional)</span>
                     </div>
                     
                     <div className="flex items-center mt-4">
-                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Baixo investimento comparado a mão de obra interna e suas qualificações</span> 
+                        <span className="text-xl text-rose-700">►</span><span className="text-gray-900 text-xl ml-4">Baixo investimento comparado a mão de obra interna e suas qualificações</span> 
                     </div>
 
                     <div className="flex items-center mt-4">
-                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Segurança de dados</span>
+                        <span className="text-xl text-rose-700">►</span><span className="text-gray-900 text-xl ml-4">Segurança de dados</span>
                     </div>
 
                     <div className="flex items-center mt-4">
-                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Atualização e capacitação constante.</span>
+                        <span className="text-xl text-rose-700">►</span><span className="text-gray-900 text-xl ml-4">Atualização e capacitação constante.</span>
                     </div>
 
                     <div className="flex items-center mt-4">
-                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Baixa rotatividade e absenteísmo. </span>
+                        <span className="text-xl text-rose-700">►</span><span className="text-gray-900 text-xl ml-4">Baixa rotatividade e absenteísmo. </span>
                     </div>
 
                     <div className="flex items-center mt-4">
-                    <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Serviços executados por profissionais especificamente treinados.</span>
+                    <span className="text-xl text-rose-700">►</span><span className="text-gray-900 text-xl ml-4">Serviços executados por profissionais especificamente treinados.</span>
                     </div>
 
                     <div className="flex items-center mt-4">
-                        <span className="text-xl text-red-700">►</span><span className="text-gray-900 text-xl ml-4">Prazo de 48H para execução de atividades.</span>
+                        <span className="text-xl text-rose-700">►</span><span className="text-gray-900 text-xl ml-4">Prazo de 48H para execução de atividades.</span>
                     </div>
                 </div>
             </section>

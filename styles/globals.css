@@ -372,7 +372,7 @@
 @media (max-width: 1023px){
     #menu{
         display: block;
-        top: 92px;
+        top: 81px;
         transition: 0.6s;
         height: 0;
         @apply absolute;

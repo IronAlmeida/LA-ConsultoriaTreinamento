@@ -175,7 +175,7 @@ export default function SuperForm({titulo, nomeBtn}) {
     }
 
     return (
-        <section className="relative bg-gray-800 w-full p-4">
+        <section className="relative bg-gray-300 w-full p-4">
             {ok && (
                 <div className="w-full dark h-full p-8 absolute top-0 left-0">
                     <div className="w-3/4 sm:w-1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-600 text-center p-4 rounded-xl animation-message">
@@ -187,7 +187,7 @@ export default function SuperForm({titulo, nomeBtn}) {
                 </div>
             )}
             <div className="w-full sm:w-3/4 m-auto">
-            <div className="w-full p-8 bg-gray-700">
+            <div className="w-full p-8 shadow-lg rounded-2xl bg-slate-600">
                 <Formik 
                 initialValues={{
                     nome: '',
@@ -215,9 +215,9 @@ export default function SuperForm({titulo, nomeBtn}) {
                         <h1 className="text-white text-4xl font-semibold text-center">{titulo}</h1>
                     </div>
                     
-                    <Campos type="text" name="nome" placeholder="Nome completo" label="Nome ou Razão Social" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-700 transition duration-500 px-2 pb-3 text-lg" />
+                    <Campos type="text" name="nome" placeholder="Nome completo" label="Nome ou Razão Social" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-rose-700 transition duration-500 px-2 pb-3 text-lg" />
 
-                    <Campos type="email" name="email" placeholder="Seu melhor e-mail" label="E-mail" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-700 transition duration-500 px-2 pb-3 text-lg" />
+                    <Campos type="email" name="email" placeholder="Seu melhor e-mail" label="E-mail" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-rose-700 transition duration-500 px-2 pb-3 text-lg" />
 
                     <div className="xl:w-3/4 m-auto mb-6 pt-3">
                         <p className="text-white text-base font-semibold mb-2"><span className="text-red-700 mr-2">*</span>Tipo de telefone para contato:</p>
@@ -229,16 +229,16 @@ export default function SuperForm({titulo, nomeBtn}) {
                     </div>
 
                     {valueTel === '1' && (
-                        <Campos type="text" autoComplete="no" id="fixo" name="telefone" placeholder="Telefone com DDD" label="Telefone Fixo" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-700 transition duration-500 px-2 pb-3 text-lg" />
+                        <Campos type="text" autoComplete="no" id="fixo" name="telefone" placeholder="Telefone com DDD" label="Telefone Fixo" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-rose-700 transition duration-500 px-2 pb-3 text-lg" />
                     )}
 
                     {valueTel === '2' && 
-                        <Campos type="text" autoComplete="no" id="celular" name="telefone" placeholder="Telefone com DDD" label="Telefone Celular" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-red-700 transition duration-500 px-2 pb-3 text-lg" />
+                        <Campos type="text" autoComplete="no" id="celular" name="telefone" placeholder="Telefone com DDD" label="Telefone Celular" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-rose-700 transition duration-500 px-2 pb-3 text-lg" />
                     }
                     
 
                     <div className="xl:w-3/4 m-auto mb-6 pt-3">
-                        <p className="text-white text-base font-semibold mb-2"><span className="text-red-700 mr-2">*</span>Quais serviços você se interessou? (Pode selecionar mais de uma opção)</p>
+                        <p className="text-white text-base font-semibold mb-2"><span className="text-rose-700 mr-2">*</span>Quais serviços você se interessou? (Pode selecionar mais de uma opção)</p>
                         <div className="flex flex-col flex-wrap">
                             <label className="text-white text-base font-semibold mr-4"><Field id="box1" className="mr-1 boxes" type="checkbox" name="orcamento" value="Auditoria" onClick={checkBox} />Auditoria</label>
                             <label className="text-white text-base font-semibold mr-4"><Field id="box2" className="mr-1 boxes" type="checkbox" name="orcamento" value="Padronização do DP" onClick={checkBox} />Padronização do DP</label>
@@ -337,7 +337,7 @@ export default function SuperForm({titulo, nomeBtn}) {
 
                     
                     <div className="w-full xl:w-3/4 m-auto">
-                        <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit" onClick={validarCheckbox, validarCheckbox2}>{nomeBtn}</button>
+                        <button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit" onClick={validarCheckbox, validarCheckbox2}>{nomeBtn}</button>
                     </div>
                     
                 </Form>

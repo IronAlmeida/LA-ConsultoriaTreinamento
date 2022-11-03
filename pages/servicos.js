@@ -27,7 +27,7 @@ export default function suporte() {
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={user.email} />}
             
-            <div className="w-full bg-gradient-to-l from-gray-400 via-gray-500 to-gray-400">
+            <div className="w-full bg-gradient-to-l from-slate-400 via-slate-600 to-slate-400">
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                     <h2 className="text-4xl font-light text-white text-center">Serviços</h2>
                </div>
@@ -38,7 +38,7 @@ export default function suporte() {
 
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto  justify-between xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
                         <div className="p-4">
-                            <svg width="72px" height="72px" viewBox="0 0 496 496" className="fill-current text-red-700">
+                            <svg width="72px" height="72px" viewBox="0 0 496 496" className="fill-current text-rose-700">
                                 <path d="m496 414.207031v-60.421875l-23.144531-5.914062c-.160157-.390625-.320313-.78125-.488281-1.167969l12.183593-20.535156-42.726562-42.726563-20.535157 12.183594c-.394531-.167969-.785156-.328125-1.167968-.488281l-5.914063-23.136719h-60.421875l-5.914062 23.144531c-.390625.160157-.78125.320313-1.167969.488281l-20.535156-12.183593-42.726563 42.726562 12.183594 20.535157c-.167969.394531-.328125.785156-.488281 1.167968l-23.136719 5.914063v60.421875l23.144531 5.914062c.160157.390625.320313.78125.488281 1.167969l-12.183593 20.535156 42.726562 42.726563 20.535157-12.183594c.394531.167969.785156.328125 1.167968.488281l5.914063 23.136719h60.421875l5.914062-23.144531c.390625-.160157.78125-.320313 1.167969-.488281l20.535156 12.183593 42.726563-42.726562-12.183594-20.535157c.167969-.394531.328125-.785156.488281-1.167968zm-31.542969 25.097657-25.152343 25.152343-17.097657-10.144531-3.847656 1.839844c-2.480469 1.175781-5.015625 2.238281-7.625 3.160156l-4.03125 1.429688-4.910156 19.257812h-35.578125l-4.910156-19.257812-4.03125-1.429688c-2.609376-.914062-5.152344-1.976562-7.625-3.160156l-3.847657-1.839844-17.097656 10.144531-25.152344-25.152343 10.144531-17.097657-1.839843-3.847656c-1.175781-2.480469-2.238281-5.015625-3.160157-7.625l-1.429687-4.03125-19.265625-4.910156v-35.578125l19.257812-4.910156 1.429688-4.03125c.914062-2.609376 1.976562-5.152344 3.160156-7.625l1.839844-3.847657-10.144531-17.097656 25.152343-25.152344 17.097657 10.144531 3.847656-1.839843c2.480469-1.175781 5.015625-2.238281 7.625-3.160157l4.03125-1.429687 4.910156-19.265625h35.578125l4.910156 19.257812 4.03125 1.429688c2.609376.914062 5.152344 1.976562 7.625 3.160156l3.847657 1.839844 17.097656-10.144531 25.152344 25.152343-10.144531 17.097657 1.839843 3.847656c1.175781 2.480469 2.238281 5.015625 3.160157 7.625l1.429687 4.03125 19.265625 4.910156v35.578125l-19.257812 4.910156-1.429688 4.03125c-.914062 2.609376-1.976562 5.152344-3.160156 7.625l-1.839844 3.847657zm0 0"/>
 
                                 <path d="m384 320c-35.289062 0-64 28.710938-64 64s28.710938 64 64 64 64-28.710938 64-64-28.710938-64-64-64zm0 112c-26.472656 0-48-21.527344-48-48s21.527344-48 48-48 48 21.527344 48 48-21.527344 48-48 48zm0 0"/>
@@ -77,13 +77,13 @@ export default function suporte() {
                             <p className="text-gray-900 text-xl">Outsourcing de folha de pagamento, os serviços serão executados por profissionais especificamente treinados.</p>
                         </div>
                         <div className="w-full">
-                            <Link href="/bpo"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba mais</button></a></Link>
+                            <Link href="/bpo"><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Saiba mais</button></Link>
                         </div>
                     </div>
 
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto  justify-between xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
                         <div className="p-4">
-                            <svg width="72" height="72" x="0" y="0" viewBox="0 0 60 58" class="fill-current text-red-700">
+                            <svg width="72" height="72" x="0" y="0" viewBox="0 0 60 58" class="fill-current text-rose-700">
                                 <path d="m30 26c-.146 0-.291-.032-.426-.095l-17-8c-.35-.165-.574-.518-.574-.905s.224-.74.574-.905l17-8c.27-.127.582-.127.852 0l17 8c.35.165.574.518.574.905s-.224.74-.574.905l-17 8c-.135.063-.28.095-.426.095zm-14.651-9 14.651 6.895 14.651-6.895-14.651-6.895z" />
 
                                 <path d="m30 34c-.153 0-.307-.035-.447-.105l-12-6c-.339-.17-.553-.516-.553-.895v-7.647c0-.342.175-.661.464-.844.289-.184.652-.205.961-.061l11.575 5.447 11.574-5.447c.31-.145.673-.123.961.061.29.183.465.502.465.844v7.647c0 .379-.214.725-.553.895l-12 6c-.14.07-.294.105-.447.105zm-11-7.618 11 5.5 11-5.5v-5.453l-10.574 4.976c-.27.127-.582.127-.852 0l-10.574-4.976z" />
@@ -120,13 +120,13 @@ export default function suporte() {
                             <p className="text-gray-900 text-xl">Cursos online para quem quer ingressar no Departamento Pessoal e para aqueles que tem experiência mas que precisam se atualizar.</p>
                         </div>
                         <div className="w-full">
-                            <Link href="/cursos"><a><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Ver cursos</button></a></Link>
+                            <Link href="/cursos"><button className="w-full p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-center text-2xl">Ver cursos</button></Link>
                         </div>
                     </div>
 
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
                         <div className="p-4">
-                            <HiOutlineDocumentSearch className="text-red-700 text-7xl" />
+                            <HiOutlineDocumentSearch className="text-rose-700 text-7xl" />
                         </div>
                         <div className="p-4 text-center">
                             <h2 className="text-2xl text-gray-900 font-medium">Auditoria Folha de Pagamento/DP</h2>
@@ -138,7 +138,7 @@ export default function suporte() {
 
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
                         <div className="p-4">
-                            <svg width="72px" height="72px" x="0" y="0" viewBox="0 0 64 64" className="fill-current text-red-700">
+                            <svg width="72px" height="72px" x="0" y="0" viewBox="0 0 64 64" className="fill-current text-rose-700">
                                 <path d="M60,53H59V18a3,3,0,0,0-3-3H50V14a1,1,0,0,0-1-1H47.406a13.889,13.889,0,0,0-1.1-2.649l1.128-1.129a1,1,0,0,0,0-1.414L43.192,3.565a1.029,1.029,0,0,0-1.414,0L40.649,4.694A13.866,13.866,0,0,0,38,3.594V2a1,1,0,0,0-1-1H31a1,1,0,0,0-1,1V3.594a13.866,13.866,0,0,0-2.649,1.1L26.222,3.565a1.029,1.029,0,0,0-1.414,0L20.565,7.808a1,1,0,0,0,0,1.414l1.128,1.129A13.889,13.889,0,0,0,20.594,13H19a1,1,0,0,0-1,1v1H8a3,3,0,0,0-3,3V53H4a3,3,0,0,0-3,3v2a5.006,5.006,0,0,0,5,5H58a5.006,5.006,0,0,0,5-5V56A3,3,0,0,0,60,53ZM20,15h1.361a1,1,0,0,0,.973-.77,11.965,11.965,0,0,1,1.46-3.518,1,1,0,0,0-.144-1.233l-.963-.964,2.828-2.829.964.965a1,1,0,0,0,1.233.144,11.9,11.9,0,0,1,3.518-1.46A1,1,0,0,0,32,4.362V3h4V4.362a1,1,0,0,0,.77.973A11.9,11.9,0,0,1,40.288,6.8a1,1,0,0,0,1.233-.144l.964-.965,2.828,2.829-.963.964a1,1,0,0,0-.144,1.233,11.965,11.965,0,0,1,1.46,3.518,1,1,0,0,0,.973.77H48v4H46.639a1,1,0,0,0-.973.77,11.965,11.965,0,0,1-1.46,3.518,1,1,0,0,0,.144,1.233l.963.964-2.828,2.829-.964-.965a1,1,0,0,0-1.233-.144,12.032,12.032,0,0,1-2.262,1.087,11.684,11.684,0,0,0-.691-1.385l.829-.829a10,10,0,1,0-13.887-6.761A.992.992,0,0,0,24,20v1.387c-.342.087-.667.215-1,.331a11.891,11.891,0,0,1-.668-1.949A1,1,0,0,0,21.361,19H20ZM35.354,39.939l.838.839-1.414,1.414-.839-.839a1,1,0,0,0-1.274-.117,9.891,9.891,0,0,1-3.846,1.59A1,1,0,0,0,28,43.81V45H26V43.81a1,1,0,0,0-.819-.984,9.891,9.891,0,0,1-3.846-1.59,1,1,0,0,0-1.274.117l-.839.839-1.414-1.414.838-.839a1,1,0,0,0,.117-1.274,9.892,9.892,0,0,1-1.589-3.846A1,1,0,0,0,16.19,34H15V32h1.19a1,1,0,0,0,.984-.819,9.892,9.892,0,0,1,1.589-3.846,1,1,0,0,0-.117-1.274l-.838-.839,1.414-1.414.84.839a1,1,0,0,0,1.274.116,9.857,9.857,0,0,1,3.845-1.589A1,1,0,0,0,26,22.19V21h2v1.19a1,1,0,0,0,.819.984,9.857,9.857,0,0,1,3.845,1.589,1,1,0,0,0,1.274-.116l.84-.839,1.414,1.414-.838.839a1,1,0,0,0-.117,1.274,9.892,9.892,0,0,1,1.589,3.846A1,1,0,0,0,37.81,32H39v2H37.81a1,1,0,0,0-.984.819,9.892,9.892,0,0,1-1.589,3.846A1,1,0,0,0,35.354,39.939ZM26,17a8,8,0,1,1,11.811,7.013l-2.326-2.326a1,1,0,0,0-1.414,0l-.978.979A11.8,11.8,0,0,0,30,21.387V20a1,1,0,0,0-1-1H26.253A7.98,7.98,0,0,1,26,17ZM20.6,21a13.816,13.816,0,0,0,.571,1.536c-.085.047-.176.079-.259.129l-.978-.979a1,1,0,0,0-1.414,0l-2.828,2.828a1,1,0,0,0,0,1.414l.978.978A11.8,11.8,0,0,0,15.387,30H14a1,1,0,0,0-1,1v4a1,1,0,0,0,1,1h1.387a11.8,11.8,0,0,0,1.278,3.093l-.978.978a1,1,0,0,0,0,1.414l2.828,2.828a1.029,1.029,0,0,0,1.414,0l.978-.978A11.834,11.834,0,0,0,24,44.613V46a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V44.613a11.834,11.834,0,0,0,3.093-1.278l.978.978a1,1,0,0,0,1.414,0l2.828-2.828a1,1,0,0,0,0-1.414l-.978-.978A11.8,11.8,0,0,0,38.613,36H40a1,1,0,0,0,1-1V31a1,1,0,0,0-1-1h-.84a13.864,13.864,0,0,0,1.489-.694l1.129,1.129a1,1,0,0,0,1.414,0l4.243-4.243a1,1,0,0,0,0-1.414l-1.128-1.129A13.889,13.889,0,0,0,47.406,21H53V49H11V21H20.6ZM7,18a1,1,0,0,1,1-1H18v2H10a1,1,0,0,0-1,1V50a1,1,0,0,0,1,1H54a1,1,0,0,0,1-1V20a1,1,0,0,0-1-1H50V17h6a1,1,0,0,1,1,1V53H7ZM27,55H37v1a1,1,0,0,1-1,1H28a1,1,0,0,1-1-1Zm34,3a3,3,0,0,1-3,3H6a3,3,0,0,1-3-3V56a1,1,0,0,1,1-1H25v1a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V55H60a1,1,0,0,1,1,1Z" />
 
                                 <path xmlns="http://www.w3.org/2000/svg" d="M27,25a8,8,0,1,0,8,8A8.009,8.009,0,0,0,27,25Zm5,4.69A5.971,5.971,0,0,1,32.65,31H32Zm-.9-1.063a11.9,11.9,0,0,1-3.384-1.422,1,1,0,0,0-1.233.144l-.964.965-.844-.843A5.978,5.978,0,0,1,31.1,28.627ZM27,39a5.991,5.991,0,0,1-4.046-10.418l1.854,1.853a1,1,0,0,0,1.414,0l1.129-1.129A13.866,13.866,0,0,0,30,30.406V32a1,1,0,0,0,1,1h2A6.006,6.006,0,0,1,27,39Z"/>
@@ -148,13 +148,13 @@ export default function suporte() {
                             <h2 className="text-2xl text-gray-900 font-medium">Padronização do DP</h2>
                         </div>
                         <div className="p-4 text-center">
-                            <p className="text-gray-900 text-xl"><span className="text-2xl text-red-700">•</span> Levantamento de diagnóstico; <br/><span className="text-2xl text-red-700">•</span> Checklist / Mapear processos organizando o Departamento Pessoal.</p>
+                            <p className="text-gray-900 text-xl"><span className="text-2xl text-rose-700">•</span> Levantamento de diagnóstico; <br/><span className="text-2xl text-rose-700">•</span> Checklist / Mapear processos organizando o Departamento Pessoal.</p>
                         </div>
                     </div>
 
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto  justify-between xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
                         <div className="p-4">
-                            <BiChat className="text-red-700 text-7xl" />
+                            <BiChat className="text-rose-700 text-7xl" />
                         </div>
                         <div className="p-4 text-center">
                             <h2 className="text-2xl text-gray-900 font-medium">Consultoria / Assesoria</h2>
@@ -166,7 +166,7 @@ export default function suporte() {
 
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto  justify-between xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
                         <div className="p-4">
-                            <svg height="72px" viewBox="0 0 64 64" width="72px" className="fill-current text-red-700">
+                            <svg height="72px" viewBox="0 0 64 64" width="72px" className="fill-current text-rose-700">
                                 <path d="m11 55h18c.553 0 1-.448 1-1v-4c0-3.401-2.44-6.241-5.66-6.868.576-.605 1.025-1.329 1.31-2.132h3.35c.553 0 1-.448 1-1v-4c0-.552-.447-1-1-1h-1c0-3.007-1.67-5.63-4.129-6.996.084-.327.129-.664.129-1.004 0-2.206-1.794-4-4-4s-4 1.794-4 4c0 .34.045.677.13 1.004-2.46 1.366-4.13 3.988-4.13 6.996v.184c-1.161.414-2 1.514-2 2.816 0 1.654 1.346 3 3 3h1.35c.285.803.734 1.527 1.31 2.132-3.22.627-5.66 3.467-5.66 6.868v4c0 .552.447 1 1 1zm9-10h3l-1.108 1.478-1.185-1.185c-.195-.195-.451-.293-.707-.293s-.512.098-.707.293l-1.185 1.185-1.108-1.478zm0-2c-2.206 0-4-1.794-4-4v-2h3c1.634 0 3.087-.788 4-2.003.283.377.624.707 1 .991v3.012h-2v2h1.444c-.694 1.19-1.97 2-3.444 2zm8-4h-2v-2h2zm-10-12c0-1.103.897-2 2-2s2 .897 2 2c0 .086-.022.17-.033.255-.631-.161-1.287-.255-1.967-.255s-1.336.094-1.967.255c-.011-.085-.033-.168-.033-.255zm2 2c3.251 0 5.906 2.599 5.998 5.828-1.163-.413-1.998-1.525-1.998-2.828 0-.552-.447-1-1-1s-1 .448-1 1c0 1.654-1.346 3-3 3h-5c0-3.309 2.691-6 6-6zm-7 10c-.552 0-1-.449-1-1s.448-1 1-1h1v2zm-1 11c0-1.993 1.18-3.703 2.871-4.506l2.329 3.106c.174.232.439.377.729.397.301.019.573-.085.778-.291l1.293-1.292 1.293 1.293c.188.189.442.293.707.293.023 0 .047-.001.071-.002.289-.021.555-.166.729-.397l2.329-3.106c1.691.802 2.871 2.512 2.871 4.505v3h-2v-4h-2v4h-8v-4h-2v4h-2z"/>
 
                                 <path d="m38 37h-6v2h5v18h-34v-18h5v-2h-6c-.553 0-1 .448-1 1v20c0 .552.447 1 1 1h15v2h-4v2h14v-2h-4v-2h15c.553 0 1-.448 1-1v-20c0-.552-.447-1-1-1zm-17 24h-2v-2h2z"/>
@@ -188,7 +188,7 @@ export default function suporte() {
 
                     <div className="flex flex-col w-full lg:w-3/5 lg:mx-auto  justify-between xl:w-2/5 xl:mx-0 mt-10 items-center rounded-xl border-2 border-gray-400 shadow-xl">
                         <div className="p-4">
-                            <BiSupport className="text-red-700 text-7xl" />
+                            <BiSupport className="text-rose-700 text-7xl" />
                         </div>
                         <div className="p-4 text-center">
                             <h2 className="text-2xl text-gray-900 font-medium">Suporte LA</h2>

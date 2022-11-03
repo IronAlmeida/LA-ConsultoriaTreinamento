@@ -23,26 +23,26 @@ export default function sobre() {
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={user.email} />}
         
-            <div className="w-full bg-gradient-to-l from-gray-400 via-gray-500 to-gray-400">
+            <div className="w-full bg-gradient-to-l from-slate-700 via-slate-800 to-slate-700">
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                     <h2 className="text-4xl font-light text-white text-center">Sobre</h2>
                </div>
             </div>
 
-            <section className="w-full p-4 bg-gradient-to-r from-gray-300 to-gray-500">
+            <section className="w-full p-4 bg-gray-300">
                 <div className="w-full sm:w-3/4 m-auto">
-                    <h2 className="text-2xl text-center sm:text-4xl font-medium text-gray-900 mb-4">Quem é Lourdes Almeida?</h2>
+                    <h2 className="text-2xl text-center sm:text-4xl font-medium my-4 text-slate-900">Quem é Lourdes Almeida?</h2>
 
-                    <div className="flex flex-wrap justify-between sm:p-4">
-                        <div className=" shadow-2xl px-2 pt-2 mb-4 mx-auto">
-                            <img className="mt-20" src="lourdes-sobre.webp" width="323px" height="402px" />
+                    <div className="flex flex-wrap sm:pb-4">
+                        <div className="px-2 pt-2 mx-auto">
+                            <img className="mt-6" src="lourdes-sobre.webp" width="323px" height="402px" />
                         </div>
 
-                        <div className="w-full xl:w-3/5 bg-gradient-to-tl from-gray-700 via-gray-800 to-gray-900 rounded-xl">
-                            <p className="text-2xl text-white p-4 text-center">
-                            Técnica Contábil CRC/SE; Gestora de RH; MBA Legislação Trabalhista e  Direito Previdenciário; Especialista em eSocial, DCTFWEB e Departamento Pessoal; Consultora Trabalhista; Professora e Palestrante; Vivência profissional de 19 anos na área trabalhista.<br/><br/>
-                            Palestrante do 1º Congresso Nacional e eSocial, realizado em São Paulo, no dia 10 de dezembro de 2018.<br/><br/>
-                            Palestrante do 1º Congresso Nacional On-line de Departamento Pessoal e eSocial, no período de 10 a 15 de outubro de 2020.
+                        <div className="w-full bg-slate-700 rounded-xl">
+                            <p className="text-2xl text-white p-4 text-left">
+                            Técnica Contábil CRC/SE e Gestora de RH;<br/> MBA Legislação Trabalhista e Direito Previdenciário;<br/>  Especialista em eSocial, DCTFWEB e Departamento Pessoal;<br/> Consultora Trabalhista, Professora e Palestrante;<br/> Vivência profissional de 19 anos na área trabalhista.<br/><br/>
+                            Palestrante do 1º Congresso Nacional e eSocial, realizado em São Paulo.<br/><br/>
+                            Palestrante do 1º Congresso Nacional On-line de Departamento Pessoal e eSocial.
                             </p>
                         </div>
                     </div>

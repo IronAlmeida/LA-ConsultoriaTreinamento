@@ -27,7 +27,7 @@ export default function Cursos() {
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho email={user.email} />}
             
-            <div className="w-full bg-gray-800">
+            <div className="w-full bg-slate-600">
                 <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                         <h2 className="text-4xl font-light text-white text-center">Cursos</h2>
                 </div>
@@ -35,54 +35,54 @@ export default function Cursos() {
 
             <section className="w-full p-4 bg-gray-300">
                 <div className="w-full sm:w-3/4 mx-auto">
-                    <p className="text-2xl sm:text-3xl text-gray-900"><HiOutlineDesktopComputer className="inline-block text-red-700"/> Todos os cursos</p>
+                    <p className="text-2xl sm:text-3xl text-slate-900"><HiOutlineDesktopComputer className="inline-block text-rose-700"/> Todos os cursos</p>
                     <div className="bg-gray-200 rounded-xl shadow-xl py-4 px-2 sm:px-6 flex flex-wrap justify-between items-center my-7">
 
-                        <div className="flex">
+                        <div className="flex w-80">
                             <div className="my-4 p-2">
-                                <h1 className="text-gray-800 text-lg font-medium">Analista Departamento Pessoal</h1>
+                                <h1 className="text-gray-800 text-lg font-medium">- Analista Departamento Pessoal</h1>
                             </div>
                         </div>
 
-                        <div className="flex">
+                        <div className="flex w-80">
                             <div className="my-4 p-2">
-                                <h1 className="text-gray-800 text-lg font-medium">eSocial e DCTFWeb</h1>
+                                <h1 className="text-gray-800 text-lg font-medium">- eSocial e DCTFWeb</h1>
                             </div>
                         </div>
 
-                        <div className="flex">
+                        <div className="flex w-80">
                             <div className="my-4 p-2">
-                                <h1 className="text-gray-800 text-lg font-medium">Folha de Pagamento e Encargos</h1>
+                                <h1 className="text-gray-800 text-lg font-medium">- Folha de Pagamento e Encargos</h1>
                             </div>
                         </div>
 
-                        <div className="flex">
+                        <div className="flex w-80">
                             <div className="my-4 p-2">
-                                <h1 className="text-gray-800 text-lg font-medium">Cálculos Trabalhistas – Rescisões</h1>
+                                <h1 className="text-gray-800 text-lg font-medium">- Cálculos Trabalhistas – Rescisões</h1>
                             </div>
                         </div>
 
-                        <div className="flex">
+                        <div className="flex w-80">
                             <div className="my-4 p-2">
-                                <h1 className="text-gray-800 text-lg font-medium">Parcelamento de FGTS</h1>
+                                <h1 className="text-gray-800 text-lg font-medium">- Parcelamento de FGTS</h1>
                             </div>
                         </div>
 
                         
-                        <div className="flex">
+                        <div className="flex w-80">
                             <div className="my-4 p-2">
-                                <h1 className="text-gray-800 text-lg font-medium">Tipos de Jornadas/Horários e Cálculos</h1>
+                                <h1 className="text-gray-800 text-lg font-medium">- Tipos de Jornadas/Horários e Cálculos</h1>
                             </div>
                         </div>
 
-                        <div className="flex">
+                        <div className="flex w-80">
                             <div className="my-4 p-2">
-                                <h1 className="text-gray-800 text-lg font-medium">Declarações: GFIP, RAIS  e DISO.</h1>
+                                <h1 className="text-gray-800 text-lg font-medium">- Declarações: GFIP, RAIS  e DISO.</h1>
                             </div>
                         </div>
                     </div>
 
-                    <p className="text-2xl sm:text-3xl text-gray-900"><RiRecordCircleLine className="text-red-700 inline-block text-2xl" /> Cursos Ao-vivo</p>
+                    <p className="text-2xl sm:text-3xl text-gray-900"><RiRecordCircleLine className="text-rose-700 inline-block text-2xl" /> Cursos Ao-vivo</p>
                     <div className="bg-gray-200 rounded-xl shadow-xl py-4 px-2 sm:px-6 flex flex-wrap justify-between items-center text-center my-7">
 
                         {/*CARD*/}
@@ -98,12 +98,12 @@ export default function Cursos() {
                         {/*END CARD*/}
                             
                         <div className="w-full sm:w-4/6 mx-auto mt-12 pl-2">
-                            <h1 className="text-3xl text-gray-800 font-medium text-center">Vagas para outros cursos em breve...</h1>
+                            <h1 className="text-3xl text-slate-800 font-medium text-center">Vagas para outros cursos em breve...</h1>
                         </div>
 
                     </div>
                 
-                    <p className="text-2xl sm:text-3xl text-gray-900"><BsCameraVideo className="text-red-700 inline-block text-2xl" /> Cursos Gravados</p>
+                    <p className="text-2xl sm:text-3xl text-gray-900"><BsCameraVideo className="text-rose-700 inline-block text-2xl" /> Cursos Gravados</p>
                     <div className="bg-gray-200 rounded-xl shadow-xl py-4 px-2 sm:px-6 flex flex-wrap justify-between items-center text-center my-7">
                         <div className="flex m-auto">
                             <div className="w-full p-4">
