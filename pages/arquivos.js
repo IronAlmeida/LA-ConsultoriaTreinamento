@@ -83,7 +83,7 @@ export default function arquivos() {
                     <title>LA - Arquivos</title>
                 </Head>
     
-                <Cabecalho email={user.email} />
+                <Cabecalho user={user.uid} />
                 
                 <div className="w-full bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600">
                     <div className="w-full sm:w-3/4 m-auto py-8 px-4">

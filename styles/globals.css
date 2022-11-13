@@ -8,6 +8,16 @@
     font-family: 'Poppins', sans-serif;
 }
 
+::-webkit-scrollbar{
+    width: 6px;
+    background-color: #0F172A;
+}
+
+::-webkit-scrollbar-thumb{
+    width: 6px;
+    background-color: #ccc;
+}
+
 .width-calc{
     width: calc(100% - 500px);
 }

@@ -9,7 +9,7 @@ export default function Rodape() {
     return (
         <div className="w-full bg-slate-900 p-1">
             <div className="flex flex-col flex-wrap py-3 text-white text-sm sm:text-base items-center text-center sm:w-3/4 sm:mx-auto">
-                <Image src="/LA-logo.webp" className="py-2" width={80} height={56} />
+                <Image src="/LA-Logo.webp" className="py-2" width={80} height={56} />
                 <p className="pt-2">Copyright © LA - Consultoria e Treinamento {ano} | <Link href="/politica-de-privacidade" className="text-white">Política de Privacidade</Link></p>
             </div>
         </div>

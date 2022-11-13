@@ -6,7 +6,7 @@ import Rodape from "../Components/utils/footer";
 import SuperForm from "../Components/utils/superForm";
 import {BsFillShieldLockFill} from "react-icons/bs";
 import {Ri24HoursFill} from "react-icons/ri";
-import {GrUserExpert} from "react-icons/gr"
+import {ImUserCheck} from "react-icons/im"
 import { useAuth } from "../firebase/auth";
 
 export default function suporte() {
@@ -25,7 +25,7 @@ export default function suporte() {
             </Head>
 
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={user.email} />}
+            {logado === true && <Cabecalho user={user.uid} />}
             
             <div className="w-full bg-gradient-to-r from-slate-700 via-slate-800 to-slate-700 bg-cover bg-center" style={{backgroundImage: 'url(/suporte-bg.webp)'}}>
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
@@ -55,7 +55,7 @@ export default function suporte() {
                         <h2 className="text-5xl text-gray-900 text-center sm:text-left">Benefícios</h2>
                     </div>
                     <div className="w-full mt-8">
-                        <p className="text-2xl text-gray-900 text-center sm:text-left mt-10"><GrUserExpert className="text-rose-700 text-5xl m-auto sm:inline-block sm:mr-2" /> Suas dúvidas respondidas por quem possui mais de 18 anos de experiência na área!</p>
+                        <p className="text-2xl text-gray-900 text-center sm:text-left mt-10"><ImUserCheck className="text-rose-700 text-5xl m-auto sm:inline-block sm:mr-2" /> Suas dúvidas respondidas por quem possui mais de 18 anos de experiência na área!</p>
 
 
                         <p className="text-2xl text-gray-900 text-center sm:text-left mt-10"><BsFillShieldLockFill className="text-rose-700 text-5xl m-auto sm:inline-block sm:mr-2" /> Totalmente privado e seguro!</p>

@@ -37,11 +37,11 @@ export default function SliderClients() {
     }, [pause, slider])
 
     return (
-        <section className="w-full p-4">
+        <section className="w-full bg-slate-500 p-4">
             <div className="sm:w-3/4 m-auto">
-                <h1 className="text-gray-900 text-4xl font-medium text-center my-2">Nossos Clientes</h1>
+                <h1 className="text-white text-4xl font-medium text-center my-2">Nossos Clientes</h1>
             </div>
-            <div className="navigation-wrapper sm:w-3/4 m-auto my-6">
+            <div className="navigation-wrapper bg-gray-300 rounded-lg p-2 sm:w-3/4 m-auto my-6">
                 <div ref={sliderRef} className="keen-slider">
                 <div className="keen-slider__slide number-slider4">
                     <Image width="242" height="79" src="/sescap.webp" />

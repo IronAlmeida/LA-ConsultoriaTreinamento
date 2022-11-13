@@ -25,7 +25,7 @@ export default function Cursos() {
             </Head>
 
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={user.email} />}
+            {logado === true && <Cabecalho user={user.uid} />}
             
             <div className="w-full bg-slate-600">
                 <div className="w-full sm:w-3/4 m-auto py-8 px-4">
@@ -85,7 +85,7 @@ export default function Cursos() {
                     <p className="text-2xl sm:text-3xl text-gray-900"><RiRecordCircleLine className="text-rose-700 inline-block text-2xl" /> Cursos Ao-vivo</p>
                     <div className="bg-gray-200 rounded-xl shadow-xl py-4 px-2 sm:px-6 flex flex-wrap justify-between items-center text-center my-7">
 
-                        {/*CARD*/}
+                        {/*CARD*
                         <div className="flex flex-col m-auto my-6 items-center justify-between text-center border border-gray-400 shadow">
                             <div>
                                 <img className="w-full" width="300px" height="300px" src="/analista-dp.png"/>
@@ -95,14 +95,15 @@ export default function Cursos() {
                                 <a href="https://api.whatsapp.com/send?phone=5579999839846" target="_blank" rel="noopener noreferrer"><button className="w-full bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-center p-4 text-lg text-white focus:outline-none">Mais informações</button></a>
                             </div>
                         </div>
-                        {/*END CARD*/}
+                        END CARD*/}
                             
-                        <div className="w-full sm:w-4/6 mx-auto mt-12 pl-2">
-                            <h1 className="text-3xl text-slate-800 font-medium text-center">Vagas para outros cursos em breve...</h1>
+                        <div className="w-full sm:w-4/6 mx-auto pl-2">
+                            <h1 className="text-3xl text-slate-800 font-medium text-center">Vagas para cursos em breve...</h1>
                         </div>
 
                     </div>
                 
+                    {/*
                     <p className="text-2xl sm:text-3xl text-gray-900"><BsCameraVideo className="text-rose-700 inline-block text-2xl" /> Cursos Gravados</p>
                     <div className="bg-gray-200 rounded-xl shadow-xl py-4 px-2 sm:px-6 flex flex-wrap justify-between items-center text-center my-7">
                         <div className="flex m-auto">
@@ -110,7 +111,7 @@ export default function Cursos() {
                                 <h1 className="text-3xl text-gray-800 font-medium text-center">Cursos sendo gravados com maior carinho e dedicação. <br/>Em breve serão lançados ;)</h1>
                             </div>
                         </div>
-                    </div>
+                    </div>/*/}
                 </div>
             </section>
 

@@ -25,12 +25,12 @@ export default function home() {
             </Head>
 
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={user.email} />}
+            {logado === true && <Cabecalho user={user.uid} />}
             
             <SliderMain />
 
-            <section className="w-full bg-gradient-to-b from-slate-400 to-slate-500 sm:p-4">
-                <div className="bg-gray-300 w-full shadow-lg lg:w-3/4 lg:rounded-2xl m-auto p-4">
+            <section className="w-full bg-gradient-to-b from-slate-400 to-slate-500 p-4">
+                <div className="bg-gray-300 w-full shadow-lg lg:w-3/4 rounded-2xl m-auto p-4">
                     <div>
                         <h2 className="text-gray-900 text-4xl font-medium text-center my-2">A empresa</h2>
                         <p className="text-gray-900 text-xl font-normal text-center my-4">A LA Consultoria e Treinamento foi fundada em 2018 com o objetivo de ajudar as empresas e profissionais do Departamento Pessoal a lidar com as demandas da área, além de capacitar novos profissionais e atualizar aqueles que já têm experiência com as mudanças que ocorrem ao longo do tempo.</p>
@@ -38,7 +38,7 @@ export default function home() {
                 </div>
             </section>
             
-            <section className="w-full bg-gradient-to-b from-slate-500 to-slate-400 p-4">
+            <section className="w-full bg-slate-500 p-4">
                 <div className="w-full lg:w-3/4 m-auto">
                     <div className="flex justify-between flex-wrap">
                         <div className="w-full lg:w-2/5 sm:mr-2 rounded-xl flex flex-col items-center text-center p-4">
@@ -74,10 +74,10 @@ export default function home() {
             
             <SliderClients />
 
-            <section className="w-full bg-gradient-to-b from-white to-slate-200 p-4">
+            <section className="w-full bg-gradient-to-b from-slate-500 to-slate-400 p-4">
 
                 <div className="w-full sm:w-3/4 m-auto">
-                    <h2 className="text-slate-900 text-4xl font-medium text-center my-2">Depoimentos</h2>
+                    <h2 className="text-white text-4xl font-medium text-center my-2">Depoimentos</h2>
                 </div>
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full shadow-md lg:w-3/4 xl:w-2/5 m-auto mt-6 flex flex-col justify-between bg-gray-300 rounded-xl p-4">
@@ -92,7 +92,7 @@ export default function home() {
 
                     <div className="w-full shadow-md lg:w-3/4 xl:w-2/5 m-auto mt-6 flex flex-col justify-between bg-gray-300 rounded-xl p-4">
                         <div>
-                            <p className="text-slate-900 text-xl">"Lourdes Almeida excelente profissional com uma bagagem riquíssima na área de DP e E-social, sua forma de transmitir o conteúdo bastante clara e objetiva. Super atenciosa e dedicada e está sempre disponível par nos ajudar."</p>
+                            <p className="text-slate-900 text-xl">"Lourdes Almeida excelente profissional com uma bagagem riquíssima na área de DP e E-social, sua forma de transmitir o conteúdo bastante clara e objetiva. Super atenciosa e dedicada e está sempre disponível para nos ajudar."</p>
                         </div>
                         <div className="mt-10">
                             <h4 className="text-lg text-slate-900">Juceli</h4>

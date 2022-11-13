@@ -11,14 +11,15 @@ export default function HeaderHome() {
 
     return (
         <>
-            <div className="w-full bg-slate-900 px-6 py-2">
-                <div className="flex sm:w-3/4 justify-between m-auto items-center">
-                    <Link href="/" className="mt-2"><Image src="/LA-Logo.webp" width={80} height={56} /></Link>                    <nav id="nav" className="flex items-center">
+            <div className="w-full shadow-lg fixed z-10 bg-slate-900 px-6 py-3">
+                <div className="flex sm:w-5/6 justify-between m-auto items-center">
+                    <Link href="/"><Image src="/LA-Logo.webp" width={80} height={56} /></Link>                    <nav id="nav" className="flex items-center">
                         <ul id="menu" className="lg:flex items-center gap-6 mr-6">
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/" className="block p-2">Inicio</Link></li>
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/cursos" className="block p-2">Cursos</Link></li>
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/servicos" className="block p-2">Serviços</Link></li>
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/arquivos" className="block p-2">Arquivos</Link></li>
+                            <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/galeria" className="block p-2">Galeria</Link></li>
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/sobre" className="block p-2">Sobre</Link></li>
                             <li><Link href="/login">
                                 <button className="text-lg text-white rounded-full w-24 p-2 bg-rose-700 transform hover:scale-110 transition duration-200 focus:outline-none">Entrar</button>
@@ -32,6 +33,7 @@ export default function HeaderHome() {
                     </nav>
                 </div>
             </div>
+            <div className="=w-full h-20 px-6 py-2"></div>
         </>
     );
 }

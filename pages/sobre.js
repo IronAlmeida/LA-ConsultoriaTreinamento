@@ -21,7 +21,7 @@ export default function sobre() {
             </Head>
 
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={user.email} />}
+            {logado === true && <Cabecalho user={user.uid} />}
         
             <div className="w-full bg-gradient-to-l from-slate-700 via-slate-800 to-slate-700">
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">

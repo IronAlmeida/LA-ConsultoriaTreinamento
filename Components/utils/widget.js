@@ -72,7 +72,7 @@ export default function Widget() {
                 <div className="flex flex-col py-4 px-0 items-center mx-auto sm:items-start sm:m-0 sm:p-4">
                     <h2 className="text-white text-2xl font-medium">Contato</h2>
                     <div className="flex flex-col sm:flex-row items-center mt-4">
-                        <HiOutlineMail className="text-white text-3xl mr-2"/><span className="text-sm sm:text-lg text-white">lourdesalmeida@lourdesalmeidadp.com.br</span>
+                        <HiOutlineMail className="text-white text-3xl mr-2"/><span className="text-sm sm:text-lg text-white">consultoria@lourdesalmeidadp.com.br</span>
                     </div>
                     <div className="flex flex-col sm:flex-row items-center mt-4">
                         <HiOutlinePhone className="text-white text-3xl mr-2"/><span className="text-sm sm:text-lg text-white">(79) 99983-9846</span>
@@ -101,7 +101,7 @@ export default function Widget() {
                                 )}
                                 <div className="w-full mb-2 pt-3 rounded bg-gray-200">
                                     <label className="block text-gray-800 text-base font-semibold mb-2 ml-3" htmlFor="nome">Nome: </label>
-                                    <Field name="nome" type="text" id="nome" placeholder="Seu nome" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-gray-900 transition duration-500 px-2 pb-2 text-lg" />
+                                    <Field name="nome" type="text" id="nome" placeholder="Seu nome" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-rose-700 transition duration-500 px-2 pb-2 text-lg" />
                                 </div>
 
                                 {errors.email && touched.email && (
@@ -109,7 +109,7 @@ export default function Widget() {
                                 )}
                                 <div className="w-full mb-2 pt-3 rounded bg-gray-200">
                                     <label className="block text-gray-800 text-base font-semibold mb-2 ml-3" htmlFor="email">E-mail: </label>
-                                    <Field name="email" type="email" id="email" placeholder="Seu e-mail" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-gray-900 transition duration-500 px-2 pb-2 text-lg" />
+                                    <Field name="email" type="email" id="email" placeholder="Seu e-mail" className="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-rose-700 transition duration-500 px-2 pb-2 text-lg" />
                                 </div>
 
                                 <div className="w-full mb-2 pt-3 rounded bg-gray-200">

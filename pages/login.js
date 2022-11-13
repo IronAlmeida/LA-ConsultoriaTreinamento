@@ -378,12 +378,12 @@ export default function Index(){
   const router = useRouter();
 
   if (user){
-    router.replace('/campus');
+    router.replace('/');
     return (
       <>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:p-4 animate-pulse">
         <div className="flex flex-col items-center">
-            <img src="/logo-colorida.png" width="800px" height="306px" />
+            <img src="/LA-logo-full.png" width="800px" height="306px" />
             <p className="mt-4 text-xl text-black">Carregando...</p>
         </div>
         </div>
