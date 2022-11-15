@@ -19,7 +19,7 @@ export default function HeaderHome() {
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/cursos" className="block p-2">Cursos</Link></li>
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/servicos" className="block p-2">Serviços</Link></li>
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/arquivos" className="block p-2">Arquivos</Link></li>
-                            <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/galeria" className="block p-2">Galeria</Link></li>
+                            {/*<li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/galeria" className="block p-2">Galeria</Link></li>*/}
                             <li className="text-lg text-white hover:text-amber-300 trasition duration-200"><Link href="/sobre" className="block p-2">Sobre</Link></li>
                             <li><Link href="/login">
                                 <button className="text-lg text-white rounded-full w-24 p-2 bg-rose-700 transform hover:scale-110 transition duration-200 focus:outline-none">Entrar</button>
