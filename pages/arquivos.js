@@ -83,7 +83,7 @@ export default function arquivos() {
                     <title>LA - Arquivos</title>
                 </Head>
     
-                <Cabecalho email={user.email} />
+                <Cabecalho user={user.uid} />
                 
                 <div className="w-full bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600">
                     <div className="w-full sm:w-3/4 m-auto py-8 px-4">
@@ -508,7 +508,7 @@ export default function arquivos() {
     
                 <HeaderHome />
                 
-                <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800">
+                <div className="w-full bg-gradient-to-r from-slate-700 via-slate-800 to-slate-700">
                     <div className="w-full sm:w-3/4 m-auto py-8 px-4">
                             <h2 className="text-4xl font-light text-white text-center">Arquivos para download</h2>
                     </div>
@@ -528,7 +528,7 @@ export default function arquivos() {
                             </div>
                             <div className="p-6">
                                 <Link href="/login">
-                                    <a><button className="text-lg text-white rounded-full w-36 p-4 bg-gray-800 transform hover:scale-110 transition duration-200 focus:outline-none">Fazer login</button></a>
+                                    <button className="text-lg text-white rounded-full w-36 p-4 bg-gray-800 transform hover:scale-110 transition duration-200 focus:outline-none">Fazer login</button>
                                 </Link>
                             </div>
                         </div>

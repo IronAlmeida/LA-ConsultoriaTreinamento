@@ -22,15 +22,15 @@ export default function politica(){
             </Head>
             
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={user.email} />}
+            {logado === true && <Cabecalho user={user.uid} />}
 
-            <section className="w-full p-4 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100">
+            <section className="w-full p-4 bg-gradient-to-r from-gray-400 via-gray-500 to-gray-400">
                 <div className="w-full sm:w-3/4 m-auto">
-                    <h2 className="text-4xl font-light text-black text-center">Política de Privacidade</h2>
+                    <h2 className="text-4xl font-light text-white text-center">Política de Privacidade</h2>
                 </div>
             </section>
 
-            <section className="w-full p-4">
+            <section className="w-full p-4 bg-gray-300">
                 <div className="w-full sm:w-3/4 m-auto">
                     <p className="text-base sm:text-lg">A sua privacidade é importante para nós. É política da LA – Consultoria e Treinamento respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar em nosso site.</p><br/>
                     <p className="text-base sm:text-lg">Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemos isso por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</p><br/>
@@ -39,7 +39,7 @@ export default function politica(){
                     <p className="text-base sm:text-lg">Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</p><br/>
                     <p className="text-base sm:text-lg">O nosso site contém links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.</p><br/>
                     <p className="text-base sm:text-lg">Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</p><br/>
-                    <p className="text-base sm:text-lg">O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contato conosco:<br/><br/>E-mail: contato@lourdesalmeidadp.com.br</p><br/>
+                    <p className="text-base sm:text-lg">O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contato conosco:<br/><br/>E-mail: consultoria@lourdesalmeidadp.com.br</p><br/>
                 </div>
 
                 <div className="w-full sm:w-3/4 m-auto">

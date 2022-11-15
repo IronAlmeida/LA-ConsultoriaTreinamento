@@ -38,7 +38,7 @@ export default function SliderMain() {
         if (!pause && slider) {
             slider.next()
         }
-        }, 8000)
+        }, 5000)
         return () => {
         clearInterval(timer.current)
         }
@@ -49,19 +49,19 @@ export default function SliderMain() {
             <div className="navigation-wrapper">
                 <div ref={sliderRef} className="keen-slider">
                     <div className="keen-slider__slide number-slide1">
-                        <Link href="/suporte"><a><img width="100%" height="100%" className="block xl:hidden" src="la-suporte-800.webp" /></a></Link>
-                        <Link href="/suporte"><a><img width="100%" height="100%" className="hidden xl:block 2xl:hidden" src="la-suporte-1000.webp" /></a></Link>
-                        <Link href="/suporte"><a><img width="100%" height="100%" className="hidden 2xl:block" src="la-suporte-1400.webp" /></a></Link>
+                        <Link href="/suporte"><img width="100%" height="100%" className="block xl:hidden" src="la-suporte-800.png" /></Link>
+                        <Link href="/suporte"><img width="100%" height="100%" className="hidden xl:hidden 2xl:hidden" src="la-suporte-1000.png" /></Link>
+                        <Link href="/suporte"><img width="100%" height="100%" className="hidden xl:block" src="la-suporte-1400.png" /></Link>
                     </div>
                     <div className="keen-slider__slide number-slide2">
-                        <Link href="/bpo"><a><img width="100%" height="100%" className="block xl:hidden" src="la-BPO-800.webp" /></a></Link>
-                        <Link href="/bpo"><a><img width="100%" height="100%" className="hidden xl:block 2xl:hidden" src="la-BPO-1000.webp" /></a></Link>
-                        <Link href="/bpo"><a><img width="100%" height="100%" className="hidden 2xl:block" src="la-BPO-1400.webp" /></a></Link>
+                        <Link href="/bpo"><img width="100%" height="100%" className="block lg:hidden" src="la-BPO-800.png" /></Link>
+                        <Link href="/bpo"><img width="100%" height="100%" className="hidden lg:block xl:hidden" src="la-BPO-1000.png" /></Link>
+                        <Link href="/bpo"><img width="100%" height="100%" className="hidden xl:block" src="la-BPO-1400.png" /></Link>
                     </div>
                     <div className="keen-slider__slide number-slide3">
-                        <Link href="/cursos"><a><img width="100%" height="100%" className="block xl:hidden" src="la-cursos-800.webp" /></a></Link>
-                        <Link href="/cursos"><a><img width="100%" height="100%" className="hidden xl:block 2xl:hidden" src="la-cursos-1000.webp" /></a></Link>
-                        <Link href="/cursos"><a><img width="100%" height="100%" className="hidden 2xl:block" src="la-cursos-1400.webp" /></a></Link>
+                        <Link href="/cursos"><img width="100%" height="100%" className="block lg:hidden" src="la-cursos-800.png" /></Link>
+                        <Link href="/cursos"><img width="100%" height="100%" className="hidden lg:block xl:hidden" src="la-cursos-1000.png" /></Link>
+                        <Link href="/cursos"><img width="100%" height="100%" className="hidden xl:block" src="la-cursos-1400.png" /></Link>
                     </div>
                 </div>
                 {slider && (
@@ -79,7 +79,7 @@ export default function SliderMain() {
             </div>
             
             {slider && (
-            <div className="dots">
+            <div className="dots bg-slate-400">
                 {[...Array(slider.details().size).keys()].map((idx) => {
                     return (
                     <button

@@ -22,17 +22,15 @@ export default function home() {
         <>
             <Head>
                 <title>LA - Consultoria e Treinamento</title>
-                <meta name="robots" content="index/follow"/>
-                <meta name="description" content="Lourdes Almeida - Consultoria e Treinamento"/>
             </Head>
 
             {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho email={user.email} />}
+            {logado === true && <Cabecalho user={user.uid} />}
             
             <SliderMain />
 
-            <section className="w-full sm:p-4">
-                <div className="bg-gray-300 w-full lg:w-3/4 lg:rounded-2xl m-auto p-4">
+            <section className="w-full bg-gradient-to-b from-slate-400 to-slate-500 p-4">
+                <div className="bg-gray-300 w-full shadow-lg lg:w-3/4 rounded-2xl m-auto p-4">
                     <div>
                         <h2 className="text-gray-900 text-4xl font-medium text-center my-2">A empresa</h2>
                         <p className="text-gray-900 text-xl font-normal text-center my-4">A LA Consultoria e Treinamento foi fundada em 2018 com o objetivo de ajudar as empresas e profissionais do Departamento Pessoal a lidar com as demandas da área, além de capacitar novos profissionais e atualizar aqueles que já têm experiência com as mudanças que ocorrem ao longo do tempo.</p>
@@ -40,33 +38,33 @@ export default function home() {
                 </div>
             </section>
             
-            <section className="w-full p-4">
+            <section className="w-full bg-slate-500 p-4">
                 <div className="w-full lg:w-3/4 m-auto">
                     <div className="flex justify-between flex-wrap">
                         <div className="w-full lg:w-2/5 sm:mr-2 rounded-xl flex flex-col items-center text-center p-4">
-                            <BsBullseye className="text-center text-6xl text-red-700" />
+                            <BsBullseye className="text-center text-6xl text-amber-300" />
                             <div className="w-full">
-                                <h2 className="text-gray-900 text-3xl font-medium text-center my-4">Missão</h2>
-                                <p className="text-gray-900 text-xl font-normal text-center my-4">Oferecer capacitação  profissional na área de  Departamento Pessoal
+                                <h2 className="text-white text-3xl font-medium text-center my-4">Missão</h2>
+                                <p className="text-white text-xl font-normal text-center my-4">Oferecer capacitação  profissional na área de  Departamento Pessoal
                                 com treinamentos e orientação, com ênfase na  resolução de problemas  corporativos.
                                 </p>
                             </div>
                         </div>
 
                         <div className="w-full lg:w-2/5 sm:mr-2 rounded-xl flex flex-col items-center text-center p-4">
-                            <AiFillEye className="text-center text-6xl text-red-700" />
+                            <AiFillEye className="text-center text-6xl text-amber-300" />
                             <div className="w-full">
-                                <h2 className="text-gray-900 text-3xl font-medium text-center my-4">Visão</h2>
-                                <p className="text-gray-900 text-xl font-normal text-center my-4">Sermos autoridade na  prestação de serviços para  as área de Departamento  Pessoal, oferecendo  resultados para  profissionais e resultado  para empresas.
+                                <h2 className="text-white text-3xl font-medium text-center my-4">Visão</h2>
+                                <p className="text-white text-xl font-normal text-center my-4">Sermos autoridade na  prestação de serviços para  as área de Departamento  Pessoal, oferecendo  resultados para  profissionais e resultado  para empresas.
                                 </p>
                             </div>
                         </div>
 
-                        <div className="w-full lg:w-2/5 m-auto rounded-xl  flex flex-col items-center text-center p-4">
-                            <FaHandshake className="text-center text-6xl text-red-700" />
+                        <div className="w-full lg:w-2/5 m-auto rounded-xl flex flex-col items-center text-center p-4">
+                            <FaHandshake className="text-center text-6xl text-amber-300" />
                             <div className="w-full">
-                                <h2 className="text-gray-900 text-3xl font-medium text-center my-4">Valores</h2>
-                                <p className="text-gray-900 text-xl font-normal text-center my-4">Gratidão, integridade,  inteligência, inspiração,  flexibilidade, valorização do  ser humano,  responsabilidade social e interesse pelo  conhecimento.
+                                <h2 className="text-white text-3xl font-medium text-center my-4">Valores</h2>
+                                <p className="text-white text-xl font-normal text-center my-4">Gratidão, integridade,  inteligência, inspiração,  flexibilidade, valorização do  ser humano,  responsabilidade social e interesse pelo  conhecimento.
                                 </p>
                             </div>
                         </div>
@@ -76,39 +74,39 @@ export default function home() {
             
             <SliderClients />
 
-            <section className="w-full p-4">
+            <section className="w-full bg-gradient-to-b from-slate-500 to-slate-400 p-4">
 
                 <div className="w-full sm:w-3/4 m-auto">
-                    <h2 className="text-gray-900 text-4xl font-medium text-center my-2">Depoimentos</h2>
+                    <h2 className="text-white text-4xl font-medium text-center my-2">Depoimentos</h2>
                 </div>
                 <div className="flex flex-wrap justify-between">
-                    <div className="w-full lg:w-3/4 xl:w-2/5 m-auto mt-6 flex flex-col justify-between bg-gradient-to-b from-gray-200 to-gray-300 rounded-xl p-4">
+                    <div className="w-full shadow-md lg:w-3/4 xl:w-2/5 m-auto mt-6 flex flex-col justify-between bg-gray-300 rounded-xl p-4">
                         <div>
-                            <p className="text-gray-900 text-xl">"Lourdes é uma profissional altamente capacitada, está sempre atualizada, e tem uma didática incrível. Nos responde com atenção, agilidade e competência. Ter a consultoria da Lourdes em nosso escritório faz toda a diferença."</p>
+                            <p className="text-slate-900 text-xl">"Lourdes é uma profissional altamente capacitada, está sempre atualizada, e tem uma didática incrível. Nos responde com atenção, agilidade e competência. Ter a consultoria da Lourdes em nosso escritório faz toda a diferença."</p>
                         </div>
                         <div className="mt-10">
-                            <h4 className="text-lg text-gray-900">Alice Sousa</h4>
-                            <p className="text-base text-gray-700">Giro Contabilidade</p>
+                            <h4 className="text-lg text-slate-900">Alice Sousa</h4>
+                            <p className="text-base text-slate-700">Giro Contabilidade</p>
                         </div>
                     </div>
 
-                    <div className="w-full lg:w-3/4 xl:w-2/5 m-auto mt-6 flex flex-col justify-between bg-gradient-to-b from-gray-200 to-gray-300 rounded-xl p-4">
+                    <div className="w-full shadow-md lg:w-3/4 xl:w-2/5 m-auto mt-6 flex flex-col justify-between bg-gray-300 rounded-xl p-4">
                         <div>
-                            <p className="text-gray-900 text-xl">"Lourdes Almeida excelente profissional com uma bagagem riquíssima na área de DP e E-social, sua forma de transmitir o conteúdo bastante clara e objetiva. Super atenciosa e dedicada e está sempre disponível par nos ajudar."</p>
+                            <p className="text-slate-900 text-xl">"Lourdes Almeida excelente profissional com uma bagagem riquíssima na área de DP e E-social, sua forma de transmitir o conteúdo bastante clara e objetiva. Super atenciosa e dedicada e está sempre disponível para nos ajudar."</p>
                         </div>
                         <div className="mt-10">
-                            <h4 className="text-lg text-gray-900">Juceli</h4>
-                            <p className="text-base text-gray-700">MB Motos</p>
+                            <h4 className="text-lg text-slate-900">Juceli</h4>
+                            <p className="text-base text-slate-700">MB Motos</p>
                         </div>
                     </div>
 
-                    <div className="w-full lg:w-3/4 xl:w-2/5 m-auto mt-6 flex flex-col justify-between bg-gradient-to-b from-gray-200 to-gray-300 rounded-xl p-4">
+                    <div className="w-full shadow-md lg:w-3/4 xl:w-2/5 m-auto mt-6 flex flex-col justify-between bg-gray-300 rounded-xl p-4">
                         <div className="m-auto">
-                            <p className="text-gray-900 text-xl">"Nunca tinha trabalhado de home office e o grupo de DP da Lourdes foi fundamental para ter segurança no que estava fazendo. Ela sempre esclarecia a legislação e isso nos deixava mais tranquilos. Além dos cursos onde aprendemos de verdade e sempre na prática."</p>
+                            <p className="text-slate-900 text-xl">"Nunca tinha trabalhado de home office e o grupo de DP da Lourdes foi fundamental para ter segurança no que estava fazendo. Ela sempre esclarecia a legislação e isso nos deixava mais tranquilos. Além dos cursos onde aprendemos de verdade e sempre na prática."</p>
                         </div>
                         <div className="mt-10">
-                            <h4 className="text-lg text-gray-900">Sheila Santos</h4>
-                            <p className="text-base text-gray-700">Aluna da LA</p>
+                            <h4 className="text-lg text-slate-900">Sheila Santos</h4>
+                            <p className="text-base text-slate-700">Aluna da LA</p>
                         </div>
                     </div>
                 </div>
