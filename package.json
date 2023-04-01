@@ -16,7 +16,7 @@
     "firebase-admin": "^11.2.0",
     "formik": "^2.2.6",
     "keen-slider": "^5.4.1",
-    "next": "^13.0.3",
+    "next": "^13.2.4",
     "next-images": "^1.7.0",
     "nookies": "^2.5.2",
     "react": "^18.2.0",
