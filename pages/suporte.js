@@ -1,31 +1,20 @@
 import Head from "next/head";
 import HeaderHome from "../Components/utils/headerHome";
-import Cabecalho from "../Components/utils/cabecalho";
 import Widget from "../Components/utils/widget";
 import Rodape from "../Components/utils/footer";
 import SuperForm from "../Components/utils/superForm";
 import {BsFillShieldLockFill} from "react-icons/bs";
 import {Ri24HoursFill} from "react-icons/ri";
 import {ImUserCheck} from "react-icons/im"
-import { useAuth } from "../firebase/auth";
 
 export default function suporte() {
-
-    const { user } = useAuth();
-
-    let logado = false;
-    if (user){
-        logado = true;
-    }
-
     return (
         <>
             <Head>
                 <title>LA - Suporte</title>
             </Head>
 
-            {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho user={user.uid} />}
+            <HeaderHome />
             
             <div className="w-full bg-gradient-to-r from-slate-700 via-slate-800 to-slate-700 bg-cover bg-center" style={{backgroundImage: 'url(/suporte-bg.webp)'}}>
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">

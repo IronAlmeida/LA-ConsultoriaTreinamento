@@ -1,6 +1,6 @@
 {
-  "name": "la-app",
-  "version": "0.1.0",
+  "name": "LA-Consultoria-Treinamento",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,8 +12,6 @@
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "eslint-config-next": "^13.0.0",
-    "firebase": "^8.4.2",
-    "firebase-admin": "^11.2.0",
     "formik": "^2.2.6",
     "keen-slider": "^5.4.1",
     "next": "^13.2.4",

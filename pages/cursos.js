@@ -1,31 +1,17 @@
-import Head from "next/head";
-import Cabecalho from "../Components/utils/cabecalho";
-import HeaderHome from "../Components/utils/headerHome";
+import Head from '../Components/head'
+import Header from "../Components/utils/Header";
 import Rodape from "../Components/utils/footer";
 import Widget from "../Components/utils/widget";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
 import {BsCameraVideo} from "react-icons/bs";
-import {useAuth} from "../firebase/auth";
-
 
 export default function Cursos() { 
-
-    const { user } = useAuth();
-
-    let logado = false;
-    if(user){
-        logado = true;
-    }
-
     return (
         <>
-            <Head>
-                <title>LA - Cursos</title>
-            </Head>
+           <Head title={"LA - Cursos"} />
 
-            {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho user={user.uid} />}
+           <Header style={"static"} color={"#0F172A"} />
             
             <div className="w-full bg-slate-600">
                 <div className="w-full sm:w-3/4 m-auto py-8 px-4">

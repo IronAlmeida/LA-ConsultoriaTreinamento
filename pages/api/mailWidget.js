@@ -4,8 +4,8 @@ mailWidget.setApiKey(process.env.SENDGRID_API_KEY_WIDGET)
 export default async function sendMailWidget(req, res) {
 
    const dataWidget = {
-       to: 'contato@lourdesalmeidadp.com.br',
-       from: 'Contato Site SendGrid <contato@lourdesalmeidadp.com.br>',
+       to: 'ironsantos911@gmail.com',
+       from: 'ironsantos1999@gmail.com',
        subject: 'Contato através do site',
        text: 'Nova mensagem',
        html: `

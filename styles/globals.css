@@ -2,14 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+:root{
+    --bg-color: rgba(156, 163, 175, 0.1);
+    --text-color: #DA315F;
+}
 
-* {
-    font-family: 'Poppins', sans-serif;
+body{
+    background-color: var(--bg-color);
+}
+
+h2 {
+    color: var(--text-color);
 }
 
 ::-webkit-scrollbar{
-    width: 6px;
+    width: 10px;
     background-color: #0F172A;
 }
 
@@ -29,6 +36,20 @@
 .dark{
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+.bg-scroll{
+    background-color: #0F172A;
+    transition: 0.5s ease;
+}
+
+/* BACKGROUND HERO SECTION */
+.bg-la{
+    background-image: url("../public/bg-LA.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 
 .animation-message{
     animation: message 1s;

@@ -1,5 +1,3 @@
-import firebase from "firebase/app";
-import {firebaseClient} from "../firebase/apifirebase";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,11 +6,9 @@ import {useState} from "react";
 import { Field, Form, Formik } from "formik";
 import { AiFillEyeInvisible, AiFillEye, AiOutlineExclamationCircle } from 'react-icons/ai';
 import * as Yup from 'yup';
-import {useAuth} from "../firebase/auth";
 
 /*LADO ESQUERDO - BACKGROUND */
 const Background = () => {
-  
     return (
       <div className="bg-cover relative overflow-hidden hidden bg-center lg:block lg:w-1/2 2xl:w-2/3 h-screen p-12" style={{backgroundImage: `url(/bg-main.webp)`}}>
         <div className="flex flex-col">
@@ -107,7 +103,6 @@ const Header = () => {
 
   //FORMULÁRIO
   const Formlogin = () => {
-    firebaseClient();
     const [visivel, setVisivel] = useState(false)
     const [erro, setErro] = useState(false);
     const router = useRouter()

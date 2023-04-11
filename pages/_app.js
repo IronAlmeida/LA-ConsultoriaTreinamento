@@ -1,22 +1,27 @@
 import "../styles/globals.css";
 import "../styles/slider.css";
-import "../styles/dp.css";
-import {AuthProvider} from "../firebase/auth";
 import Head from "next/head";
+import {Poppins} from "next/font/google"
+
+const poppins = Poppins({
+  weight: ['400', '500', '600'],
+  subsets: ['latin']
+})
 
 function MyApp({ Component, pageProps }) {
   return ( 
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${poppins.style.fontFamily};
+        }
+      `}</style>
+
       <Head>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <meta name="adopt-website-id" content="b6597f8e-52c9-421f-8f11-55fe4a1dfcc9" />
-        <script src="//tag.goadopt.io/injector.js?website_code=b6597f8e-52c9-421f-8f11-55fe4a1dfcc9" className="adopt-injector"></script>
-        <script>window.adoptHideAfterConsent = true;</script>
       </Head>
 
-      <AuthProvider>
-        <Component {...pageProps} />
-      </AuthProvider>
+      <Component {...pageProps} />
     </>
     )
 }

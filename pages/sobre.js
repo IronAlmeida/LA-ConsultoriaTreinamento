@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from '../Components/head'
 import Cabecalho from "../Components/utils/cabecalho";
 import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
@@ -16,9 +16,7 @@ export default function sobre() {
 
     return (
         <>
-            <Head>
-                <title>LA - Sobre</title>
-            </Head>
+            <Head children={"LA - Sobre"} />
 
             {logado === false && <HeaderHome />}
             {logado === true && <Cabecalho user={user.uid} />}

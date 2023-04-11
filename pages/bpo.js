@@ -3,19 +3,9 @@ import HeaderHome from "../Components/utils/headerHome";
 import Rodape from "../Components/utils/footer";
 import SuperForm from "../Components/utils/superForm";
 import {GiCardExchange} from "react-icons/gi";
-import Cabecalho from "../Components/utils/cabecalho";
 import Widget from "../Components/utils/widget";
-import { useAuth } from "../firebase/auth";
 
 export default function Bpo() {
-
-    const { user } = useAuth();
-
-    let logado = false;
-    if (user){
-        logado = true;
-    }
-
     return (
         <>
 
@@ -23,8 +13,7 @@ export default function Bpo() {
                 <title>LA - BPO</title>
             </Head>
 
-            {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho user={user.uid} />}
+            <HeaderHome />
 
             <div className="w-full bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 bg-cover bg-center" style={{backgroundImage: 'url(/bpo-bg.png)'}}>
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">

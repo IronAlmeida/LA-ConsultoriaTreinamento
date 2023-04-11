@@ -5,6 +5,18 @@ import Image from "next/image";
 
 export default function SliderClients() {
 
+    //Mudar a quantidade visivel de logomarcas parti de uma dertermianda largura da janela do navegador
+    const mediaQuery = () => {
+        if(typeof document !== 'undefined') {
+            if (window.innerWidth >= 768 && window.innerWidth < 1024){
+                return 2;
+            } else if (window.innerWidth >= 1024){
+                return 3;
+            }
+            return 1;
+        }
+    }
+
     const [currentSlide, setCurrentSlide] = React.useState(0)
     const [pause, setPause] = React.useState(false)
     const timer = React.useRef()
@@ -13,7 +25,7 @@ export default function SliderClients() {
         setCurrentSlide(s.details().relativeSlide)
       },
       duration: 1000,
-      slidesPerView: 3,
+      slidesPerView: mediaQuery(),
       mode: "free-snap",
       spacing: 15,
       loop: true,
@@ -37,11 +49,11 @@ export default function SliderClients() {
     }, [pause, slider])
 
     return (
-        <section className="w-full bg-slate-500 p-4">
-            <div className="sm:w-3/4 m-auto">
-                <h1 className="text-white text-4xl font-medium text-center my-2">Nossos Clientes</h1>
+        <section className="w-full p-4 mt-8">
+            <div className="sm:w-5/6 m-auto">
+                <h2 className="text-4xl font-medium text-center my-2">Alguns de nossos clientes</h2>
             </div>
-            <div className="navigation-wrapper bg-gray-300 rounded-lg p-2 sm:w-3/4 m-auto my-6">
+            <div className="navigation-wrapper rounded-lg p-2 sm:w-5/6 m-auto my-6">
                 <div ref={sliderRef} className="keen-slider">
                 <div className="keen-slider__slide number-slider4">
                     <Image width="242" height="79" src="/sescap.webp" />
@@ -78,21 +90,6 @@ export default function SliderClients() {
                 </div>
                 </div>
              </div>       
-            {slider && (
-                <div className="dots mt-2">
-                    {[...Array(slider.details().size).keys()].map((idx) => {
-                        return (
-                        <button
-                            key={idx}
-                            onClick={() => {
-                            slider.moveToSlideRelative(idx)
-                            }}
-                            className={"dot" + (currentSlide === idx ? " active" : "")}
-                        />
-                        )
-                    })}
-                </div>
-            )}     
         </section>
     );
 };

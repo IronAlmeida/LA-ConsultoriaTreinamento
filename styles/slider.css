@@ -25,29 +25,6 @@ body {
     justify-content: center;
     color: rgb(255, 0, 0);
   }
-
-  /*SLIDER PRINCIPAIS*/
-  .number-slide1 {
-    background-image: url("../public/bg-la-suporte-1400.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .number-slide2 {
-    background-image: url("../public/bg-la-BPO-1400.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .number-slide3 {
-    background-image: url("../public/bg-la-cursos-1400.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-  /*FIM SLIDER PRINCIPAIS*/
   
   .navigation-wrapper {
     position: relative;

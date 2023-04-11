@@ -1,28 +1,14 @@
-import Head from "next/head";
-import HeaderHome from "../Components/utils/headerHome";
-import Cabecalho from "../Components/utils/cabecalho";
+import Head from "../Components/head";
+import Header from "../Components/utils/Header";
 import Rodape from "../Components/utils/footer";
 import Widget from "../Components/utils/widget";
-import { useAuth } from "../firebase/auth";
 
 export default function politica(){
-
-    const { user } = useAuth();
-
-    let logado = false;
-    if (user){
-        logado = true;
-    }
-
-
     return (
         <>
-            <Head>
-                <title>LA - Política de Privacidade</title>
-            </Head>
+            <Head title={"LA - Política de privacidade"}></Head>
             
-            {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho user={user.uid} />}
+            <Header style={"static"} color={"#0F172A"} />
 
             <section className="w-full p-4 bg-gradient-to-r from-gray-400 via-gray-500 to-gray-400">
                 <div className="w-full sm:w-3/4 m-auto">

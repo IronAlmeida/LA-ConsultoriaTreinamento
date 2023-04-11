@@ -1,31 +1,19 @@
-import Head from "next/head";
-import Cabecalho from "../Components/utils/cabecalho";
-import HeaderHome from "../Components/utils/headerHome";
+import Head from "../Components/head";
+import Header from "../Components/utils/Header";
 import SuperForm from "../Components/utils/superForm";
 import Widget from "../Components/utils/widget";
 import Rodape from "../Components/utils/footer";
 import {HiOutlineDocumentSearch} from "react-icons/hi";
 import {BiChat, BiSupport} from "react-icons/bi";
 import Link from "next/link";
-import {useAuth} from "../firebase/auth";
 
 export default function suporte() {
 
-    const { user } = useAuth();
-
-    let logado = false;
-    if (user){
-        logado = true;
-    }
-
     return (
         <>
-            <Head>
-                <title>LA - Serviços</title>
-            </Head>
+            <Head title={"LA - Serviços"}/>
 
-            {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho user={user.uid} />}
+            <Header />
             
             <div className="w-full bg-gradient-to-l from-slate-400 via-slate-600 to-slate-400">
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
