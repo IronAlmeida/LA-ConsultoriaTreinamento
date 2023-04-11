@@ -1,25 +1,14 @@
 import Head from '../Components/head'
-import Cabecalho from "../Components/utils/cabecalho";
-import HeaderHome from "../Components/utils/headerHome";
+import Header from "../Components/utils/Header";
 import Rodape from "../Components/utils/footer";
 import Widget from "../Components/utils/widget";
-import {useAuth} from "../firebase/auth";
 
 export default function sobre() {
-
-    const { user } = useAuth();
-
-    let logado = false;
-    if (user){
-        logado = true;
-    }
-
     return (
         <>
-            <Head children={"LA - Sobre"} />
+            <Head title={"LA - Sobre"} />
 
-            {logado === false && <HeaderHome />}
-            {logado === true && <Cabecalho user={user.uid} />}
+            <Header />
         
             <div className="w-full bg-gradient-to-l from-slate-700 via-slate-800 to-slate-700">
                <div className="w-full sm:w-3/4 m-auto py-8 px-4">
