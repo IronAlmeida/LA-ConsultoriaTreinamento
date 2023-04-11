@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "../styles/slider.css";
 import Head from "next/head";
-import { Raleway } from 'next/font/google';
+import { Raleway } from '@next/font/google'
 
 const raleway = Raleway({ subsets: ['latin'] });
 
