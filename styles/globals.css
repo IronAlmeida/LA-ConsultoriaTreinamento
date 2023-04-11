@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 
 :root{
     --bg-color: rgba(156, 163, 175, 0.1);
