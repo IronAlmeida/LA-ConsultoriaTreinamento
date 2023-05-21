@@ -4,7 +4,7 @@ import Rodape from "../Components/utils/footer";
 import Widget from "../Components/utils/widget";
 import {HiOutlineDesktopComputer} from "react-icons/hi";
 import {RiRecordCircleLine} from "react-icons/ri";
-import {BsCameraVideo} from "react-icons/bs";
+// import {BsCameraVideo} from "react-icons/bs";
 
 export default function Cursos() { 
     return (
