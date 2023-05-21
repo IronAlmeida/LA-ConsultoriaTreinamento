@@ -1,9 +1,12 @@
 import "../styles/globals.css";
 import "../styles/slider.css";
 import Head from "next/head";
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  weight: ['400'],
+})
 
 
 function MyApp({ Component, pageProps }) {
