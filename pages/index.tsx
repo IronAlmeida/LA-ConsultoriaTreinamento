@@ -1,9 +1,9 @@
 import Head from '../Components/head';
-import Header from "../Components/utils/Header";
-import Rodape from "../Components/utils/footer";
-import Widget from "../Components/utils/widget";
-import HeroSection from "../Components/utils/heroSection";
-import SliderClients from "../Components/utils/sliderClients";
+import Header from "../Components/utils/Header.js";
+import Rodape from "../Components/utils/footer.js";
+import Widget from "../Components/utils/widget.js";
+import HeroSection from "../Components/utils/heroSection.js";
+import SliderClients from "../Components/utils/sliderClients.js";
 import {BsBullseye} from "react-icons/bs";
 import {AiFillEye} from "react-icons/ai";
 import {FaHandshake} from "react-icons/fa";
@@ -15,7 +15,7 @@ export default function home() {
             
             <HeroSection />
 
-            <Header />
+            <Header style={undefined} color={undefined} />
 
 
             <section className='-full p-4 mt-16'>

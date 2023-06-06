@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root{
-    --bg-color: rgba(156, 163, 175, 0.1);
+    --bg-color: rgba(156, 163, 175, 0.2);
     --text-color: #DA315F;
 }
 

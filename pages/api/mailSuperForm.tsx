@@ -1,7 +1,9 @@
+import { NextApiRequest, NextApiResponse } from "next"
+
 const mailSuperForm = require('@sendgrid/mail')
 mailSuperForm.setApiKey(process.env.SENDGRID_API_KEY_SUPERFORM)
 
-export default async function sendMailSuperForm(req, res) {
+export default async function sendMailSuperForm(req: NextApiRequest, res:NextApiResponse) {
     const dataSuperForm = {
         to: 'contato@lourdesalmeidadp.com.br',
         from: 'Contato Site <contato@lourdesalmeidadp.com.br>',

@@ -1,7 +1,9 @@
-const mailWidget = require('@sendgrid/mail')
+import { NextApiRequest, NextApiResponse } from "next"
+
+import mailWidget from '@sendgrid/mail'
 mailWidget.setApiKey(process.env.SENDGRID_API_KEY_WIDGET)
 
-export default async function sendMailWidget(req, res) {
+export default async function sendMailWidget({ req, res }: { req: NextApiRequest; res: NextApiResponse }): Promise<void> {
 
    const dataWidget = {
        to: 'ironsantos911@gmail.com',
