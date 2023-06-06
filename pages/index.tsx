@@ -15,7 +15,7 @@ export default function home() {
             
             <HeroSection />
 
-            <Header />
+            <Header style={undefined} color={undefined} />
 
 
             <section className='-full p-4 mt-16'>

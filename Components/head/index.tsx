@@ -1,6 +1,12 @@
 import NextHead from "next/head";
+import React from "react";
 
-export default function Head ({title}){
+interface Title {
+    title: string
+}
+
+
+export default function Head ({title}: Title){
     return (
         <NextHead>
             <title>{title}</title>

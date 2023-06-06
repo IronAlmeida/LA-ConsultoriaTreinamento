@@ -1,7 +1,8 @@
 import "../styles/globals.css";
 import "../styles/slider.css";
 import Head from "next/head";
-import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google';
+import { AppProps } from "next/app";
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -9,7 +10,7 @@ const inter = Inter({
 })
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return ( 
     <>
       <Head>

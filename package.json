@@ -38,6 +38,8 @@
   },
   "homepage": "https://github.com/IronDS/LA-ConsultoriaTreinamento#readme",
   "devDependencies": {
+    "@types/react": "18.2.6",
+    "@types/react-input-mask": "^3.0.2",
     "@vercel/node": "^2.14.3",
     "autoprefixer": "^10.4.13",
     "eslint-plugin-react-hooks": "^4.6.0",
