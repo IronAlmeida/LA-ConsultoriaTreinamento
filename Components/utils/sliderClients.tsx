@@ -56,37 +56,37 @@ export default function SliderClients() {
             <div className="navigation-wrapper rounded-lg p-2 sm:w-5/6 m-auto my-6">
                 <div ref={sliderRef} className="keen-slider">
                 <div className="keen-slider__slide number-slider4">
-                    <Image width="242" height="79" src="/sescap.webp" />
+                    <Image alt="logo cliente" width="242" height="79" src="/sescap.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider5">
-                    <Image width="226" height="49" src="/impacto.webp" />
+                    <Image alt="logo cliente" width="226" height="49" src="/impacto.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider6">
-                    <Image width="252" height="89" src="/barros-filhos.webp" />
+                    <Image alt="logo cliente" width="252" height="89" src="/barros-filhos.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider7">
-                    <Image width="273" height="100" src="/campo-lindo.webp" />
+                    <Image alt="logo cliente" width="273" height="100" src="/campo-lindo.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider8">
-                    <Image width="261" height="100" src="/ricarte.webp" />
+                    <Image alt="logo cliente" width="261" height="100" src="/ricarte.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider9">
-                    <Image width="185" height="92" src="/hospital-olhos.webp" />
+                    <Image alt="logo cliente" width="185" height="92" src="/hospital-olhos.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider10">
-                    <Image width="164" height="78" src="/giro.webp" />
+                    <Image alt="logo cliente" width="164" height="78" src="/giro.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider11">
-                    <Image width="164" height="109" src="/jj.webp" />
+                    <Image alt="logo cliente" width="164" height="109" src="/jj.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider12">
-                    <Image width="251" height="91" src="/cemise.webp" />
+                    <Image alt="logo cliente" width="251" height="91" src="/cemise.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider13">
-                    <Image width="218" height="77" src="/emcs.webp" />
+                    <Image alt="logo cliente" width="218" height="77" src="/emcs.webp" />
                 </div>
                 <div className="keen-slider__slide number-slider14">
-                    <Image width="174" height="100" src="/mb-moto.webp" />
+                    <Image alt="logo cliente" width="174" height="100" src="/mb-moto.webp" />
                 </div>
                 </div>
              </div>       

@@ -337,7 +337,7 @@ export default function SuperForm({titulo, nomeBtn}) {
 
                     
                     <div className="w-full xl:w-3/4 m-auto">
-                        <button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit" onClick={validarCheckbox, validarCheckbox2}>{nomeBtn}</button>
+                        <button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 focus:outline-none" type="submit" onClick={{validarCheckbox, validarCheckbox2}}>{nomeBtn}</button>
                     </div>
                     
                 </Form>

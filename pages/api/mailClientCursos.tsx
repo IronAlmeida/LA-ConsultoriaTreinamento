@@ -1,7 +1,9 @@
+import { NextApiRequest, NextApiResponse } from "next";
+
 const mailClientCursos = require('@sendgrid/mail')
 mailClientCursos.setApiKey(process.env.SENDGRID_API_KEY_CLIENTCURSOS)
 
-export default async function sendMailClientCursos(req, res) {
+export default async function sendMailClientCursos(req: NextApiRequest, res: NextApiResponse) {
 
     const nomeCompleto = req.body.nome;
     const nomediv = nomeCompleto.split(" ")

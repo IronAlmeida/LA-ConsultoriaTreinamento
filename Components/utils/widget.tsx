@@ -1,4 +1,4 @@
-import {Field, Form, Formik} from "formik";
+import {Field, Form, Formik, FormikErrors} from "formik";
 import { useState } from "react";
 import {HiOutlineMail, HiOutlinePhone} from "react-icons/hi";
 import * as Yup from 'yup';
@@ -30,6 +30,19 @@ export default function Widget() {
             alert("Falha no envio!")
         })
     } 
+
+    interface MyFormValues {
+        nome: string,
+        email: string,
+        message: string
+    }
+
+    type T = {
+        errors: T,
+        touched: T
+    }
+
+    const initalValues: MyFormValues = {nome: '', email: '', message: ''}
 
     return (
         <>
@@ -91,27 +104,23 @@ export default function Widget() {
                     <h2 className="text-center sm:text-left text-white text-2xl font-medium">Fale conosco!</h2>
                     <div className="w-full mt-3">
                         <Formik 
-                            initialValues={{
-                                nome: '',
-                                email: '',
-                                message: ''
-                            }}
+                            initialValues={initalValues}
                             validationSchema={schema}
                             validateOnMount
                             onSubmit={enviar}
                         >
-                        {({errors, touched}) => (
+                        {({errors, touched}: FormikErrors<T>) => (
                             <Form>
 
-                                {errors.nome && touched.nome && (
-                                    <div className="w-full text-white text-sm font-normal">{errors.nome}</div>
+                                {errors && touched && (
+                                    <div className="w-full text-white text-sm font-normal">Nome obrigatiorio</div>
                                 )}
                                 <div className="w-full mb-2 pt-3 rounded">
                                     <Field name="nome" type="text" id="nome" placeholder="Seu nome" className="bg-transparent w-full text-white focus:outline-none border-b border-white px-2 pb-2 text-lg placeholder:text-[#FFFFFF78] placeholder:text-sm" />
                                 </div>
 
-                                {errors.email && touched.email && (
-                                    <div className="w-full text-white text-sm font-normal">{errors.email}</div>
+                                {errors && touched && (
+                                    <div className="w-full text-white text-sm font-normal">Email obrigatorio</div>
                                 )}
                                 <div className="w-full mb-2 pt-3 rounded">
     

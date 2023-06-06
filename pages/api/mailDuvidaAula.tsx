@@ -1,7 +1,9 @@
+import { NextApiRequest, NextApiResponse } from "next"
+
 const mailDuvida = require('@sendgrid/mail')
 mailDuvida.setApiKey(process.env.SENDGRID_API_KEY_DUVIDAS)
 
-export default async function sendMailDuvidas(req, res) {
+export default async function sendMailDuvidas(req: NextApiRequest, res: NextApiResponse) {
 
    const dataDuvidas = {
        to: 'consultoria@lourdesalmeidadp.com.br',
