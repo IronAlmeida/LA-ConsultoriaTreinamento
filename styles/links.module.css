@@ -1,0 +1,9 @@
+.Body {
+  background: url("../public/bg-mobile-LA.png") no-repeat top center/cover;
+}
+
+@media (min-width: 700px) {
+  .Body {
+    background: url("../public/bg-desktop-LA.png") no-repeat top center/cover;
+  }
+}
