@@ -3,7 +3,6 @@ import "../styles/slider.css";
 import "../styles/dp.css";
 import { AuthProvider } from "../firebase/auth";
 import Head from "next/head";
-import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   return (

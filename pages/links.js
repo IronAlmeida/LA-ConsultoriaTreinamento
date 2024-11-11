@@ -31,15 +31,6 @@ export default function links() {
         <ul className="flex flex-col gap-4 py-2 px-0">
           <li>
             <a
-              className="flex items-center justify-center py-4 px-6 background-links border border-solid border-[#d9bb68] rounded-lg backdrop font-bold text-sm"
-              target="_blank"
-              href={"https://www.even3.com.br/previdencia-em-foco/"}
-            >
-              CURSO: PREVIDÊNCIA EM FOCO - 09/11
-            </a>
-          </li>
-          <li>
-            <a
               className="flex items-center justify-center py-4 px-6 background-links border border-solid border-[#d9bb68] rounded-lg backdrop font-bold"
               target="_blank"
               href={"https://lourdesalmeidadp.com.br/"}

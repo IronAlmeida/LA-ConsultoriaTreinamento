@@ -33,3 +33,15 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#pages
+codep-se.js
+
+#images
+codep-parte2.png
+codep_2edicao.png
+codep_logo2025.png
+logoC.png
+nave.png
+site.jpg
+stars.jpg
