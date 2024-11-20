@@ -6,9 +6,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        codep: "url('/public/Site.png')",
-      },
+      scrolBehavior: ["smooth"],
     },
   },
   variants: {

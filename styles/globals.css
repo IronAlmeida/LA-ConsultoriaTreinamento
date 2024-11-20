@@ -12,6 +12,10 @@
   background-color: #ccc;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .root {
   --bg-url: url("../public/bg-mobile-LA.png");
 }

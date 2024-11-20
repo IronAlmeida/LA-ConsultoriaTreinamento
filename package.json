@@ -17,6 +17,7 @@
     "formik": "^2.2.6",
     "keen-slider": "^5.4.1",
     "next": "^15.0.3",
+    "next-cloudinary": "^6.16.0",
     "next-images": "^1.7.0",
     "nookies": "^2.5.2",
     "react": "^18.2.0",
