@@ -7,7 +7,7 @@ import {
   BsArrowRightCircle,
   BsRocketTakeoff,
 } from "react-icons/bs";
-// import { CldVideoPlayer } from "next-cloudinary";
+import { CldVideoPlayer } from "next-cloudinary";
 
 const tomorrow = Tomorrow({
   subsets: ["latin"],
@@ -164,14 +164,14 @@ export default function Codep() {
           </div>
           <div className="flex justify-center py-4">
             {/* <CldVideoPlayer
-            className="rounded-2xl border-[3px] border-[#E8C25A]"
-            src="CODEP-2024/fgdwicaioo7nxksverre"
-          /> */}
+              className="rounded-2xl border-[3px] border-[#E8C25A]"
+              src="CODEP-2024/fgdwicaioo7nxksverre"
+            /> */}
             <iframe
               className="rounded-3xl border-[2px] border-[#E8C25A]"
               width="300"
               height="530"
-              src="https://www.youtube.com/embed/i1wrlqepxIM"
+              src="https://drive.google.com/file/d/1YKLIlse-_AiPGShOfKTnoARIELfuJ0yi/preview"
               title="1° Congresso de Departamento Pessoal de Sergipe (CODEP/SE)"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
               referrerPolicy="strict-origin-when-cross-origin"
