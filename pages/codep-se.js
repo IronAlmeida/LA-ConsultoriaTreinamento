@@ -19,32 +19,36 @@ export default function Codep() {
   return (
     <>
       <div className="bg-[url('../public/background_1.jpg')] bg-cover bg-bottom bg-no-repeat pt-12 pb-40">
-        <div className="w-3/4 flex flex-col items-left gap-9 min-[1537px]:gap-16 min-[1537px]:mt-10 mx-auto px-4">
-          <Image src={"/codep_logo2025.webp"} width={500} height={400} />
-          <div className={` ${tomorrow.className} w-4/6 min-[1537px]:w-3/6`}>
-            <h1 className={`text-[48px] leading-[60px] text-white`}>
+        <div className="w-full xl:w-3/4 flex flex-col items-center xl:items-start gap-12 xl:gap-10 min-[1537px]:gap-16 min-[1537px]:mt-10 mx-auto px-4">
+          <Image src={"/codep_logo2025.webp"} width={400} height={400} />
+          <div
+            className={` ${tomorrow.className} w-full lg:w-4/6 min-[1537px]:w-3/6`}
+          >
+            <h1
+              className={`text-4xl text-center xl:text-left xl:text-5xl xl:leading-[60px] text-white`}
+            >
               O maior encontro de{" "}
               <span className="text-[#E8C25A] font-bold">
                 Departamento Pessoal
               </span>{" "}
               de Sergipe está de volta!
             </h1>
-            <p className="flex items-center text-white text-lg mt-4">
+            <p className="text-center xl:text-left text-white text-lg mt-6">
               Venha fazer parte desta jornada e explorar o que há de novo no
               Universo DP.
             </p>
           </div>
           <div
-            className={`${tomorrow.className} text-white text-2xl font-semibold`}
+            className={`${tomorrow.className} text-white text-xl lg:text-2xl `}
           >
-            <p className="flex items-center">
+            <p className="flex items-center justify-center">
               {" "}
               <BsCalendar2CheckFill className="mr-2" /> 18 e 19 de Julho de 2025
             </p>
-            <p className="flex items-center">
+            <p className="flex items-center mt-2">
               {" "}
               <BsGeoAlt className="mr-2" />
-              Centro de Convenções José Augusto Gama - Hotel Arcus, Aracaju/SE
+              Hotel Arcus | Aracaju/SE
             </p>
           </div>
           <Link href={"#ingresso"}>
@@ -56,7 +60,7 @@ export default function Codep() {
         </div>
       </div>
       <div className="bg-[url('../public/background_2.jpg')] bg-cover bg-top">
-        <div className="w-3/4 flex flex-col items-center mx-auto py-8 px-4">
+        <div className="w-full lg:w-3/4 flex flex-col items-center mx-auto py-8 px-4">
           <Image
             src={"/nave.webp"}
             width={250}
@@ -64,7 +68,7 @@ export default function Codep() {
             className="mt-[-100px]"
           />
           <div className={`${tomorrow.className}`}>
-            <h1 className="text-white text-3xl text-center mt-10">
+            <h1 className="text-white text-2xl lg:text-3xl text-center mt-10">
               <span className="font-bold">DP em expansão: </span>
               <br />
               <span className="text-[#E8C25A]">
@@ -72,9 +76,9 @@ export default function Codep() {
               </span>
             </h1>
           </div>
-          <div className="flex items-center mt-5 gap-10">
+          <div className="flex flex-col 2xl:flex-row items-center mt-10  2xl:mt-5 2xl:gap-10">
             <div>
-              <Image src={"/codep2025_logoC.webp"} width={1386} height={769} />
+              <Image src={"/codep2025_logoC.webp"} width={350} height={300} />
             </div>
             <div
               className={`${tomorrow.className} text-white text-justify p-6 rounded-3xl`}
@@ -101,7 +105,7 @@ export default function Codep() {
             </div>
           </div>
           <p
-            className={`${tomorrow.className} flex items-center justify-center text-[#E8C25A] font-bold mt-5 text-3xl text-center`}
+            className={`${tomorrow.className} flex items-center justify-center text-[#E8C25A] font-bold mt-5 text-2xl 2xl:text-3xl text-center`}
           >
             Venha fazer parte dessa missão!{" "}
             <BsRocketTakeoff className="text-white ml-4" />
@@ -112,9 +116,9 @@ export default function Codep() {
       <div
         className={`w-full pt-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
       >
-        <div className="flex flex-col items-center w-3/4 mx-auto bg-gradient-to-b from-[#120608] via-[#000] to-[#080204] p-8 rounded-3xl text-white text-center">
+        <div className="flex flex-col items-center w-full lg:w-3/4 mx-auto bg-gradient-to-b from-[#120608] via-[#000] to-[#080204] p-8 rounded-3xl text-white text-center">
           <Image
-            src={"/codep_2024.jfif"}
+            src={"/codep_2024.jpg"}
             width={600}
             height={300}
             className="rounded-xl"
@@ -151,9 +155,11 @@ export default function Codep() {
       <div
         className={`w-full bg-gradient-to-b from-[#120608] via-[#090303] to-[#000] py-6 px-2 ${tomorrow.className}`}
       >
-        <div className="w-full md:w-3/4 xl:w-3/5 m-auto rounded-3xl py-8 text-center">
+        <div className="w-full lg:w-3/4 xl:w-3/5 m-auto rounded-3xl  text-center">
           <div className="text-white">
-            <h1 className="text-4xl">O que rolou no CODEP/SE 2024?</h1>
+            <h1 className="text-3xl lg:text-4xl">
+              O que rolou no CODEP/SE 2024?
+            </h1>
             <p className="text-xl mt-2">Confira os melhores momentos.</p>
           </div>
           <div className="flex justify-center py-4">
