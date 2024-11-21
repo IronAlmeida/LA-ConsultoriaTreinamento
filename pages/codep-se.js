@@ -7,7 +7,7 @@ import {
   BsArrowRightCircle,
   BsRocketTakeoff,
 } from "react-icons/bs";
-import { CldVideoPlayer } from "next-cloudinary";
+// import { CldVideoPlayer } from "next-cloudinary";
 
 const tomorrow = Tomorrow({
   subsets: ["latin"],
