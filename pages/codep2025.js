@@ -116,7 +116,7 @@ export default function Codep() {
           <Link href={"#ingresso"}>
             <button className="w-/34 p-4 bg-gradient-to-b from-[#E11D61] to-[#672A48] rounded-full">
               <p
-                className={`${tomorrow.className} flex items-center justify-center text-white font-bold text-xl 2xl:text-2xl text-center`}
+                className={`${tomorrow.className} flex items-center justify-center text-white font-bold text-[17px] 2xl:text-2xl text-center`}
               >
                 Venha fazer parte dessa missão!{" "}
                 <BsRocketTakeoff className="text-white ml-2 text-2xl" />
@@ -130,8 +130,8 @@ export default function Codep() {
         className={`w-full py-6 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
       >
         <div className="w-full lg:w-4/5 text-center mx-auto px-8">
-          <h1 className="flex items-center justify-center text-4xl text-white">
-            <BsGeoAlt className="text-4xl mr-4" />
+          <h1 className="flex items-center justify-center text-3xl text-white">
+            <BsGeoAlt className="text-4xl lg:text-4xl mr-4" />
             Local do evento
           </h1>
           <div className="w-full lg:w-4/5 text-center mx-auto mt-4">
@@ -194,7 +194,9 @@ export default function Codep() {
                 </div>
                 <div className="embla__slide">
                   <Image
-                    src={"/codep_3.jpg"}
+                    src={
+                      "https://drive.google.com/uc?id=1ZP9UEWziexmBPoZo-smCkYUlUTB1YhGi&export=view"
+                    }
                     width={1000}
                     height={300}
                     className="rounded-xl"
@@ -202,7 +204,9 @@ export default function Codep() {
                 </div>
                 <div className="embla__slide">
                   <Image
-                    src={"/codep_4.jpg"}
+                    src={
+                      "https://drive.google.com/uc?id=1yByzdVd4g5WPcTzWcIpQNffDoVQp5o6C&export=view"
+                    }
                     width={1000}
                     height={300}
                     className="rounded-xl"
@@ -213,8 +217,8 @@ export default function Codep() {
           </div>
 
           <div>
-            <h1 className="text-4xl mt-4">Para quem é o evento?</h1>
-            <p className="text-lg mt-4 text-justify">
+            <h1 className="text-2xl sm:text-4xl mt-4">Para quem é o evento?</h1>
+            <p className="text-sm sm:text-lg mt-4 text-justify">
               O CODEP é o encontro feito para todos os profissionais de
               Departamento Pessoal e áreas afins. Nosso objetivo é criar um
               ambiente dinâmico e colaborativo onde você possa se conectar com
@@ -245,7 +249,7 @@ export default function Codep() {
       >
         <div className="w-full lg:w-3/4 xl:w-3/5 m-auto rounded-3xl  text-center">
           <div className="text-white">
-            <h1 className="text-3xl lg:text-4xl">
+            <h1 className="text-2xl sm:text-4xl">
               O que rolou no CODEP/SE 2024?
             </h1>
             <p className="text-xl mt-2">Confira os melhores momentos.</p>
@@ -396,14 +400,14 @@ export default function Codep() {
         id="ingresso"
         className={`w-full text-center text-white bg-[#120608] py-8 px-2 ${tomorrow.className}`}
       >
-        <h1 className="text-4xl">Garanta já seu ingresso!</h1>
+        <h1 className="text-3xl sm:text-4xl">Garanta já seu ingresso!</h1>
         <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 mx-auto mt-5 bg-[#E8C25A] rounded-full py-2">
           <h1 className="text-black text-2xl font-bold">
             Lote Promocional até 31/12!
           </h1>
         </div>
         <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 relative rounded-3xl m-auto border-[2px] border-[#6E517A] py-8 px-2 mt-12">
-          <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-3xl mt-[-60px]">
+          <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-2xl sm:text-3xl mt-[-60px]">
             Ingresso Individual
           </h1>
           <div>
@@ -452,7 +456,7 @@ export default function Codep() {
           </div>
         </div>
         <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 relative rounded-3xl m-auto border-[2px] border-[#6E517A] py-8 px-2 mt-12">
-          <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-2xl xl:text-3xl mt-[-60px]">
+          <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-xl sm:text-2xl xl:text-3xl mt-[-60px]">
             Ingressos para Grupos
           </h1>
           <div>
