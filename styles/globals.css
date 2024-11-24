@@ -24,6 +24,26 @@ html {
   background: var(--bg-url) no-repeat top center/cover;
 }
 
+/* EMBLA CAROUSEL  */
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla__slide2 {
+  flex: 0 0 33%;
+  min-width: 0;
+}
+
+/* EMBLA CAROUSEL FIM */
+
 @media (min-width: 700px) {
   .Body {
     --bg-url: url("../public/bg-desktop-LA.png");

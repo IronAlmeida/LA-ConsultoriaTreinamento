@@ -1,0 +1,580 @@
+import Image from "next/image";
+import { Tomorrow } from "next/font/google";
+import Link from "next/link";
+import {
+  BsCalendar2CheckFill,
+  BsGeoAlt,
+  BsArrowRightCircle,
+  BsRocketTakeoff,
+} from "react-icons/bs";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { Accordion, AccordionItem } from "@nextui-org/accordion";
+import Rodape from "../Components/utils/footer";
+// import { CldVideoPlayer } from "next-cloudinary";
+
+const tomorrow = Tomorrow({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-tomorrow",
+});
+
+export default function Codep() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ playOnInit: true, delay: 2000 }),
+  ]);
+
+  // const [emblaRef2] = useEmblaCarousel({ loop: true, align: "start" }, [
+  //   // Autoplay({ playOnInit: true, delay: 2000 }),
+  // ]);
+
+  let data = new Date();
+  let ano = data.getFullYear();
+
+  return (
+    <>
+      <div className="bg-[url('../public/background_1.jpg')] bg-cover bg-bottom bg-no-repeat pt-12 pb-40">
+        <div className="w-full xl:w-3/4 flex flex-col items-center xl:items-start gap-12 xl:gap-10 min-[1537px]:gap-16 min-[1537px]:mt-10 mx-auto px-4">
+          <Image src={"/codep_logo2025.webp"} width={400} height={400} />
+          <div
+            className={` ${tomorrow.className} w-full lg:w-4/6 min-[1537px]:w-3/6`}
+          >
+            <h1
+              className={`text-4xl text-center xl:text-left xl:text-5xl xl:leading-[60px] text-white`}
+            >
+              O maior encontro de{" "}
+              <span className="text-[#E8C25A] font-bold">
+                Departamento Pessoal
+              </span>{" "}
+              de Sergipe está de volta!
+            </h1>
+            <p className="text-center xl:text-left text-white text-lg mt-6">
+              Venha fazer parte desta jornada e explorar o que há de novo no
+              Universo DP.
+            </p>
+          </div>
+          <div
+            className={`${tomorrow.className} text-white text-xl lg:text-2xl `}
+          >
+            <p className="flex items-center justify-center">
+              {" "}
+              <BsCalendar2CheckFill className="mr-2" /> 18 e 19 de Julho de 2025
+            </p>
+            <p className="flex items-center mt-2">
+              {" "}
+              <BsGeoAlt className="mr-2" />
+              Hotel Arcus | Aracaju/SE
+            </p>
+          </div>
+          <Link href={"#ingresso"}>
+            <button className="flex justify-center items-center w-[300px] bg-gradient-to-b from-[#E11D61] to-[#672A48] rounded-full text-white text-lg py-4">
+              <p className={`${tomorrow.className}`}>ADQUIRA SEU INGRESSO!</p>
+              <BsArrowRightCircle className="text-2xl ml-2" />
+            </button>
+          </Link>
+        </div>
+      </div>
+      <div className="bg-[url('../public/background_2.jpg')] bg-cover bg-top">
+        <div className="w-full lg:w-3/4 flex flex-col items-center mx-auto py-8 px-4">
+          <Image
+            src={"/nave.webp"}
+            width={250}
+            height={250}
+            className="mt-[-100px]"
+          />
+          <div className={`${tomorrow.className}`}>
+            <h1 className="text-white text-2xl lg:text-3xl text-center mt-10">
+              <span className="font-bold">DP em expansão: </span>
+              <br />
+              <span className="text-[#E8C25A]">
+                Despertar para uma nova realidade
+              </span>
+            </h1>
+          </div>
+          <div className="flex flex-col 2xl:flex-row 2xl:justify-around items-center my-8">
+            <div>
+              <Image src={"/codep2025_logoC.webp"} width={350} height={300} />
+            </div>
+            <div
+              className={`${tomorrow.className} text-xl text-white text-justify p-6 rounded-3xl md:w-5/6 xl:w-3/4 2xl:w-2/4`}
+            >
+              <p>
+                Assim como o universo, o Departamento Pessoal está em constante
+                expansão, evoluindo e se modernizando em múltiplas direções.
+                Nesta edição, convidamos você a um despertar para novas
+                possibilidades, explorando desde as mais recentes atualizações
+                na legislação até as inovações tecnológicas que estão
+                transformando a área.
+                <br />
+                <br /> Prepare-se para um encontro onde cada palestra será um
+                novo ponto de descoberta e cada troca de conhecimentos abrirá
+                novos horizontes a serem explorados. No CODEP/SE 2025, você
+                estará entre os pioneiros a desbravar essa nova era do DP!
+              </p>
+            </div>
+          </div>
+          <Link href={"#ingresso"}>
+            <button className="w-/34 p-4 bg-gradient-to-b from-[#E11D61] to-[#672A48] rounded-full">
+              <p
+                className={`${tomorrow.className} flex items-center justify-center text-white font-bold text-xl 2xl:text-2xl text-center`}
+              >
+                Venha fazer parte dessa missão!{" "}
+                <BsRocketTakeoff className="text-white ml-2 text-2xl" />
+              </p>
+            </button>
+          </Link>
+        </div>
+      </div>
+      {/* LOCAL DO EVENTO */}
+      <div
+        className={`w-full py-6 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+      >
+        <div className="w-full lg:w-4/5 text-center mx-auto px-8">
+          <h1 className="flex items-center justify-center text-4xl text-white">
+            <BsGeoAlt className="text-4xl mr-4" />
+            Local do evento
+          </h1>
+          <div className="w-full lg:w-4/5 text-center mx-auto mt-4">
+            <iframe
+              className="mx-auto"
+              src="https://drive.google.com/file/d/1imilTDQ0oCUxk7BCDNX0Om14RuKnpg7u/preview"
+              width="300"
+              height="480"
+              allow="autoplay"
+            ></iframe>
+          </div>
+          <div className="w-full lg:w-3/4 mx-auto">
+            <p className="text-lg text-white mt-2 text-justify xl:text-center">
+              O palco do nosso CODEP 2025 será o{" "}
+              <span className="text-[#E8C25A] font-bold">
+                Centro de Eventos João Augusto Gama
+              </span>
+              , situado nas dependências do{" "}
+              <span className="text-[#E8C25A] font-bold">Hotel Arcus</span>{" "}
+              próximo a orla de Atalaia.
+            </p>
+          </div>
+          <div className="mt-4" style={{ width: "100%" }}>
+            <iframe
+              width="100%"
+              height="600"
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=pt-br&amp;q=Centro%20de%20conven%C3%A7%C3%B5es%20Jo%C3%A3o%20Augusto%20Gama+(Hotel%20Arcus%20-%20Centro%20de%20Conve%C3%A7%C3%B5es%20Jos%C3%A9%20Augusto%20Gama)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      {/* PARA QUEM É O EVENTO */}
+      <div
+        className={`w-full pt-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+      >
+        <div className="flex flex-col items-center w-full lg:w-3/4 2xl:w-3/6 mx-auto bg-gradient-to-b from-[#120608] via-[#000] to-[#080204] p-8 rounded-3xl text-white text-center">
+          <div className="w-full md:w-3/4 mx-auto">
+            <div className="embla" ref={emblaRef}>
+              <div className="embla__container">
+                <div className="embla__slide">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1csL1Va3ur9nzC57IvLt9iewavSJ9JY-e&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+                <div className="embla__slide">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1BsV_3Ct9Wz1UrDqMJD79QqwMFERbTiDs&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+                <div className="embla__slide">
+                  <Image
+                    src={"/codep_3.jpg"}
+                    width={1000}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+                <div className="embla__slide">
+                  <Image
+                    src={"/codep_4.jpg"}
+                    width={1000}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h1 className="text-4xl mt-4">Para quem é o evento?</h1>
+            <p className="text-lg mt-4 text-justify">
+              O CODEP é o encontro feito para todos os profissionais de
+              Departamento Pessoal e áreas afins. Nosso objetivo é criar um
+              ambiente dinâmico e colaborativo onde você possa se conectar com
+              os melhores do ramo, compartilhar conhecimentos e impulsionar seu
+              crescimento profissional.
+              <br />
+              <br />
+              Durante o evento você terá acesso a palestras inspiradoras
+              ministradas pelos principais especialistas do Brasil e também da
+              nossa querida Sergipe. Além disso, teremos momentos de interação,
+              entretenimento e valiosas oportunidades de networking, todas
+              destinadas a enriquecer sua trajetória profissional.
+            </p>
+          </div>
+
+          <Link href={"#ingresso"}>
+            <button className="flex justify-center items-center w-[300px] bg-gradient-to-b from-[#E11D61] to-[#672A48] rounded-full text-white text-lg py-4 mt-8">
+              <p className={`${tomorrow.className}`}>ADQUIRA SEU INGRESSO!</p>
+              <BsArrowRightCircle className="text-2xl ml-2" />
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      {/* SOBRE O CODEP 2024 */}
+      <div
+        className={`w-full bg-gradient-to-b from-[#120608] via-[#090303] to-[#000] py-6 px-2 ${tomorrow.className}`}
+      >
+        <div className="w-full lg:w-3/4 xl:w-3/5 m-auto rounded-3xl  text-center">
+          <div className="text-white">
+            <h1 className="text-3xl lg:text-4xl">
+              O que rolou no CODEP/SE 2024?
+            </h1>
+            <p className="text-xl mt-2">Confira os melhores momentos.</p>
+          </div>
+          <div className="flex justify-center py-4">
+            {/* <CldVideoPlayer
+              className="rounded-2xl border-[3px] border-[#E8C25A]"
+              src="CODEP-2024/fgdwicaioo7nxksverre"
+            /> */}
+            <iframe
+              className="rounded-3xl border-[2px] border-[#E8C25A]"
+              width="300"
+              height="530"
+              src="https://drive.google.com/file/d/1YKLIlse-_AiPGShOfKTnoARIELfuJ0yi/preview"
+              title="1° Congresso de Departamento Pessoal de Sergipe (CODEP/SE)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className="text-xl text-white">
+            Veja também os registros da primeira edição.
+          </p>
+          <a
+            href="https://photos.google.com/share/AF1QipOJ1Vtw1uJj_57prG4ybmx5FORn5SKlZJr9_etCtbEXYryKCydM06Y7FZB2NURW2A?key=R2VtZEp4azRka1hJUjBiX24yTHRTTDl2bjFwTFBR"
+            target="_blank"
+          >
+            <button className="bg-[#E11D61] p-4 mt-4 rounded-full text-white">
+              Ver fotos CODEP/SE 2024
+            </button>
+          </a>
+        </div>
+      </div>
+      {/* PALESTRANTES QUE PASSARAM PELO CODEP */}
+      {/* <div
+        className={`w-full py-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+      >
+        <div className="w-full lg:w-3/4 text-center mx-auto">
+          <h1 className="text-2xl text-white">Palestrantes do CODEP 2024</h1>
+          <div className="embla" ref={emblaRef2}>
+            <div className="embla__container mt-10">
+              <div className="embla__slide2 text-center text-white">
+                <div className="w-1/2 rounded-full mx-auto">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1c9p3-ljBIfHf4qFPqoSfFWKflo9a80Pm&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                  />
+                </div>
+                <h1 className="mt-4">Guilherme Santos</h1>
+                <p>@ajuda.dp</p>
+              </div>
+              <div className="embla__slide2 text-white">
+                <div className="w-1/2 rounded-full mx-auto">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1l0KbA4H95GqMQPqnquh4AYQMJ3i8wesL&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                  />
+                </div>
+                <h1 className="mt-4">Liêda Amaral</h1>
+                <p>@liedaamaral</p>
+              </div>
+              <div className="embla__slide2 text-white">
+                <div className="w-1/2 rounded-full mx-auto">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1o6yLr4FTjKO9pfQpKbns7tJFWknbxrjt&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                  />
+                </div>
+                <h1 className="mt-4">José Maia</h1>
+                <p>@liedaamaral</p>
+              </div>
+              <div className="embla__slide2 text-white">
+                <h2>Imagem 4</h2>
+              </div>
+              <div className="embla__slide2 text-white">
+                <h2>Imagem 5</h2>
+              </div>
+              <div className="embla__slide2 text-white">
+                <h2>Imagem 6</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* PALESTRANTES 2025 */}
+
+      <div
+        className={`w-full py-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+      >
+        <div className="w-full lg:w-3/4 text-white mx-auto text-center">
+          <div className="bg-gradient-to-r from-red-500 to-yellow-300 text-transparent bg-clip-text">
+            <h1 className="text-4xl font-bold italic ">
+              Em breve serão confimados os palestrantes de 2025!
+            </h1>
+          </div>
+
+          <p className="mt-4">
+            Fiquem ligados no instagram da LA para novidades em primeira mão:{" "}
+            <br />
+            <a
+              href="https://www.instagram.com/lourdesalmeidadp/"
+              target="_blank"
+            >
+              <button className="p-4 border border-yellow-300 rounded-full mt-5">
+                {" "}
+                @lourdesalmeidadp
+              </button>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      {/* SEJA UM PATROCINADOR */}
+      <div
+        className={`w-full py-20 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+      >
+        <div className="w-full md:w-3/4 lg:w-2/4 mx-auto border border-[#E8C25A] p-8 rounded-3xl shadow-lg shadow-slate-900">
+          <h1 className="text-4xl text-white text-center">
+            Seja um patrocinador
+          </h1>
+          <p className="text-lg lg:text-xl text-white mt-8 text-justify">
+            Como patrocinador, sua empresa terá a oportunidade de se destacar
+            perante um público altamente qualificado, fortalecendo sua marca e
+            ampliando conexões estratégicas.
+          </p>
+          <Link href="https://wa.me/5579996121721?text=Olá, gostaria de ver os planos para ser patrocinador do CODEP 2025.">
+            <button className="flex justify-center items-center w-[300px] bg-white rounded-full text-[#E11D61] text-lg py-4 mt-8 mx-auto">
+              <p className={`${tomorrow.className} font-bold`}>
+                Quero ser um patrocinador
+              </p>
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      {/* INGRESSOS */}
+      <div
+        id="ingresso"
+        className={`w-full text-center text-white bg-[#120608] py-8 px-2 ${tomorrow.className}`}
+      >
+        <h1 className="text-4xl">Garanta já seu ingresso!</h1>
+        <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 mx-auto mt-5 bg-[#E8C25A] rounded-full py-2">
+          <h1 className="text-black text-2xl font-bold">
+            Lote Promocional até 31/12!
+          </h1>
+        </div>
+        <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 relative rounded-3xl m-auto border-[2px] border-[#6E517A] py-8 px-2 mt-12">
+          <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-3xl mt-[-60px]">
+            Ingresso Individual
+          </h1>
+          <div>
+            <div className="mt-10">
+              <p className="text-2xl text-[#E8C25A]">
+                1° Lote a partir de janeiro 2025
+              </p>
+              <p className="text-2xl text-[#E23C65]">R$ 397,00*</p>
+              <p className="text-sm">
+                *Valor para pagamento via pix <br />
+                *Cartão de crédito: + R$ 39,70 taxa ou até 10x R$ 51,49
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <p className="text-3xl font-bold text-[#E8C25A]">
+                Lote Promocional até 31/12
+              </p>
+              <p className="text-5xl font-bold mt-2 text-[#7FDB58]">
+                R$ 347,00**
+              </p>
+              <p className="text-[16px] mt-2">
+                **Valor para pagamento via pix <br />
+                **Cartão de crédito: + R$ 34,70 taxa ou até 10x R$ 46,30
+              </p>
+            </div>
+
+            <div className="mt-10 font-bold">
+              <a
+                href="https://wa.me/5579996121721?text=Olá, gostaria de adquirir meu ingresso para o CODEP/SE 2025."
+                target="_blank"
+              >
+                <button className="bg-[#E11D61] p-4 rounded-full hover:scale-110 ease-in duration-300">
+                  Adquirir lote via Pix
+                </button>
+              </a>
+            </div>
+
+            <div className="mt-4 font-bold">
+              <a href="https://www.even3.com.br/tickets/get/codep25?even3_orig=get_tickets">
+                <button className="bg-[#E11D61] p-4 rounded-full hover:scale-110 ease-in duration-300">
+                  Adquirir lote via cartão de crédito
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 relative rounded-3xl m-auto border-[2px] border-[#6E517A] py-8 px-2 mt-12">
+          <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-2xl xl:text-3xl mt-[-60px]">
+            Ingressos para Grupos
+          </h1>
+          <div>
+            <div className="mt-10">
+              <p className="text-2xl sm:text-4xl font-bold text-[#E8C25A]">
+                Lote Promocional - 3 pessoas
+              </p>
+              <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
+                R$ 332,33{" "}
+                <span className="text-[16px] font-normal text-white">
+                  por pessoa*
+                </span>
+              </p>
+              <p className="text-sm sm:text-[16px] mt-2">
+                *Valor para pagamento via pix <br />
+                *Cartão de crédito: + R$ 33,23 taxa por pessoa ou até 10x R$
+                129,30
+              </p>
+            </div>
+            <div className="mt-10">
+              <p className="text-2xl sm:text-4xl font-bold text-[#E8C25A]">
+                Lote Promocional - 4 pessoas
+              </p>
+              <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
+                R$ 324,25{" "}
+                <span className="text-[16px] font-normal text-white">
+                  por pessoa**
+                </span>
+              </p>
+              <p className="text-sm sm:text-[16px] mt-2 text-center">
+                **Valor para pagamento via pix <br />
+                **Cartão de crédito: + R$ 32,43 taxa por pessoa ou até 10x R$
+                168,21
+              </p>
+            </div>
+
+            <div className="mt-10 font-bold">
+              <a
+                href="https://wa.me/5579996121721?text=Olá, gostaria de adquirir ingressos em grupo para o CODEP/SE 2025."
+                target="_blank"
+              >
+                <button className="bg-[#E11D61] p-4 rounded-full hover:scale-110 ease-in duration-300">
+                  Adquirir lote via Pix
+                </button>
+              </a>
+            </div>
+
+            <div className="mt-4 font-bold">
+              <a href="https://www.even3.com.br/tickets/get/codep25?even3_orig=get_tickets">
+                <button className="bg-[#E11D61] p-4 rounded-full hover:scale-110 ease-in duration-300">
+                  Adquirir lote via cartão de crédito
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* PERGUNTAS FRENQUENTES */}
+      <div
+        className={`w-full py-6 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+      >
+        <div className="w-full lg:w-3/4 mx-auto p-8">
+          <h1 className="text-3xl text-white text-center mb-10">
+            Perguntas Frenquentes
+          </h1>
+          <Accordion>
+            <AccordionItem
+              key="1"
+              aria-label="Accordion 1"
+              title="Quais são as formas de pagamento disponíveis?"
+              classNames={{ title: "text-[#E8C25A]" }}
+            >
+              <p className="text-white">
+                O pagamento está disponível via PIX e Cartão de crédito. <br />
+                <br />
+                Para pagamentos via Pix entrar em contato com nossa equipe via
+                WhatsApp no (79) 9 9612-1721 - Andrea Sales.
+                <br />
+                <br />
+                Pagamentos via Cartão possui acréscimo estabelecido pela
+                plataforma de vendas sendo parcelados em até 10x
+              </p>
+            </AccordionItem>
+            <AccordionItem
+              key="2"
+              aria-label="Accordion 2"
+              title="Como recebo o meu ingresso?"
+              classNames={{ title: "text-[#E8C25A]" }}
+            >
+              <p className="text-white">
+                Para ingressos adquiridos via PIX você recebe no momento da
+                compra através de nossa equipe no WhatsApp.
+                <br />
+                <br />
+                Para ingressos adquirios via plataforma de vendas você receberá
+                em seu e-mail logo após a finalização da compra.
+              </p>
+            </AccordionItem>
+            <AccordionItem
+              key="3"
+              aria-label="Accordion 3"
+              title="Qual a data e o local do CODEP/SE 2025?"
+              classNames={{ title: "text-[#E8C25A]" }}
+            >
+              <p className="text-white">
+                A edição do CODEP/SE 2025 vai acontecer nos dias 18 e 19 de
+                julho de 2025, no centro de eventos João Augusto Gama situado
+                nas dependências do Hotel Arcus.
+              </p>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </div>
+      <div className="w-full bg-gradient-to-b from-[#120608] via-[#000] to-[#080204] p-1">
+        <div className="flex flex-col flex-wrap py-3 text-white text-sm sm:text-base items-center text-center sm:w-3/4 sm:mx-auto">
+          <Image src="/LA-Logo.webp" className="py-2" width={80} height={56} />
+          <p className="pt-2">
+            Copyright © LA - Consultoria e Treinamento {ano}
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
