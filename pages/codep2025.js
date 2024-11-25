@@ -143,7 +143,7 @@ export default function Codep() {
             ></iframe>
           </div>
           <div className="w-full lg:w-3/4 mx-auto">
-            <p className="text-lg text-white mt-2 text-justify xl:text-center">
+            <p className="text-[16px] sm:text-lg text-white mt-2 text-justify">
               O palco do nosso CODEP 2025 será o{" "}
               <span className="text-[#E8C25A] font-bold">
                 Centro de Eventos João Augusto Gama
@@ -153,7 +153,7 @@ export default function Codep() {
               próximo a orla de Atalaia.
             </p>
           </div>
-          <div className="mt-4" style={{ width: "100%" }}>
+          <div className="lg:px-16 xl:px-32 mt-4" style={{ width: "100%" }}>
             <iframe
               width="100%"
               height="600"
@@ -423,7 +423,7 @@ export default function Codep() {
 
             <div className="mt-10">
               <p className="text-3xl font-bold text-[#E8C25A]">
-                Lote Promocional até 31/12
+                Lote Promocional
               </p>
               <p className="text-5xl font-bold mt-2 text-[#7FDB58]">
                 R$ 347,00**
@@ -519,7 +519,7 @@ export default function Codep() {
         className={`w-full py-6 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
       >
         <div className="w-full lg:w-3/4 mx-auto p-8">
-          <h1 className="text-3xl text-white text-center mb-10">
+          <h1 className="text-2xl sm:text-3xl text-white text-center mb-10">
             Perguntas Frenquentes
           </h1>
           <Accordion>
