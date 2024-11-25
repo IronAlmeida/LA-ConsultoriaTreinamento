@@ -169,7 +169,8 @@ export default function Codep() {
       >
         <div className="flex flex-col items-center w-full lg:w-3/4 2xl:w-3/6 mx-auto bg-gradient-to-b from-[#120608] via-[#000] to-[#080204] p-8 rounded-3xl text-white text-center">
           <div className="w-full md:w-3/4 mx-auto">
-            <div className="embla" ref={emblaRef}>
+            <h1 className="text-2xl sm:text-4xl">Para quem é o evento?</h1>
+            <div className="embla mt-4" ref={emblaRef}>
               <div className="embla__container">
                 <div className="embla__slide">
                   <Image
@@ -216,7 +217,6 @@ export default function Codep() {
           </div>
 
           <div>
-            <h1 className="text-2xl sm:text-4xl mt-4">Para quem é o evento?</h1>
             <p className="text-[16px] sm:text-lg mt-4 text-justify">
               O CODEP é o encontro feito para todos os profissionais de
               Departamento Pessoal e áreas afins. Nosso objetivo é criar um
@@ -246,7 +246,7 @@ export default function Codep() {
       <div
         className={`w-full bg-gradient-to-b from-[#120608] via-[#090303] to-[#000] py-6 px-2 ${tomorrow.className}`}
       >
-        <div className="w-full lg:w-3/4 xl:w-3/5 m-auto rounded-3xl  text-center">
+        <div className="w-full lg:w-3/4 xl:w-3/5 m-auto rounded-3xl text-center">
           <div className="text-white">
             <h1 className="text-2xl sm:text-4xl">
               O que rolou no CODEP/SE 2024?
@@ -269,7 +269,7 @@ export default function Codep() {
               allowFullScreen
             ></iframe>
           </div>
-          <p className="text-xl text-white">
+          <p className="text-lg text-white">
             Veja também os registros da primeira edição.
           </p>
           <a
@@ -460,7 +460,7 @@ export default function Codep() {
           </h1>
           <div>
             <div className="mt-10">
-              <p className="text-2xl sm:text-4xl font-bold text-[#E8C25A]">
+              <p className="text-xl sm:text-4xl font-bold text-[#E8C25A]">
                 Lote Promocional - 3 pessoas
               </p>
               <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
@@ -476,7 +476,7 @@ export default function Codep() {
               </p>
             </div>
             <div className="mt-10">
-              <p className="text-2xl sm:text-4xl font-bold text-[#E8C25A]">
+              <p className="text-xl sm:text-4xl font-bold text-[#E8C25A]">
                 Lote Promocional - 4 pessoas
               </p>
               <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
