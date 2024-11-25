@@ -20,7 +20,7 @@ const tomorrow = Tomorrow({
 
 export default function Codep() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ playOnInit: true, delay: 2000 }),
+    Autoplay({ delay: 2000 }),
   ]);
 
   // const [emblaRef2] = useEmblaCarousel({ loop: true, align: "start" }, [
