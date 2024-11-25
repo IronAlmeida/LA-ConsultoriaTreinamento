@@ -10,7 +10,6 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
-import Rodape from "../Components/utils/footer";
 // import { CldVideoPlayer } from "next-cloudinary";
 
 const tomorrow = Tomorrow({
@@ -96,7 +95,7 @@ export default function Codep() {
               <Image src={"/codep2025_logoC.webp"} width={350} height={300} />
             </div>
             <div
-              className={`${tomorrow.className} text-xl text-white text-justify p-6 rounded-3xl md:w-5/6 xl:w-3/4 2xl:w-2/4`}
+              className={`${tomorrow.className} text-[16px] sm:text-xl text-justify text-white p-4 rounded-3xl md:w-5/6 xl:w-3/4 2xl:w-2/4`}
             >
               <p>
                 Assim como o universo, o Departamento Pessoal está em constante
@@ -218,7 +217,7 @@ export default function Codep() {
 
           <div>
             <h1 className="text-2xl sm:text-4xl mt-4">Para quem é o evento?</h1>
-            <p className="text-sm sm:text-lg mt-4 text-justify">
+            <p className="text-[16px] sm:text-lg mt-4 text-justify">
               O CODEP é o encontro feito para todos os profissionais de
               Departamento Pessoal e áreas afins. Nosso objetivo é criar um
               ambiente dinâmico e colaborativo onde você possa se conectar com
@@ -538,7 +537,7 @@ export default function Codep() {
                 <br />
                 <br />
                 Pagamentos via Cartão possui acréscimo estabelecido pela
-                plataforma de vendas sendo parcelados em até 10x
+                plataforma de vendas sendo parcelado em até 10x
               </p>
             </AccordionItem>
             <AccordionItem
@@ -552,7 +551,7 @@ export default function Codep() {
                 compra através de nossa equipe no WhatsApp.
                 <br />
                 <br />
-                Para ingressos adquirios via plataforma de vendas você receberá
+                Para ingressos adquiridos via plataforma de vendas você receberá
                 em seu e-mail logo após a finalização da compra.
               </p>
             </AccordionItem>

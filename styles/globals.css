@@ -37,11 +37,6 @@ html {
   min-width: 0;
 }
 
-.embla__slide2 {
-  flex: 0 0 33%;
-  min-width: 0;
-}
-
 /* EMBLA CAROUSEL FIM */
 
 @media (min-width: 700px) {
