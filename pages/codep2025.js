@@ -400,11 +400,6 @@ export default function Codep() {
         className={`w-full text-center text-white bg-[#120608] py-8 px-2 ${tomorrow.className}`}
       >
         <h1 className="text-3xl sm:text-4xl">Garanta já seu ingresso!</h1>
-        <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 mx-auto mt-5 bg-[#E8C25A] rounded-full py-2">
-          <h1 className="text-black text-2xl font-bold">
-            Lote Promocional até 31/12!
-          </h1>
-        </div>
         <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 relative rounded-3xl m-auto border-[2px] border-[#6E517A] py-8 px-2 mt-12">
           <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-2xl sm:text-3xl mt-[-60px]">
             Ingresso Individual
@@ -412,25 +407,23 @@ export default function Codep() {
           <div>
             <div className="mt-10">
               <p className="text-2xl text-[#E8C25A]">
-                1° Lote a partir de janeiro 2025
+                2° Lote a partir de 17 de março 2025
               </p>
-              <p className="text-2xl text-[#E23C65]">R$ 397,00*</p>
+              <p className="text-2xl text-[#E23C65]">R$ 467,00*</p>
               <p className="text-sm">
                 *Valor para pagamento via pix <br />
-                *Cartão de crédito: + R$ 39,70 taxa ou até 10x R$ 51,49
+                *Cartão de crédito: + R$ 46,70 taxa ou até 10x R$ 60,57
               </p>
             </div>
 
             <div className="mt-10">
-              <p className="text-3xl font-bold text-[#E8C25A]">
-                Lote Promocional
-              </p>
+              <p className="text-3xl font-bold text-[#E8C25A]">1° Lote</p>
               <p className="text-5xl font-bold mt-2 text-[#7FDB58]">
-                R$ 347,00**
+                R$ 397,00**
               </p>
               <p className="text-[16px] mt-2">
                 **Valor para pagamento via pix <br />
-                **Cartão de crédito: + R$ 34,70 taxa ou até 10x R$ 46,30
+                **Cartão de crédito: + R$ 39,70 taxa ou até 10x R$ 51,49
               </p>
             </div>
 
@@ -461,34 +454,34 @@ export default function Codep() {
           <div>
             <div className="mt-10">
               <p className="text-xl sm:text-4xl font-bold text-[#E8C25A]">
-                Lote Promocional - 3 pessoas
+                1° Lote - 3 pessoas
               </p>
               <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
-                R$ 332,33{" "}
+                R$ 382,33{" "}
                 <span className="text-[16px] font-normal text-white">
                   por pessoa*
                 </span>
               </p>
               <p className="text-sm sm:text-[16px] mt-2">
                 *Valor para pagamento via pix <br />
-                *Cartão de crédito: + R$ 33,23 taxa por pessoa ou até 10x R$
-                129,30
+                *Cartão de crédito: + R$ 38,24 taxa por pessoa ou até 10x R$
+                148,75
               </p>
             </div>
             <div className="mt-10">
               <p className="text-xl sm:text-4xl font-bold text-[#E8C25A]">
-                Lote Promocional - 4 pessoas
+                1° Lote - 4 pessoas
               </p>
               <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
-                R$ 324,25{" "}
+                R$ 374,25{" "}
                 <span className="text-[16px] font-normal text-white">
                   por pessoa**
                 </span>
               </p>
               <p className="text-sm sm:text-[16px] mt-2 text-center">
                 **Valor para pagamento via pix <br />
-                **Cartão de crédito: + R$ 32,43 taxa por pessoa ou até 10x R$
-                168,21
+                **Cartão de crédito: + R$ 37,43 taxa por pessoa ou até 10x R$
+                194,15
               </p>
             </div>
 
