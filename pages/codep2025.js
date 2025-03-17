@@ -10,6 +10,14 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 // import { CldVideoPlayer } from "next-cloudinary";
 
 const tomorrow = Tomorrow({
@@ -22,10 +30,6 @@ export default function Codep() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 2000 }),
   ]);
-
-  // const [emblaRef2] = useEmblaCarousel({ loop: true, align: "start" }, [
-  //   // Autoplay({ playOnInit: true, delay: 2000 }),
-  // ]);
 
   let data = new Date();
   let ano = data.getFullYear();
@@ -349,9 +353,46 @@ export default function Codep() {
         className={`w-full py-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
       >
         <div className="w-full lg:w-3/4 text-white mx-auto text-center">
+          {/* CARROSSEL PALESTRANTES */}
+          {/*<div className="w-1/2 mx-auto">
+            <Carousel opts={{ loop: true }} className="w-full max-w-sm">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex aspect-square items-center justify-center p-6">
+                        <span className="text-4xl font-semibold">1</span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex aspect-square items-center justify-center p-6">
+                        <span className="text-4xl font-semibold">2</span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex aspect-square items-center justify-center p-6">
+                        <span className="text-4xl font-semibold">3</span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>*/}
+
           <div className="bg-gradient-to-r from-red-500 to-yellow-300 text-transparent bg-clip-text">
             <h1 className="text-4xl font-bold italic ">
-              Em breve serão confimados os palestrantes de 2025!
+              Em breve serão confimados novos palestrantes!
             </h1>
           </div>
 
@@ -407,23 +448,19 @@ export default function Codep() {
           <div>
             <div className="mt-10">
               <p className="text-2xl text-[#E8C25A]">
-                2° Lote a partir de 17 de março 2025
+                3° Lote a partir de 16 de junho 2025
               </p>
-              <p className="text-2xl text-[#E23C65]">R$ 467,00*</p>
-              <p className="text-sm">
-                *Valor para pagamento via pix <br />
-                *Cartão de crédito: + R$ 46,70 taxa ou até 10x R$ 60,57
-              </p>
+              <p className="text-3xl text-[#E23C65]">R$ 567,00</p>
             </div>
 
             <div className="mt-10">
-              <p className="text-3xl font-bold text-[#E8C25A]">1° Lote</p>
+              <p className="text-3xl font-bold text-[#E8C25A]">2° Lote</p>
               <p className="text-5xl font-bold mt-2 text-[#7FDB58]">
-                R$ 397,00**
+                R$ 467,00*
               </p>
               <p className="text-[16px] mt-2">
                 **Valor para pagamento via pix <br />
-                **Cartão de crédito: + R$ 39,70 taxa ou até 10x R$ 51,49
+                **Cartão de crédito: + R$ 46,70 taxa ou até 10x R$ 60,57
               </p>
             </div>
 
@@ -454,34 +491,34 @@ export default function Codep() {
           <div>
             <div className="mt-10">
               <p className="text-xl sm:text-4xl font-bold text-[#E8C25A]">
-                1° Lote - 3 pessoas
+                2° Lote - 3 pessoas
               </p>
               <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
-                R$ 382,33{" "}
+                R$ 443,65{" "}
                 <span className="text-[16px] font-normal text-white">
                   por pessoa*
                 </span>
               </p>
               <p className="text-sm sm:text-[16px] mt-2">
                 *Valor para pagamento via pix <br />
-                *Cartão de crédito: + R$ 38,24 taxa por pessoa ou até 10x R$
-                148,75
+                *Cartão de crédito: + R$ 44,37 taxa por pessoa ou até 10x R$
+                172,61
               </p>
             </div>
             <div className="mt-10">
               <p className="text-xl sm:text-4xl font-bold text-[#E8C25A]">
-                1° Lote - 4 pessoas
+                2° Lote - 4 pessoas
               </p>
               <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
-                R$ 374,25{" "}
+                R$ 429,64{" "}
                 <span className="text-[16px] font-normal text-white">
                   por pessoa**
                 </span>
               </p>
               <p className="text-sm sm:text-[16px] mt-2 text-center">
                 **Valor para pagamento via pix <br />
-                **Cartão de crédito: + R$ 37,43 taxa por pessoa ou até 10x R$
-                194,15
+                **Cartão de crédito: + R$ 42,96 taxa por pessoa ou até 10x R$
+                222,88
               </p>
             </div>
 
