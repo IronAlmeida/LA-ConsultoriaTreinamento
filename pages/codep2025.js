@@ -7,6 +7,7 @@ import {
   BsArrowRightCircle,
   BsRocketTakeoff,
 } from "react-icons/bs";
+import { AiOutlineTeam } from "react-icons/ai";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
@@ -18,6 +19,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Repeat } from "lucide-react";
 // import { CldVideoPlayer } from "next-cloudinary";
 
 const tomorrow = Tomorrow({
@@ -33,6 +35,15 @@ export default function Codep() {
 
   let data = new Date();
   let ano = data.getFullYear();
+
+  const palestrantes = [
+    {
+      nome: "Luciano Pimentel",
+    },
+    {
+      nome: "Fran Menezes",
+    },
+  ];
 
   return (
     <>
@@ -69,12 +80,20 @@ export default function Codep() {
               Hotel Arcus | Aracaju/SE
             </p>
           </div>
-          <Link href={"#ingresso"}>
-            <button className="flex justify-center items-center w-[300px] bg-gradient-to-b from-[#E11D61] to-[#672A48] rounded-full text-white text-lg py-4">
-              <p className={`${tomorrow.className}`}>ADQUIRA SEU INGRESSO!</p>
-              <BsArrowRightCircle className="text-2xl ml-2" />
-            </button>
-          </Link>
+          <div className="flex flex-wrap gap-5 justify-center">
+            <Link href={"#ingresso"}>
+              <button className="flex justify-center items-center w-[300px] bg-gradient-to-b from-[#E11D61] to-[#672A48] rounded-full text-white text-lg py-4">
+                <p className={`${tomorrow.className}`}>ADQUIRA SEU INGRESSO!</p>
+                <BsArrowRightCircle className="text-2xl ml-2" />
+              </button>
+            </Link>
+            <Link href={"https://wa.me/5579996536481"} target="_blank">
+              <button className="flex justify-center items-center w-[300px] bg-gradient-to-b from-[#020c1b]  to-[#672A48] rounded-full text-white text-lg py-4">
+                <p className={`${tomorrow.className}`}>FALAR COM A EQUIPE</p>
+                <AiOutlineTeam className="text-2xl ml-2" />
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="bg-[url('../public/background_2.jpg')] bg-cover bg-top">
@@ -126,44 +145,6 @@ export default function Codep() {
               </p>
             </button>
           </Link>
-        </div>
-      </div>
-      {/* LOCAL DO EVENTO */}
-      <div
-        className={`w-full py-6 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
-      >
-        <div className="w-full lg:w-4/5 text-center mx-auto px-8">
-          <h1 className="flex items-center justify-center text-3xl text-white">
-            <BsGeoAlt className="text-4xl lg:text-4xl mr-4" />
-            Local do evento
-          </h1>
-          <div className="w-full lg:w-4/5 text-center mx-auto mt-4">
-            <iframe
-              className="mx-auto"
-              src="https://drive.google.com/file/d/1imilTDQ0oCUxk7BCDNX0Om14RuKnpg7u/preview"
-              width="300"
-              height="480"
-              allow="autoplay"
-            ></iframe>
-          </div>
-          <div className="w-full lg:w-3/4 mx-auto">
-            <p className="text-[16px] sm:text-lg text-white mt-2 text-justify">
-              O palco do nosso CODEP 2025 será o{" "}
-              <span className="text-[#E8C25A] font-bold">
-                Centro de Eventos João Augusto Gama
-              </span>
-              , situado nas dependências do{" "}
-              <span className="text-[#E8C25A] font-bold">Hotel Arcus</span>{" "}
-              próximo a orla de Atalaia.
-            </p>
-          </div>
-          <div className="lg:px-16 xl:px-32 mt-4" style={{ width: "100%" }}>
-            <iframe
-              width="100%"
-              height="600"
-              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=pt-br&amp;q=Centro%20de%20conven%C3%A7%C3%B5es%20Jo%C3%A3o%20Augusto%20Gama+(Hotel%20Arcus%20-%20Centro%20de%20Conve%C3%A7%C3%B5es%20Jos%C3%A9%20Augusto%20Gama)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            ></iframe>
-          </div>
         </div>
       </div>
 
@@ -286,109 +267,120 @@ export default function Codep() {
           </a>
         </div>
       </div>
-      {/* PALESTRANTES QUE PASSARAM PELO CODEP */}
-      {/* <div
-        className={`w-full py-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
-      >
-        <div className="w-full lg:w-3/4 text-center mx-auto">
-          <h1 className="text-2xl text-white">Palestrantes do CODEP 2024</h1>
-          <div className="embla" ref={emblaRef2}>
-            <div className="embla__container mt-10">
-              <div className="embla__slide2 text-center text-white">
-                <div className="w-1/2 rounded-full mx-auto">
-                  <Image
-                    src={
-                      "https://drive.google.com/uc?id=1c9p3-ljBIfHf4qFPqoSfFWKflo9a80Pm&export=view"
-                    }
-                    width={1000}
-                    height={300}
-                  />
-                </div>
-                <h1 className="mt-4">Guilherme Santos</h1>
-                <p>@ajuda.dp</p>
-              </div>
-              <div className="embla__slide2 text-white">
-                <div className="w-1/2 rounded-full mx-auto">
-                  <Image
-                    src={
-                      "https://drive.google.com/uc?id=1l0KbA4H95GqMQPqnquh4AYQMJ3i8wesL&export=view"
-                    }
-                    width={1000}
-                    height={300}
-                  />
-                </div>
-                <h1 className="mt-4">Liêda Amaral</h1>
-                <p>@liedaamaral</p>
-              </div>
-              <div className="embla__slide2 text-white">
-                <div className="w-1/2 rounded-full mx-auto">
-                  <Image
-                    src={
-                      "https://drive.google.com/uc?id=1o6yLr4FTjKO9pfQpKbns7tJFWknbxrjt&export=view"
-                    }
-                    width={1000}
-                    height={300}
-                  />
-                </div>
-                <h1 className="mt-4">José Maia</h1>
-                <p>@liedaamaral</p>
-              </div>
-              <div className="embla__slide2 text-white">
-                <h2>Imagem 4</h2>
-              </div>
-              <div className="embla__slide2 text-white">
-                <h2>Imagem 5</h2>
-              </div>
-              <div className="embla__slide2 text-white">
-                <h2>Imagem 6</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       {/* PALESTRANTES 2025 */}
-
       <div
         className={`w-full py-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
       >
         <div className="w-full lg:w-3/4 text-white mx-auto text-center">
-          {/* CARROSSEL PALESTRANTES */}
-          {/*<div className="w-1/2 mx-auto">
-            <Carousel opts={{ loop: true }} className="w-full max-w-sm">
+          <div className="w-3/4 mx-auto mb-8">
+            <Carousel
+              opts={{
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 2000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: true,
+                }),
+              ]}
+              className="w-full"
+            >
               <CarouselContent>
+                {/* LUCIANO PIMENTEL */}
                 <CarouselItem>
                   <div className="p-1">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">1</span>
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/luciano.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-lg"
+                        />
                       </CardContent>
                     </Card>
                   </div>
                 </CarouselItem>
+                {/* POLLYANA TIBURCIO */}
                 <CarouselItem>
                   <div className="p-1">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">2</span>
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/pollyana.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-lg"
+                        />
                       </CardContent>
                     </Card>
                   </div>
                 </CarouselItem>
+                {/* ANDERSON CRISTOVAM */}
                 <CarouselItem>
                   <div className="p-1">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <span className="text-4xl font-semibold">3</span>
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/anderson.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-lg"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                {/* CAMILA CRUZ */}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/camila.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-lg"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                {/* CLAUDECI SILVA */}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/claudeci.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-lg"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                {/* ALLYFRAN DUTRA */}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/allyfran.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-lg"
+                        />
                       </CardContent>
                     </Card>
                   </div>
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
             </Carousel>
-          </div>*/}
+          </div>
 
           <div className="bg-gradient-to-r from-red-500 to-yellow-300 text-transparent bg-clip-text">
             <h1 className="text-4xl font-bold italic ">
@@ -540,6 +532,46 @@ export default function Codep() {
                 </button>
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* LOCAL DO EVENTO */}
+      <div
+        className={`w-full py-6 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+      >
+        <div className="w-full lg:w-4/5 text-center mx-auto px-8">
+          <h1 className="flex items-center justify-center text-3xl text-white">
+            <BsGeoAlt className="text-4xl lg:text-4xl mr-4" />
+            Local do evento
+          </h1>
+          <div className="w-full lg:w-4/5 text-center mx-auto mt-4">
+            <iframe
+              className="mx-auto"
+              src="https://drive.google.com/file/d/1imilTDQ0oCUxk7BCDNX0Om14RuKnpg7u/preview"
+              width="300"
+              height="480"
+              allow="autoplay"
+            ></iframe>
+          </div>
+          <div className="w-full lg:w-2/4 mx-auto">
+            <p className="text-[16px] sm:text-lg text-white mt-2 text-justify">
+              O palco do nosso CODEP 2025 será o{" "}
+              <span className="text-[#E8C25A] font-bold">
+                Centro de Eventos João Augusto Gama
+              </span>
+              , situado nas dependências do{" "}
+              <span className="text-[#E8C25A] font-bold">Hotel Arcus</span>{" "}
+              próximo a orla de Atalaia.
+            </p>
+          </div>
+          <div className="lg:px-16 xl:px-32 mt-4" style={{ width: "100%" }}>
+            <iframe
+              width="70%"
+              height="500"
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=pt-br&amp;q=Centro%20de%20conven%C3%A7%C3%B5es%20Jo%C3%A3o%20Augusto%20Gama+(Hotel%20Arcus%20-%20Centro%20de%20Conve%C3%A7%C3%B5es%20Jos%C3%A9%20Augusto%20Gama)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              className="mx-auto"
+            ></iframe>
           </div>
         </div>
       </div>
