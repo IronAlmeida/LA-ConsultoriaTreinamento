@@ -264,7 +264,7 @@ export default function Codep() {
 
           <div className="bg-gradient-to-r from-red-500 to-yellow-300 text-transparent bg-clip-text">
             <h1 className="text-4xl font-bold italic ">
-              Em breve serão confimados novos palestrantes!
+              Em breve serão confirmados novos palestrantes!
             </h1>
           </div>
 
