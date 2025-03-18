@@ -273,7 +273,7 @@ export default function Codep() {
         className={`w-full py-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
       >
         <div className="w-full lg:w-3/4 text-white mx-auto text-center">
-          <div className="w-3/4 mx-auto mb-8">
+          <div className="w-full lg:w-3/4 mx-auto mb-8">
             <Carousel
               opts={{
                 loop: true,
@@ -567,7 +567,7 @@ export default function Codep() {
           </div>
           <div className="lg:px-16 xl:px-32 mt-4" style={{ width: "100%" }}>
             <iframe
-              width="70%"
+              width="100%"
               height="500"
               src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=pt-br&amp;q=Centro%20de%20conven%C3%A7%C3%B5es%20Jo%C3%A3o%20Augusto%20Gama+(Hotel%20Arcus%20-%20Centro%20de%20Conve%C3%A7%C3%B5es%20Jos%C3%A9%20Augusto%20Gama)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               className="mx-auto"
