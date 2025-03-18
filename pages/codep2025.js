@@ -148,126 +148,6 @@ export default function Codep() {
         </div>
       </div>
 
-      {/* PARA QUEM É O EVENTO */}
-      <div
-        className={`w-full pt-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
-      >
-        <div className="flex flex-col items-center w-full lg:w-3/4 2xl:w-3/6 mx-auto bg-gradient-to-b from-[#120608] via-[#000] to-[#080204] p-8 rounded-3xl text-white text-center">
-          <div className="w-full md:w-3/4 mx-auto">
-            <h1 className="text-2xl sm:text-4xl">Para quem é o evento?</h1>
-            <div className="embla mt-4" ref={emblaRef}>
-              <div className="embla__container">
-                <div className="embla__slide">
-                  <Image
-                    src={
-                      "https://drive.google.com/uc?id=1csL1Va3ur9nzC57IvLt9iewavSJ9JY-e&export=view"
-                    }
-                    width={1000}
-                    height={300}
-                    className="rounded-xl"
-                  />
-                </div>
-                <div className="embla__slide">
-                  <Image
-                    src={
-                      "https://drive.google.com/uc?id=1BsV_3Ct9Wz1UrDqMJD79QqwMFERbTiDs&export=view"
-                    }
-                    width={1000}
-                    height={300}
-                    className="rounded-xl"
-                  />
-                </div>
-                <div className="embla__slide">
-                  <Image
-                    src={
-                      "https://drive.google.com/uc?id=1ZP9UEWziexmBPoZo-smCkYUlUTB1YhGi&export=view"
-                    }
-                    width={1000}
-                    height={300}
-                    className="rounded-xl"
-                  />
-                </div>
-                <div className="embla__slide">
-                  <Image
-                    src={
-                      "https://drive.google.com/uc?id=1yByzdVd4g5WPcTzWcIpQNffDoVQp5o6C&export=view"
-                    }
-                    width={1000}
-                    height={300}
-                    className="rounded-xl"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <p className="text-[16px] sm:text-lg mt-4 text-justify">
-              O CODEP é o encontro feito para todos os profissionais de
-              Departamento Pessoal e áreas afins. Nosso objetivo é criar um
-              ambiente dinâmico e colaborativo onde você possa se conectar com
-              os melhores do ramo, compartilhar conhecimentos e impulsionar seu
-              crescimento profissional.
-              <br />
-              <br />
-              Durante o evento você terá acesso a palestras inspiradoras
-              ministradas pelos principais especialistas do Brasil e também da
-              nossa querida Sergipe. Além disso, teremos momentos de interação,
-              entretenimento e valiosas oportunidades de networking, todas
-              destinadas a enriquecer sua trajetória profissional.
-            </p>
-          </div>
-
-          <Link href={"#ingresso"}>
-            <button className="flex justify-center items-center w-[300px] bg-gradient-to-b from-[#E11D61] to-[#672A48] rounded-full text-white text-lg py-4 mt-8">
-              <p className={`${tomorrow.className}`}>ADQUIRA SEU INGRESSO!</p>
-              <BsArrowRightCircle className="text-2xl ml-2" />
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      {/* SOBRE O CODEP 2024 */}
-      <div
-        className={`w-full bg-gradient-to-b from-[#120608] via-[#090303] to-[#000] py-6 px-2 ${tomorrow.className}`}
-      >
-        <div className="w-full lg:w-3/4 xl:w-3/5 m-auto rounded-3xl text-center">
-          <div className="text-white">
-            <h1 className="text-2xl sm:text-4xl">
-              O que rolou no CODEP/SE 2024?
-            </h1>
-            <p className="text-xl mt-2">Confira os melhores momentos.</p>
-          </div>
-          <div className="flex justify-center py-4">
-            {/* <CldVideoPlayer
-              className="rounded-2xl border-[3px] border-[#E8C25A]"
-              src="CODEP-2024/fgdwicaioo7nxksverre"
-            /> */}
-            <iframe
-              className="rounded-3xl border-[2px] border-[#E8C25A]"
-              width="300"
-              height="530"
-              src="https://drive.google.com/file/d/1YKLIlse-_AiPGShOfKTnoARIELfuJ0yi/preview"
-              title="1° Congresso de Departamento Pessoal de Sergipe (CODEP/SE)"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <p className="text-lg text-white">
-            Veja também os registros da primeira edição.
-          </p>
-          <a
-            href="https://photos.google.com/share/AF1QipOJ1Vtw1uJj_57prG4ybmx5FORn5SKlZJr9_etCtbEXYryKCydM06Y7FZB2NURW2A?key=R2VtZEp4azRka1hJUjBiX24yTHRTTDl2bjFwTFBR"
-            target="_blank"
-          >
-            <button className="bg-[#E11D61] p-4 mt-4 rounded-full text-white">
-              Ver fotos CODEP/SE 2024
-            </button>
-          </a>
-        </div>
-      </div>
-
       {/* PALESTRANTES 2025 */}
       <div
         className={`w-full py-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
@@ -404,26 +284,123 @@ export default function Codep() {
         </div>
       </div>
 
-      {/* SEJA UM PATROCINADOR */}
+      {/* PARA QUEM É O EVENTO */}
       <div
-        className={`w-full py-20 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+        className={`w-full pt-12 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
       >
-        <div className="w-full md:w-3/4 lg:w-2/4 mx-auto border border-[#E8C25A] p-8 rounded-3xl shadow-lg shadow-slate-900">
-          <h1 className="text-4xl text-white text-center">
-            Seja um patrocinador
-          </h1>
-          <p className="text-lg lg:text-xl text-white mt-8 text-justify">
-            Como patrocinador, sua empresa terá a oportunidade de se destacar
-            perante um público altamente qualificado, fortalecendo sua marca e
-            ampliando conexões estratégicas.
-          </p>
-          <Link href="https://wa.me/5579996121721?text=Olá, gostaria de ver os planos para ser patrocinador do CODEP 2025.">
-            <button className="flex justify-center items-center w-[300px] bg-white rounded-full text-[#E11D61] text-lg py-4 mt-8 mx-auto">
-              <p className={`${tomorrow.className} font-bold`}>
-                Quero ser um patrocinador
-              </p>
+        <div className="flex flex-col items-center w-full lg:w-3/4 2xl:w-3/6 mx-auto bg-gradient-to-b from-[#120608] via-[#000] to-[#080204] p-8 rounded-3xl text-white text-center">
+          <div className="w-full md:w-3/4 mx-auto">
+            <h1 className="text-2xl sm:text-4xl">Para quem é o evento?</h1>
+            <div className="embla mt-4" ref={emblaRef}>
+              <div className="embla__container">
+                <div className="embla__slide">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1csL1Va3ur9nzC57IvLt9iewavSJ9JY-e&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+                <div className="embla__slide">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1BsV_3Ct9Wz1UrDqMJD79QqwMFERbTiDs&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+                <div className="embla__slide">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1ZP9UEWziexmBPoZo-smCkYUlUTB1YhGi&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+                <div className="embla__slide">
+                  <Image
+                    src={
+                      "https://drive.google.com/uc?id=1yByzdVd4g5WPcTzWcIpQNffDoVQp5o6C&export=view"
+                    }
+                    width={1000}
+                    height={300}
+                    className="rounded-xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[16px] sm:text-lg mt-4 text-justify">
+              O CODEP é o encontro feito para todos os profissionais de
+              Departamento Pessoal e áreas afins. Nosso objetivo é criar um
+              ambiente dinâmico e colaborativo onde você possa se conectar com
+              os melhores do ramo, compartilhar conhecimentos e impulsionar seu
+              crescimento profissional.
+              <br />
+              <br />
+              Durante o evento você terá acesso a palestras inspiradoras
+              ministradas pelos principais especialistas do Brasil e também da
+              nossa querida Sergipe. Além disso, teremos momentos de interação,
+              entretenimento e valiosas oportunidades de networking, todas
+              destinadas a enriquecer sua trajetória profissional.
+            </p>
+          </div>
+
+          <Link href={"#ingresso"}>
+            <button className="flex justify-center items-center w-[300px] bg-gradient-to-b from-[#E11D61] to-[#672A48] rounded-full text-white text-lg py-4 mt-8">
+              <p className={`${tomorrow.className}`}>ADQUIRA SEU INGRESSO!</p>
+              <BsArrowRightCircle className="text-2xl ml-2" />
             </button>
           </Link>
+        </div>
+      </div>
+
+      {/* SOBRE O CODEP 2024 */}
+      <div
+        className={`w-full bg-gradient-to-b from-[#120608] via-[#090303] to-[#000] py-6 px-2 ${tomorrow.className}`}
+      >
+        <div className="w-full lg:w-3/4 xl:w-3/5 m-auto rounded-3xl text-center">
+          <div className="text-white">
+            <h1 className="text-2xl sm:text-4xl">
+              O que rolou no CODEP/SE 2024?
+            </h1>
+            <p className="text-xl mt-2">Confira os melhores momentos.</p>
+          </div>
+          <div className="flex justify-center py-4">
+            {/* <CldVideoPlayer
+              className="rounded-2xl border-[3px] border-[#E8C25A]"
+              src="CODEP-2024/fgdwicaioo7nxksverre"
+            /> */}
+            <iframe
+              className="rounded-3xl border-[2px] border-[#E8C25A]"
+              width="300"
+              height="530"
+              src="https://drive.google.com/file/d/1YKLIlse-_AiPGShOfKTnoARIELfuJ0yi/preview"
+              title="1° Congresso de Departamento Pessoal de Sergipe (CODEP/SE)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className="text-lg text-white">
+            Veja também os registros da primeira edição.
+          </p>
+          <a
+            href="https://photos.google.com/share/AF1QipOJ1Vtw1uJj_57prG4ybmx5FORn5SKlZJr9_etCtbEXYryKCydM06Y7FZB2NURW2A?key=R2VtZEp4azRka1hJUjBiX24yTHRTTDl2bjFwTFBR"
+            target="_blank"
+          >
+            <button className="bg-[#E11D61] p-4 mt-4 rounded-full text-white">
+              Ver fotos CODEP/SE 2024
+            </button>
+          </a>
         </div>
       </div>
 
@@ -533,6 +510,29 @@ export default function Codep() {
               </a>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* SEJA UM PATROCINADOR */}
+      <div
+        className={`w-full py-20 px-2 bg-gradient-to-b from-[#080204] via-[#000] to-[#120608] ${tomorrow.className}`}
+      >
+        <div className="w-full md:w-3/4 lg:w-2/4 mx-auto border border-[#E8C25A] p-8 rounded-3xl shadow-lg shadow-slate-900">
+          <h1 className="text-4xl text-white text-center">
+            Seja um patrocinador
+          </h1>
+          <p className="text-lg lg:text-xl text-white mt-8 text-justify">
+            Como patrocinador, sua empresa terá a oportunidade de se destacar
+            perante um público altamente qualificado, fortalecendo sua marca e
+            ampliando conexões estratégicas.
+          </p>
+          <Link href="https://wa.me/5579996121721?text=Olá, gostaria de ver os planos para ser patrocinador do CODEP 2025.">
+            <button className="flex justify-center items-center w-[300px] bg-white rounded-full text-[#E11D61] text-lg py-4 mt-8 mx-auto">
+              <p className={`${tomorrow.className} font-bold`}>
+                Quero ser um patrocinador
+              </p>
+            </button>
+          </Link>
         </div>
       </div>
 
