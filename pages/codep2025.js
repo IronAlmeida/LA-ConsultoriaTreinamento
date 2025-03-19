@@ -177,8 +177,14 @@ export default function Codep() {
                           src="/luciano.jpg"
                           width={280}
                           height={280}
-                          className="rounded-lg"
+                          className="rounded-t-lg"
                         />
+                        <Link
+                          href={"https://www.instagram.com/dpconectado/"}
+                          target="_blank"
+                        >
+                          <p className="my-2">@dpconectado</p>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>
@@ -192,8 +198,14 @@ export default function Codep() {
                           src="/pollyana.jpg"
                           width={280}
                           height={280}
-                          className="rounded-lg"
+                          className="rounded-t-lg"
                         />
+                        <Link
+                          href={"https://www.instagram.com/pollytiburcio"}
+                          target="_blank"
+                        >
+                          <p className="my-2">@pollytiburcio</p>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>
@@ -207,8 +219,14 @@ export default function Codep() {
                           src="/anderson.jpg"
                           width={280}
                           height={280}
-                          className="rounded-lg"
+                          className="rounded-t-lg"
                         />
+                        <Link
+                          href={"https://www.instagram.com/anderson.cristovam/"}
+                          target="_blank"
+                        >
+                          <p className="my-2">@anderson.cristovam</p>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>
@@ -222,8 +240,16 @@ export default function Codep() {
                           src="/camila.jpg"
                           width={280}
                           height={280}
-                          className="rounded-lg"
+                          className="rounded-t-lg"
                         />
+                        <Link
+                          href={
+                            "https://www.instagram.com/professoracamilacruz/"
+                          }
+                          target="_blank"
+                        >
+                          <p className="my-2">@professoracamilacruz</p>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>
@@ -237,8 +263,16 @@ export default function Codep() {
                           src="/claudeci.jpg"
                           width={280}
                           height={280}
-                          className="rounded-lg"
+                          className="rounded-t-lg"
                         />
+                        <Link
+                          href={
+                            "https://www.instagram.com/claudecidasilvaoficial/"
+                          }
+                          target="_blank"
+                        >
+                          <p className="my-2">@claudecidasilvaoficial</p>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>
@@ -252,8 +286,38 @@ export default function Codep() {
                           src="/allyfran.jpg"
                           width={280}
                           height={280}
-                          className="rounded-lg"
+                          className="rounded-t-lg"
                         />
+                        <Link
+                          href={"https://www.instagram.com/allyfrandutra.dp/"}
+                          target="_blank"
+                        >
+                          <p className="my-2">@allyfrandutra.dp</p>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+
+                {/* FRAN MENEZES */}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/fran.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-t-lg"
+                        />
+                        <Link
+                          href={
+                            "https://www.instagram.com/franmenezes.oficial/"
+                          }
+                          target="_blank"
+                        >
+                          <p className="my-2">@franmenezes.oficial</p>
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>
