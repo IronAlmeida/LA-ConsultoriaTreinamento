@@ -344,6 +344,30 @@ export default function Codep() {
                     </Card>
                   </div>
                 </CarouselItem>
+
+                {/* ZENAIDE CARVALHO*/}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/zenaide.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-t-lg"
+                        />
+                        <Link
+                          href={
+                            "https://www.instagram.com/zenaidecarvalhomentora/"
+                          }
+                          target="_blank"
+                        >
+                          <p className="my-2">@zenaidecarvalhomentora</p>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
               </CarouselContent>
             </Carousel>
           </div>
