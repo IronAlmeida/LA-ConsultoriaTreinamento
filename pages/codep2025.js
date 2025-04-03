@@ -368,6 +368,28 @@ export default function Codep() {
                     </Card>
                   </div>
                 </CarouselItem>
+
+                {/* JENÍ CARLA*/}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/jeni.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-t-lg"
+                        />
+                        <Link
+                          href={"https://www.instagram.com/jenicarla/"}
+                          target="_blank"
+                        >
+                          <p className="my-2">@jenicarla</p>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
               </CarouselContent>
             </Carousel>
           </div>
