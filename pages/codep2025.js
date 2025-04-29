@@ -459,6 +459,26 @@ export default function Codep() {
               </button>
             </a>
           </p>
+
+          <h1 className="mt-5 text-4xl">Programação</h1>
+
+          <div className="w-full mt-5">
+            <Image
+              src={"/Dia 1 - Site.png"}
+              width={500}
+              height={600}
+              className="rounded-xl mx-auto"
+            />
+          </div>
+
+          <div className="w-full mt-5">
+            <Image
+              src={"/Dia 2 - Site.png"}
+              width={500}
+              height={600}
+              className="rounded-xl mx-auto"
+            />
+          </div>
         </div>
       </div>
 
