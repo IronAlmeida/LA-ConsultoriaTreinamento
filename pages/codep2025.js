@@ -680,7 +680,7 @@ export default function Codep() {
           <div>
             <div className="mt-10">
               <p className="text-xl sm:text-4xl font-bold text-[#E8C25A]">
-                2° Lote - 3 pessoas
+                2° Lote - a partir de 3 pessoas
               </p>
               <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
                 R$ 443,65{" "}
@@ -696,7 +696,7 @@ export default function Codep() {
             </div>
             <div className="mt-10">
               <p className="text-xl sm:text-4xl font-bold text-[#E8C25A]">
-                2° Lote - 4 pessoas
+                2° Lote - a partir 4 pessoas
               </p>
               <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
                 R$ 429,64{" "}
