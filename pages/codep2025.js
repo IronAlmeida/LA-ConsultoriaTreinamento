@@ -458,14 +458,76 @@ export default function Codep() {
                     </Card>
                   </div>
                 </CarouselItem>
+
+                {/* VICTOR LOPES */}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/victor.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-t-lg"
+                        />
+                        <Link
+                          href={
+                            "https://www.instagram.com/contador.victorlopes/"
+                          }
+                          target="_blank"
+                        >
+                          <p className="my-2">@contador.victorlopes</p>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+
+                {/* ISABELLY LUCENA */}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/isabelly.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-t-lg"
+                        />
+                        <Link
+                          href={"https://www.instagram.com/isabellylucena/"}
+                          target="_blank"
+                        >
+                          <p className="my-2">@isabellylucena</p>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+
+                {/* THUANY REIS*/}
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card className="rounded-lg">
+                      <CardContent>
+                        <Image
+                          src="/thuany.jpg"
+                          width={280}
+                          height={280}
+                          className="rounded-t-lg"
+                        />
+                        <Link
+                          href={"https://www.instagram.com/thuanysales/"}
+                          target="_blank"
+                        >
+                          <p className="my-2">@thuanysales</p>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
               </CarouselContent>
             </Carousel>
-          </div>
-
-          <div className="bg-gradient-to-r from-red-500 to-yellow-300 text-transparent bg-clip-text">
-            <h1 className="text-4xl font-bold italic ">
-              Em breve serão confirmados novos palestrantes!
-            </h1>
           </div>
 
           <p className="mt-4">
