@@ -87,7 +87,7 @@ export default function Codep() {
                 <BsArrowRightCircle className="text-2xl ml-2" />
               </button>
             </Link>
-            <Link href={"https://wa.me/5579996536481"} target="_blank">
+            <Link href={"https://wa.me/5579996581078"} target="_blank">
               <button className="flex justify-center items-center w-[300px] bg-gradient-to-b from-[#020c1b]  to-[#672A48] rounded-full text-white text-lg py-4">
                 <p className={`${tomorrow.className}`}>FALAR COM A EQUIPE</p>
                 <AiOutlineTeam className="text-2xl ml-2" />
