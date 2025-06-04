@@ -808,6 +808,98 @@ export default function Codep() {
             perante um público altamente qualificado, fortalecendo sua marca e
             ampliando conexões estratégicas.
           </p>
+          <h1 className="text-2xl text-white text-center mt-5">
+            Patrocinadores
+          </h1>
+
+          <div className="bg-white p-6 rounded-2xl mt-5">
+            {/* SÓLIDES */}
+            <div className="mt-5">
+              <Link href={"https://solides.com.br/"} target="_blank">
+                <Image
+                  className="m-auto"
+                  src={"/solides.png"}
+                  width={200}
+                  height={200}
+                />
+                <p className="text-justify mt-5">
+                  A Solides é líder em tecnologia para gestão de pessoas,
+                  oferecendo soluções inovadoras que transformam a maneira como
+                  lidamos com o Departamento Pessoal. Com ferramentas avançadas
+                  de análise comportamental e gestão de talentos, eles estão na
+                  vanguarda da revolução digital no setor.
+                </p>
+              </Link>
+            </div>
+
+            {/* EB Treinamentos */}
+            <div className="mt-20">
+              <Link
+                href={"https://www.instagram.com/eb_treinamentos/"}
+                target="_blank"
+              >
+                <Image
+                  className="m-auto"
+                  src={"/eb.png"}
+                  width={200}
+                  height={200}
+                />
+                <p className="text-justify mt-5">
+                  A EB Treinamentos é referência nacional quando o assunto é
+                  formação de alto impacto para quem atua no DP, RH e áreas
+                  correlatas. Muito mais que uma escola, é um verdadeiro
+                  ecossistema de transformação profissional.
+                </p>
+              </Link>
+            </div>
+
+            {/* BSSP GRADUAÇÃO */}
+            <div className="mt-20">
+              <Link
+                href={
+                  "https://bsspce.com.br/pos-graduacao-e-mba-bssp/?utm_source=Link+da+Bio+do+RD+Station&utm_medium=social&utm_campaign=CTA+no+Link+da+Bio"
+                }
+                target="_blank"
+              >
+                <Image
+                  className="m-auto"
+                  src={"/bssp.jpg"}
+                  width={200}
+                  height={200}
+                />
+                <p className="text-justify mt-5">
+                  A BSSP é reconhecida por oferecer pós-graduações e MBAs
+                  práticos, ministrados por professores que são referências no
+                  mercado. Com cursos voltados para áreas como Contabilidade,
+                  Direito, Engenharia, Gestão, Perícia, Saúde e
+                  Trabalhista/Previdenciário, a instituição prepara
+                  profissionais para os desafios reais do mercado de trabalho.
+                </p>
+              </Link>
+            </div>
+
+            {/* LACEL CONTABILIDADE */}
+            <div className="mt-20">
+              <Link
+                href={"https://www.lacel.cnt.br/site2/index.php/pt/"}
+                target="_blank"
+              >
+                <Image
+                  className="m-auto"
+                  src={"/lacel.jpeg"}
+                  width={200}
+                  height={200}
+                />
+                <p className="text-justify mt-5">
+                  Com 36 anos de experiência no mercado, a Lacel é referência em
+                  serviços contábeis de alta qualidade, oferecendo soluções
+                  personalizadas para empresas e condomínios. Seu compromisso
+                  com a excelência e a inovação a torna uma parceira estratégica
+                  para o sucesso empresarial.
+                </p>
+              </Link>
+            </div>
+          </div>
           <Link href="https://wa.me/5579996121721?text=Olá, gostaria de ver os planos para ser patrocinador do CODEP 2025.">
             <button className="flex justify-center items-center w-[300px] bg-white rounded-full text-[#E11D61] text-lg py-4 mt-8 mx-auto">
               <p className={`${tomorrow.className} font-bold`}>
