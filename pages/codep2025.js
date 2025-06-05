@@ -845,10 +845,15 @@ export default function Codep() {
                   height={200}
                 />
                 <p className="text-justify mt-5">
-                  A EB Treinamentos é referência nacional quando o assunto é
-                  formação de alto impacto para quem atua no DP, RH e áreas
-                  correlatas. Muito mais que uma escola, é um verdadeiro
-                  ecossistema de transformação profissional.
+                  A EB Treinamentos tem um propósito claro: 👉 Capacitar
+                  profissionais de DP e RH em toda a sua jornada de
+                  desenvolvimento, tornando-os estratégicos para as empresas por
+                  meio de uma educação prática que fortalece sua autoconfiança e
+                  os prepara para uma carreira de sucesso. <br />
+                  <br /> Sua proposta de valor vai além da sala de aula: 🎓 A EB
+                  capacita o profissional de DP e RH para ser estratégico no
+                  negócio, oferecendo produtos educacionais ideais para seu
+                  desenvolvimento de carreira, presente e futuro.
                 </p>
               </Link>
             </div>
