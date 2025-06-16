@@ -687,7 +687,7 @@ export default function Codep() {
       </div>
 
       {/* INGRESSOS */}
-      <div
+      {/* <div
         id="ingresso"
         className={`w-full text-center text-white bg-[#120608] py-8 px-2 ${tomorrow.className}`}
       >
@@ -788,6 +788,98 @@ export default function Codep() {
               <a href="https://www.even3.com.br/tickets/get/codep25?even3_orig=get_tickets">
                 <button className="bg-[#E11D61] p-4 rounded-full hover:scale-110 ease-in duration-300">
                   Adquirir lote via cartão de crédito
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* INGRESSOS - 3° LOTE */}
+      <div
+        id="ingresso"
+        className={`w-full text-center text-white bg-[#120608] py-8 px-2 ${tomorrow.className}`}
+      >
+        <h1 className="text-3xl sm:text-4xl">Garanta já seu ingresso!</h1>
+        <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 relative rounded-3xl m-auto border-[2px] border-[#6E517A] py-8 px-2 mt-12">
+          <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-2xl sm:text-3xl mt-[-60px]">
+            Ingresso Individual
+          </h1>
+          <div>
+            <div className="mt-10">
+              <p className="text-3xl font-bold text-[#E8C25A]">3° Lote</p>
+              <p className="text-5xl font-bold mt-2 text-[#7FDB58]">
+                R$ 567,00*
+              </p>
+              <p className="text-[16px] mt-2">
+                *Valor para pagamento à vista, cartão de crédito acrescenta
+                juros da operação.
+              </p>
+            </div>
+
+            <div className="mt-10 font-bold">
+              <a
+                href="https://wa.me/5579996581078?text=Olá, gostaria de adquirir meu ingresso individual para o CODEP/SE 2025."
+                target="_blank"
+              >
+                <button className="bg-[#E11D61] p-4 rounded-full hover:scale-110 ease-in duration-300">
+                  Adquirir ingresso Individual
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="w-full md:w-3/4 lg:w-3/5 xl:w-2/5 relative rounded-3xl m-auto border-[2px] border-[#6E517A] py-8 px-2 mt-12">
+          <h1 className="bg-[#672A48] rounded-full p-2 w-3/4 mx-auto text-xl sm:text-2xl xl:text-3xl mt-[-60px]">
+            Ingressos para Grupos
+          </h1>
+          <div>
+            <div className="mt-10">
+              <p className="text-xl sm:text-3xl font-bold text-[#E8C25A]">
+                3° Lote - 3 pessoas
+              </p>
+              <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
+                R$ 539,00{" "}
+                <span className="text-[16px] font-normal text-white">
+                  por pessoa*
+                </span>
+              </p>
+            </div>
+            <div className="mt-10">
+              <p className="text-xl sm:text-3xl font-bold text-[#E8C25A]">
+                3° Lote - 4 pessoas
+              </p>
+              <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
+                R$ 509,00{" "}
+                <span className="text-[16px] font-normal text-white">
+                  por pessoa*
+                </span>
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <p className="text-xl sm:text-3xl font-bold text-[#E8C25A]">
+                3° Lote - a partir de 5 pessoas
+              </p>
+              <p className="text-4xl font-bold mt-2 text-[#7FDB58]">
+                R$ 480,00{" "}
+                <span className="text-[16px] font-normal text-white">
+                  por pessoa*
+                </span>
+              </p>
+              <p className="text-sm sm:text-[16px] mt-2 text-center">
+                *Valores para pagamento à vista, cartão de crédito acrescenta
+                juros da operação.{" "}
+              </p>
+            </div>
+
+            <div className="mt-10 font-bold">
+              <a
+                href="https://wa.me/5579996581078?text=Olá, gostaria de adquirir ingressos em grupo para o CODEP/SE 2025."
+                target="_blank"
+              >
+                <button className="bg-[#E11D61] p-4 rounded-full hover:scale-110 ease-in duration-300">
+                  Adquirir ingressos em grupo
                 </button>
               </a>
             </div>
