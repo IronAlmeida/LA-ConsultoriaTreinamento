@@ -950,6 +950,27 @@ export default function Codep() {
               </Link>
             </div>
 
+            {/* LE CARD */}
+            <div className="mt-5">
+              <Link href={"https://lecard.com.br/"} target="_blank">
+                <Image
+                  className="m-auto"
+                  src={"/lecard.png"}
+                  width={200}
+                  height={200}
+                />
+                <p className="text-justify mt-5">
+                  A LeCard está presente no CODEP/SE 2025! Apresentamos nossas
+                  soluções em cartões de benefícios, pensadas para valorizar
+                  quem faz a diferença todos os dias: os colaboradores. Com a
+                  LeCard, sua empresa oferece mais praticidade, flexibilidade e
+                  autonomia no uso dos benefícios. 💳 Cartão alimentação 💳
+                  Cartão refeição 💳 Cartão premiação Cuidar de pessoas também é
+                  um investimento. E a LeCard facilita esse caminho.
+                </p>
+              </Link>
+            </div>
+
             {/* BSSP GRADUAÇÃO */}
             <div className="mt-20">
               <Link
